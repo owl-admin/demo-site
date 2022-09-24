@@ -56,10 +56,10 @@ class AdminPermissionController extends AdminController
                 Column::make()->label('路由')->name('http_path')->type('each')->items(Tag::make()
                     ->label('${item}')
                     ->className('my-1')),
-                $this->rowActionsOnlyEditAndDelete(),
+                $this->rowActionsOnlyEditAndDelete(true),
             ]);
 
-        return $this->baseList($crud);
+        return $this->baseList($crud)->toolbar([$this->createButton(true)]);
     }
 
     public function form(): Form

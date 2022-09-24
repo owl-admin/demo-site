@@ -33,6 +33,7 @@ class AdminUserController extends AdminController
             $items = $this->service
                 ->query()
                 ->with('roles')
+                ->select(['id', 'name', 'username', 'avatar', 'created_at'])
                 ->when($username, fn($query) => $query->where('username', 'like', "%$username%"))
                 ->paginate($request->input('perPage', 20))
                 ->items();
@@ -57,10 +58,10 @@ class AdminUserController extends AdminController
                     Tag::make()->label('${name}')->className('my-1')
                 ),
                 Column::make()->label('创建时间')->name('created_at')->type('datetime')->sortable(true),
-                $this->rowActionsOnlyEditAndDelete(),
+                $this->rowActionsOnlyEditAndDelete(true),
             ]);
 
-        return $this->baseList($crud);
+        return $this->baseList($crud)->toolbar([$this->createButton(true)]);
     }
 
     public function form(): Form

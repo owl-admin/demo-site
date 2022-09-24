@@ -73,7 +73,7 @@ class HomeController extends AdminController
 
         return Card::make()->className('h-full')->body([
             Wrapper::make()->body('"' . $data['hitokoto'] . '"'),
-            Wrapper::make()->size('none')->className('text-right')->body('—— ' . $data['from']),
+            Wrapper::make()->size('none')->className('text-right')->body('《一言》—— ' . $data['from']),
         ]);
     }
 
