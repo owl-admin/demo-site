@@ -10,7 +10,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "slowlyo/slow-admin": "^0.7.2@beta"
+        "slowlyo/slow-admin": "^1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

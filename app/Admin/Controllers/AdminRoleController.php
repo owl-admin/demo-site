@@ -20,7 +20,14 @@ class AdminRoleController extends AdminController
 
     protected string $queryPath = 'admin_roles';
 
-    protected string $pageTitle = '角色';
+    protected string $pageTitle;
+
+    public function __construct()
+    {
+        $this->pageTitle = __('admin.admin_roles');
+
+        parent::__construct();
+    }
 
     public function index(Request $request): JsonResponse|JsonResource
     {
@@ -40,27 +47,40 @@ class AdminRoleController extends AdminController
     public function list(): Page
     {
         $crud = $this->baseCRUD()
+            ->headerToolbar([
+                $this->createButton(true),
+                'bulkActions',
+                amis('reload')->align('right'),
+                amis('filter-toggler')->align('right'),
+            ])
             ->filterTogglable(false)
             ->columns([
                 Column::make()->label('ID')->name('id')->sortable(true),
-                Column::make()->label('名称')->name('name'),
-                Column::make()->label('标识')->name('slug')->type('tag'),
-                Column::make()->label('创建时间')->name('created_at')->type('datetime')->sortable(true),
-                Column::make()->label('更新时间')->name('updated_at')->type('datetime')->sortable(true),
-                $this->rowActionsOnlyEditAndDelete(true),
+                Column::make()->label(__('admin.admin_role.name'))->name('name'),
+                Column::make()->label(__('admin.admin_role.slug'))->name('slug')->type('tag'),
+                Column::make()->label(__('admin.created_at'))->name('created_at')->type('datetime')->sortable(true),
+                Column::make()->label(__('admin.updated_at'))->name('updated_at')->type('datetime')->sortable(true),
+                amis('operation')->label(__('admin.actions'))->buttons([
+                    $this->rowEditButton(true),
+                    $this->rowDeleteButton()->visibleOn('${slug != "administrator"}'),
+                ]),
             ]);
 
-        return $this->baseList($crud)->toolbar([$this->createButton(true)]);
+        return $this->baseList($crud);
     }
 
     public function form(): Form
     {
         return $this->baseForm()->body([
-            InputText::make()->label('名称')->name('name')->required(true),
-            InputText::make()->label('标识')->name('slug')->description('角色的唯一标识, 不可重复')->required(true),
+            InputText::make()->label(__('admin.admin_role.name'))->name('name')->required(true),
+            InputText::make()
+                ->label(__('admin.admin_role.slug'))
+                ->name('slug')
+                ->description(__('admin.admin_role.slug_description'))
+                ->required(true),
             TreeSelect::make()
                 ->name('permissions')
-                ->label('权限')
+                ->label(__('admin.admin_role.permissions'))
                 ->searchable(true)
                 ->multiple(true)
                 ->options(AdminPermissionService::make()->getTree())

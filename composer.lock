@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d934063eff038e37108b8812e81db138",
+    "content-hash": "340fd2a44ca1060d488aefd6d0cd1dfd",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,11 +3048,11 @@
         },
         {
             "name": "slowlyo/slow-admin",
-            "version": "v0.7.2-beta",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/slowlyo/slow-admin",
-                "reference": "dcfca0b35f57f87faf1ec8e2bc8087883889a73d"
+                "reference": "9d632bb46ac12a222844f84b9023214973d53c1f"
             },
             "require": {
                 "illuminate/support": "~9",
@@ -3095,7 +3095,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2022-09-19T15:32:22+00:00"
+            "time": "2022-11-12T06:55:50+00:00"
         },
         {
             "name": "symfony/console",
@@ -8308,9 +8308,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "slowlyo/slow-admin": 10
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

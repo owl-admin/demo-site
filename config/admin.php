@@ -2,46 +2,37 @@
 
 return [
     // 应用名称
-    'name' => 'Slow Admin',
+    'name'           => 'Slow Admin',
 
     // 应用 logo
-    'logo' => 'vendor/admin/logo.png',
+    'logo'           => '/admin/logo.png',
 
-    'default_avatar' => 'vendor/admin/default-avatar.png',
+    // 默认头像
+    'default_avatar' => '/admin/default-avatar.png',
 
-    'debug' => true,
+    // amis debug
+    'debug'          => true,
 
     'directory' => app_path('Admin'),
 
     'bootstrap' => app_path('Admin/bootstrap.php'),
 
     'route' => [
-        'prefix'     => 'admin',
+        'prefix'     => 'admin-api',
         'domain'     => null,
         'namespace'  => 'App\\Admin\\Controllers',
-        'middleware' => ['web', 'admin'],
+        'middleware' => ['admin'],
     ],
 
     'auth' => [
         'enable'     => true,
         'controller' => \Slowlyo\SlowAdmin\Controllers\AuthController::class,
-        'guard'      => 'admin',
-        'guards'     => [
-            'admin' => [
-                'driver'   => 'session',
-                'provider' => 'admin',
-            ],
-        ],
-        'providers'  => [
-            'admin' => [
-                'driver' => 'eloquent',
-                'model'  => \Slowlyo\SlowAdmin\Models\AdminUser::class,
-            ],
-        ],
-        'remember'   => true,
+        'guard'      => 'sanctum',
         'except'     => [
             'login',
             'logout',
+            'no-content',
+            '_settings'
         ],
     ],
 
@@ -54,15 +45,10 @@ return [
         ],
     ],
 
-    // 布局相关
-    'layout' => [
-        // amis主题  default/ang/antd/dark
-        'theme'            => 'default',
-        // 是否启用默认用户菜单
-        'enable_user_menu' => true,
-    ],
-
     'https' => false,
 
-    'show_development_tools' => true,
+    'show_development_tools'               => true,
+
+    // 是否显示 [权限] 功能中的自动生成按钮
+    'show_auto_generate_permission_button' => true,
 ];

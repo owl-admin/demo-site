@@ -23,21 +23,30 @@ class AdminUserController extends AdminController
 
     protected string $queryPath = 'admin_users';
 
-    protected string $pageTitle = '管理员';
+    protected string $pageTitle;
+
+    public function __construct()
+    {
+        $this->pageTitle = __('admin.admin_users');
+
+        parent::__construct();
+    }
 
     public function index(Request $request): JsonResponse|JsonResource
     {
         if ($this->actionOfGetData()) {
-            $username = $request->username;
+            $keyword = $request->keyword;
 
-            $items = $this->service
+            $query = $this->service
                 ->query()
                 ->with('roles')
                 ->select(['id', 'name', 'username', 'avatar', 'created_at'])
-                ->when($username, fn($query) => $query->where('username', 'like', "%$username%"))
-                ->paginate($request->input('perPage', 20))
-                ->items();
-            $total = $this->service->query()->count();
+                ->when($keyword, function ($query) use ($keyword) {
+                    $query->where('username', 'like', "%{$keyword}%")->orWhere('name', 'like', "%{$keyword}%");
+                });
+
+            $items = (clone $query)->paginate($request->input('perPage', 20))->items();
+            $total = (clone $query)->count();
 
             return $this->response()->success(compact('items', 'total'));
         }
@@ -48,35 +57,53 @@ class AdminUserController extends AdminController
     public function list(): Page
     {
         $crud = $this->baseCRUD()
-            ->filterTogglable(false)
+            ->headerToolbar([
+                $this->createButton(true),
+                'bulkActions',
+                amis('reload')->align('right'),
+                amis('filter-toggler')->align('right'),
+            ])
+            ->filter($this->baseFilter()->body(
+                InputText::make()
+                    ->name('keyword')
+                    ->label(__('admin.keyword'))
+                    ->size('md')
+                    ->placeholder(__('admin.admin_user.search_username'))
+            ))
             ->columns([
                 Column::make()->label('ID')->name('id')->sortable(true),
-                Column::make()->label('头像')->name('avatar')->type('avatar')->src('${avatar}'),
-                Column::make()->label('用户名')->name('username'),
-                Column::make()->label('名称')->name('name'),
-                Column::make()->label('角色')->name('roles')->type('each')->items(
+                Column::make()->label(__('admin.admin_user.avatar'))->name('avatar')->type('avatar')->src('${avatar}'),
+                Column::make()->label(__('admin.username'))->name('username'),
+                Column::make()->label(__('admin.admin_user.name'))->name('name'),
+                Column::make()->label(__('admin.admin_user.roles'))->name('roles')->type('each')->items(
                     Tag::make()->label('${name}')->className('my-1')
                 ),
-                Column::make()->label('创建时间')->name('created_at')->type('datetime')->sortable(true),
-                $this->rowActionsOnlyEditAndDelete(true),
+                Column::make()->label(__('admin.created_at'))->name('created_at')->type('datetime')->sortable(true),
+                amis('operation')->label(__('admin.actions'))->buttons([
+                    $this->rowEditButton(true),
+                    $this->rowDeleteButton()->visibleOn('${id != 1}'),
+                ]),
             ]);
 
-        return $this->baseList($crud)->toolbar([$this->createButton(true)]);
+        return $this->baseList($crud);
     }
 
     public function form(): Form
     {
         return $this->baseForm()->body([
-            InputImage::make()->label('头像')->name('avatar')->receiver($this->uploadImagePath()),
-            InputText::make()->label('用户名')->name('username')->required(true),
-            InputText::make()->label('名称')->name('name')->required(true),
-            InputPassword::make()->label('密码')->name('password'),
+            InputImage::make()
+                ->label(__('admin.admin_user.avatar'))
+                ->name('avatar')
+                ->receiver($this->uploadImagePath()),
+            InputText::make()->label(__('admin.username'))->name('username')->required(true),
+            InputText::make()->label(__('admin.admin_user.name'))->name('name')->required(true),
+            InputPassword::make()->label(__('admin.password'))->name('password'),
             InputPassword::make()
-                ->label('确认密码')
+                ->label(__('admin.confirm_password'))
                 ->name('confirm_password'),
             Select::make()
                 ->name('roles')
-                ->label('角色')
+                ->label(__('admin.admin_user.roles'))
                 ->searchable(true)
                 ->multiple(true)
                 ->labelField('name')
