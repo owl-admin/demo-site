@@ -3048,11 +3048,11 @@
         },
         {
             "name": "slowlyo/slow-admin",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/slowlyo/slow-admin",
-                "reference": "9d632bb46ac12a222844f84b9023214973d53c1f"
+                "reference": "38b4e50c521c5bd15be9bf09e36d8662cb8b8b1d"
             },
             "require": {
                 "illuminate/support": "~9",
@@ -3095,7 +3095,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2022-11-12T06:55:50+00:00"
+            "time": "2022-11-12T08:24:11+00:00"
         },
         {
             "name": "symfony/console",
