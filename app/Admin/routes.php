@@ -13,7 +13,7 @@ Route::group([
 
     $router->put('/user_setting/{id}', [\App\Admin\Controllers\AuthController::class, 'saveUserSetting']);
 
-    $router->get('/login', [\App\Admin\Controllers\AuthController::class, 'index']);
+    $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
     // 管理员
     $router->resource('admin_users', \App\Admin\Controllers\AdminUserController::class);
