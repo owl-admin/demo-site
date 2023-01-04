@@ -94,7 +94,6 @@ const Login: React.FC = () => {
                 {errorMessage && (
                     <LoginMessage content={errorMessage}/>
                 )}
-
                 <Alert
                     style={{
                         marginBottom: 24,

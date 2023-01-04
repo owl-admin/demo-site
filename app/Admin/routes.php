@@ -9,7 +9,7 @@ Route::group([
     'middleware' => config('admin.route.middleware'),
 ], function (Router $router) {
 
-    $router->resource('home', \App\Admin\Controllers\HomeController::class);
+    $router->resource('dashboard', \App\Admin\Controllers\HomeController::class);
 
     $router->put('/user_setting/{id}', [\App\Admin\Controllers\AuthController::class, 'saveUserSetting']);
 

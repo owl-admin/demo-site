@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9742497aac05a73d1fc9d3819320120",
+    "content-hash": "b629357481e0a50e4248d17d68d85af0",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,11 +3048,11 @@
         },
         {
             "name": "slowlyo/slow-admin",
-            "version": "v1.3.6",
+            "version": "v1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/slowlyo/slow-admin",
-                "reference": "cf3c87f344cb3dec7d58db825be9929a352337e4"
+                "reference": "238e7d4c371dec2847766b1390c51342dff30891"
             },
             "require": {
                 "illuminate/support": "~9",
@@ -3088,14 +3088,14 @@
                     "homepage": "https://gitee.com/slowlyo"
                 }
             ],
-            "description": "slow admin",
+            "description": "基于 laravel 、Ant Design Pro 和 amis 的后台框架, 友好的组件使用体验, 可轻松实现复杂页面, 内置代码生成器, 低学习成本, 让开发者快速搭建后台管理系统",
             "homepage": "https://gitee.com/slowlyo/slow-admin",
             "keywords": [
                 "SlowAdmin",
                 "admin",
                 "laravel"
             ],
-            "time": "2022-12-03T14:39:16+00:00"
+            "time": "2023-01-04T02:41:29+00:00"
         },
         {
             "name": "symfony/console",
