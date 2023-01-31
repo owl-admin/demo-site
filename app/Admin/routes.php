@@ -15,19 +15,43 @@ Route::group([
 
     $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
-    // 管理员
-    $router->resource('admin_users', \App\Admin\Controllers\AdminUserController::class);
-    // 菜单
-    $router->resource('admin_menus', \App\Admin\Controllers\AdminMenuController::class);
-    // 角色
-    $router->resource('admin_roles', \App\Admin\Controllers\AdminRoleController::class);
-    // 权限
-    $router->resource('admin_permissions', \App\Admin\Controllers\AdminPermissionController::class);
+
+    $router->group(['prefix' => 'system'], function (\Illuminate\Routing\Router $router) {
+        // 管理员
+        $router->resource('admin_users', \App\Admin\Controllers\AdminUserController::class);
+        // 菜单
+        $router->resource('admin_menus', \App\Admin\Controllers\AdminMenuController::class);
+        // 快速编辑
+        $router->post('admin_menu_quick_save', [\App\Admin\Controllers\AdminMenuController::class, 'quickEdit']);
+        // 角色
+        $router->resource('admin_roles', \App\Admin\Controllers\AdminRoleController::class);
+        // 权限
+        $router->resource('admin_permissions', \App\Admin\Controllers\AdminPermissionController::class);
+
+        $router->post('_admin_permissions_auto_generate', [
+            \App\Admin\Controllers\AdminPermissionController::class,
+            'autoGenerate',
+        ]);
+    });
 
     // 开发工具
     $router->group(['prefix' => 'dev_tools'], function (Router $router) {
         // 代码生成器
         $router->resource('code_generator', \App\Admin\Controllers\CodeGeneratorController::class);
+        // 扩展
+        $router->resource('extensions', \App\Admin\Controllers\ExtensionController::class);
+        // 本地扩展安装
+        $router->post('extensions/install', [\App\Admin\Controllers\ExtensionController::class, 'install']);
+        // 启用/禁用扩展
+        $router->post('extensions/enable', [\App\Admin\Controllers\ExtensionController::class, 'enable']);
+        // 卸载扩展
+        $router->post('extensions/uninstall', [\App\Admin\Controllers\ExtensionController::class, 'uninstall']);
+        // 获取扩展配置
+        $router->post('extensions/get_config', [\App\Admin\Controllers\ExtensionController::class, 'getConfig']);
+        // 保存扩展配置
+        $router->post('extensions/save_config', [\App\Admin\Controllers\ExtensionController::class, 'saveConfig']);
+        // 获取扩展配置表单
+        $router->post('extensions/config_form', [\App\Admin\Controllers\ExtensionController::class, 'configForm']);
     });
 
     // example
@@ -40,5 +64,19 @@ Route::group([
         $router->get('dialog', [\App\Admin\Controllers\Example\FormController::class, 'dialog']);
         $router->get('tabs', [\App\Admin\Controllers\Example\FormController::class, 'tabs']);
         $router->get('wizard', [\App\Admin\Controllers\Example\FormController::class, 'wizard']);
+    });
+
+    // 图片上传
+    $router->any('upload_image', function () {
+        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
+    });
+    // 文件上传
+    $router->any('upload_file', function () {
+        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
+    });
+
+    // 富文本编辑器上传
+    $router->any('upload_rich', function () {
+        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
     });
 });
