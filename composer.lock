@@ -3048,11 +3048,11 @@
         },
         {
             "name": "slowlyo/slow-admin",
-            "version": "v1.6.1",
+            "version": "v1.6.9",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/slowlyo/slow-admin",
-                "reference": "192e327298a1f6dcca79640c80f5f6896c2497bb"
+                "reference": "28a70a47a1ed7efe7d7e92c17d82e221523000d1"
             },
             "require": {
                 "illuminate/support": "~9",
@@ -3088,14 +3088,14 @@
                     "homepage": "https://gitee.com/slowlyo"
                 }
             ],
-            "description": "基于 laravel 、Ant Design Pro 和 amis 的后台框架, 友好的组件使用体验, 可轻松实现复杂页面, 内置代码生成器, 低学习成本, 让开发者快速搭建后台管理系统",
+            "description": "采用 laravel、amis、vue3 打造的后台框架，拥有 120+ 种组件，只用后端代码就能实现复杂的页面效果，学习成本低，让开发者能够快速构建高效的后台管理系统。",
             "homepage": "https://gitee.com/slowlyo/slow-admin",
             "keywords": [
                 "SlowAdmin",
                 "admin",
                 "laravel"
             ],
-            "time": "2023-02-04T01:07:26+00:00"
+            "time": "2023-02-16T08:24:55+00:00"
         },
         {
             "name": "symfony/console",
