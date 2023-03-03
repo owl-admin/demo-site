@@ -16,7 +16,7 @@ Route::group([
     $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
     $router->post('/_settings', function (){
-        return \Slowlyo\SlowAdmin\Admin::response()->fail('演示环境禁止修改设置');
+        return \Slowlyo\OwlAdmin\Admin::response()->fail('演示环境禁止修改设置');
     });
 
 
@@ -72,15 +72,15 @@ Route::group([
 
     // 图片上传
     $router->any('upload_image', function () {
-        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
+        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
     });
     // 文件上传
     $router->any('upload_file', function () {
-        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
+        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
     });
 
     // 富文本编辑器上传
     $router->any('upload_rich', function () {
-        return \Slowlyo\SlowAdmin\Admin::response()->fail('上传失败', 500);
+        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
     });
 });

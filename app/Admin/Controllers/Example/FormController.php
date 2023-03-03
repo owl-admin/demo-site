@@ -2,8 +2,8 @@
 
 namespace App\Admin\Controllers\Example;
 
-use Slowlyo\SlowAdmin\Renderers\Page;
-use Slowlyo\SlowAdmin\Controllers\AdminController;
+use Slowlyo\OwlAdmin\Renderers\Page;
+use Slowlyo\OwlAdmin\Controllers\AdminController;
 
 class FormController extends AdminController
 {

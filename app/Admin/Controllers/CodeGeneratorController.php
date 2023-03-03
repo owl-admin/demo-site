@@ -4,7 +4,7 @@ namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
 
-class CodeGeneratorController extends \Slowlyo\SlowAdmin\Controllers\DevTools\CodeGeneratorController
+class CodeGeneratorController extends \Slowlyo\OwlAdmin\Controllers\DevTools\CodeGeneratorController
 {
     public function store(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\JsonResource
     {

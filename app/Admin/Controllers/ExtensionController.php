@@ -3,22 +3,22 @@
 namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
-use Slowlyo\SlowAdmin\Admin;
-use Slowlyo\SlowAdmin\Renderers\Tpl;
-use Slowlyo\SlowAdmin\Renderers\Form;
-use Slowlyo\SlowAdmin\Renderers\Alert;
-use Slowlyo\SlowAdmin\Renderers\Dialog;
-use Slowlyo\SlowAdmin\Extend\Extension;
-use Slowlyo\SlowAdmin\Renderers\Drawer;
-use Slowlyo\SlowAdmin\Renderers\CRUDTable;
-use Slowlyo\SlowAdmin\Renderers\TextControl;
-use Slowlyo\SlowAdmin\Renderers\FileControl;
-use Slowlyo\SlowAdmin\Renderers\TableColumn;
-use Slowlyo\SlowAdmin\Renderers\DialogAction;
-use Slowlyo\SlowAdmin\Renderers\DrawerAction;
-use Slowlyo\SlowAdmin\Renderers\SchemaPopOver;
+use Slowlyo\OwlAdmin\Admin;
+use Slowlyo\OwlAdmin\Renderers\Tpl;
+use Slowlyo\OwlAdmin\Renderers\Form;
+use Slowlyo\OwlAdmin\Renderers\Alert;
+use Slowlyo\OwlAdmin\Renderers\Dialog;
+use Slowlyo\OwlAdmin\Extend\Extension;
+use Slowlyo\OwlAdmin\Renderers\Drawer;
+use Slowlyo\OwlAdmin\Renderers\CRUDTable;
+use Slowlyo\OwlAdmin\Renderers\TextControl;
+use Slowlyo\OwlAdmin\Renderers\FileControl;
+use Slowlyo\OwlAdmin\Renderers\TableColumn;
+use Slowlyo\OwlAdmin\Renderers\DialogAction;
+use Slowlyo\OwlAdmin\Renderers\DrawerAction;
+use Slowlyo\OwlAdmin\Renderers\SchemaPopOver;
 
-class ExtensionController extends \Slowlyo\SlowAdmin\Controllers\DevTools\ExtensionController
+class ExtensionController extends \Slowlyo\OwlAdmin\Controllers\DevTools\ExtensionController
 {
     public function store(Request $request)
     {

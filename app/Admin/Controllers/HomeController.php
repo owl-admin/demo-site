@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-class HomeController extends \Slowlyo\SlowAdmin\Controllers\HomeController
+class HomeController extends \Slowlyo\OwlAdmin\Controllers\HomeController
 {
 
 }

@@ -4,7 +4,7 @@ namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminMenuController extends \Slowlyo\SlowAdmin\Controllers\AdminMenuController
+class AdminMenuController extends \Slowlyo\OwlAdmin\Controllers\AdminMenuController
 {
     public function quickEdit()
     {

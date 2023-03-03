@@ -4,7 +4,7 @@ namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminUserController extends \Slowlyo\SlowAdmin\Controllers\AdminUserController
+class AdminUserController extends \Slowlyo\OwlAdmin\Controllers\AdminUserController
 {
     public function destroy($ids)
     {

@@ -4,7 +4,7 @@ namespace App\Admin\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminPermissionController extends \Slowlyo\SlowAdmin\Controllers\AdminPermissionController
+class AdminPermissionController extends \Slowlyo\OwlAdmin\Controllers\AdminPermissionController
 {
     public function autoGenerate()
     {
