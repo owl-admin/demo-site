@@ -87,8 +87,8 @@ const captchaEnabled = computed(() => settings.setStore(useAppStore()).getSettin
 const formRef = ref<HTMLElement & FormInst>();
 
 const model = reactive({
-	username: '',
-	password: '',
+	username: 'root',
+	password: 'root',
 	captcha: '',
 	sys_captcha: '',
 });
