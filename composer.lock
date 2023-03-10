@@ -3048,11 +3048,11 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.0.1",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/slowlyo/owl-admin",
-                "reference": "c4ae757c50597d8d87d5a066e4d218016ae33ea3"
+                "reference": "c69257e81ba86720c2db417af9db67ddb0bf4981"
             },
             "require": {
                 "illuminate/support": "~9|~10",
@@ -3095,7 +3095,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2023-03-03T05:33:16+00:00"
+            "time": "2023-03-10T12:07:43+00:00"
         },
         {
             "name": "symfony/console",

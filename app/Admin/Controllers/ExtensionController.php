@@ -2,24 +2,32 @@
 
 namespace App\Admin\Controllers;
 
-use Illuminate\Http\Request;
 use Slowlyo\OwlAdmin\Admin;
-use Slowlyo\OwlAdmin\Renderers\Tpl;
-use Slowlyo\OwlAdmin\Renderers\Form;
-use Slowlyo\OwlAdmin\Renderers\Alert;
-use Slowlyo\OwlAdmin\Renderers\Dialog;
-use Slowlyo\OwlAdmin\Extend\Extension;
-use Slowlyo\OwlAdmin\Renderers\Drawer;
-use Slowlyo\OwlAdmin\Renderers\CRUDTable;
-use Slowlyo\OwlAdmin\Renderers\TextControl;
-use Slowlyo\OwlAdmin\Renderers\FileControl;
-use Slowlyo\OwlAdmin\Renderers\TableColumn;
-use Slowlyo\OwlAdmin\Renderers\DialogAction;
-use Slowlyo\OwlAdmin\Renderers\DrawerAction;
-use Slowlyo\OwlAdmin\Renderers\SchemaPopOver;
+use App\Support\Components;
+use Illuminate\Http\Request;
 
 class ExtensionController extends \Slowlyo\OwlAdmin\Controllers\DevTools\ExtensionController
 {
+    public function index()
+    {
+        if ($this->actionOfGetData()) {
+            $data = [];
+            foreach (Admin::extension()->all() as $extension) {
+                $data[] = $this->each($extension);
+            }
+
+            return $this->response()->success(['rows' => $data]);
+        }
+
+        $page = $this->basePage()->body($this->list())->toolbar(
+            Components::make()->codeView(
+                base_path('vendor/slowlyo/owl-admin/src/Controllers/DevTools/ExtensionController.php')
+            )
+        );
+
+        return $this->response()->success($page);
+    }
+
     public function store(Request $request)
     {
         return $this->response()->fail('演示环境禁止操作');

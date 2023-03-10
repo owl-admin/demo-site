@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers\Example;
 
+use App\Support\Components;
 use Slowlyo\OwlAdmin\Renderers\Page;
 use Slowlyo\OwlAdmin\Controllers\AdminController;
 
@@ -46,7 +47,20 @@ class FormController extends AdminController
     {
         $body = file_get_contents(admin_path($path));
 
-        $page = Page::make()->title($title)->body(json_decode($body));
+        $page = Page::make()->title($title)->body(json_decode($body))->toolbar(
+            Components::make()->codeView([
+                [
+                    'title'    => '控制器',
+                    'path'     => admin_path('Controllers/Example/FormController.php'),
+                    'language' => 'php',
+                ],
+                [
+                    'title'    => '页面结构',
+                    'path'     => admin_path($path),
+                    'language' => 'json',
+                ],
+            ])
+        );
 
         return $this->response()->success($page);
     }
