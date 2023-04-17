@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a770008fe8abb91c8762bce63f3de96",
+    "content-hash": "6251f6b61936de77c39673446ee8764e",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,11 +3048,17 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.0.13",
+            "version": "v2.3.9",
             "source": {
                 "type": "git",
-                "url": "https://gitee.com/slowlyo/owl-admin",
-                "reference": "c69257e81ba86720c2db417af9db67ddb0bf4981"
+                "url": "https://github.com/Slowlyo/owl-admin.git",
+                "reference": "487f34890ab2a574bc7eb1d8b19129db2b9daa55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/487f34890ab2a574bc7eb1d8b19129db2b9daa55",
+                "reference": "487f34890ab2a574bc7eb1d8b19129db2b9daa55",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "~9|~10",
@@ -3088,14 +3094,18 @@
                     "homepage": "https://gitee.com/slowlyo"
                 }
             ],
-            "description": "采用 laravel、amis、vue3 打造的后台框架，拥有 120+ 种组件，只用后端代码就能实现复杂的页面效果，学习成本低，让开发者能够快速构建高效的后台管理系统。",
+            "description": "采用 laravel、amis 打造的后台框架，拥有 120+ 种组件，只用后端代码就能实现复杂的页面效果，让开发者能够快速构建高效的后台管理系统。",
             "homepage": "https://gitee.com/slowlyo/owl-admin",
             "keywords": [
                 "OwlAdmin",
                 "admin",
                 "laravel"
             ],
-            "time": "2023-03-10T12:07:43+00:00"
+            "support": {
+                "issues": "https://github.com/Slowlyo/owl-admin/issues",
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.3.9"
+            },
+            "time": "2023-04-17T08:09:32+00:00"
         },
         {
             "name": "symfony/console",

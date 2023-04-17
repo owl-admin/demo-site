@@ -11,7 +11,7 @@ Route::group([
 
     $router->resource('dashboard', \App\Admin\Controllers\HomeController::class);
 
-    $router->put('/user_setting/{id}', [\App\Admin\Controllers\AuthController::class, 'saveUserSetting']);
+    $router->put('/user_setting', [\App\Admin\Controllers\AuthController::class, 'saveUserSetting']);
 
     $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
