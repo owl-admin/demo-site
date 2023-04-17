@@ -56,6 +56,11 @@ Route::group([
         $router->post('extensions/save_config', [\App\Admin\Controllers\ExtensionController::class, 'saveConfig']);
         // 获取扩展配置表单
         $router->post('extensions/config_form', [\App\Admin\Controllers\ExtensionController::class, 'configForm']);
+
+        // 预加载
+        $router->post('terminal/preload', [\App\Admin\Controllers\TerminalController::class, 'preload']);
+        // 终端执行命令
+        $router->post('terminal/exec', [\App\Admin\Controllers\TerminalController::class, 'exec']);
     });
 
     // example
