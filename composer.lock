@@ -3048,16 +3048,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.4.5",
+            "version": "v2.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "9d7c171e77811b6a419f4b6e177151613bac07c1"
+                "reference": "64375483201d6677328dd6f16754ab6784c2fc46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/9d7c171e77811b6a419f4b6e177151613bac07c1",
-                "reference": "9d7c171e77811b6a419f4b6e177151613bac07c1",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/64375483201d6677328dd6f16754ab6784c2fc46",
+                "reference": "64375483201d6677328dd6f16754ab6784c2fc46",
                 "shasum": ""
             },
             "require": {
@@ -3103,17 +3103,23 @@
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.4.5"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.4.9"
             },
-            "time": "2023-04-20T07:49:42+00:00"
+            "time": "2023-04-27T05:35:15+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
-            "version": "v1.1.3",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
-                "url": "https://gitee.com/slowlyo/owl-amis-json-parse",
-                "reference": "99942bd1ab69dd16d6402606067e8e9a8a6d1daa"
+                "url": "https://github.com/Slowlyo/owl-amis-json-parse.git",
+                "reference": "14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Slowlyo/owl-amis-json-parse/zipball/14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5",
+                "reference": "14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
@@ -3151,7 +3157,11 @@
                 "json-parse",
                 "owl-admin"
             ],
-            "time": "2023-04-10T06:23:21+00:00"
+            "support": {
+                "issues": "https://github.com/Slowlyo/owl-amis-json-parse/issues",
+                "source": "https://github.com/Slowlyo/owl-amis-json-parse/tree/v1.1.4"
+            },
+            "time": "2023-04-27T01:57:14+00:00"
         },
         {
             "name": "symfony/console",
