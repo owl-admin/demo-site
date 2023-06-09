@@ -15,15 +15,19 @@ return [
     'bootstrap' => app_path('Admin/bootstrap.php'),
 
     'route' => [
-        'prefix'     => 'admin-api',
-        'domain'     => null,
-        'namespace'  => 'App\\Admin\\Controllers',
-        'middleware' => ['admin'],
+        'prefix'               => 'admin-api',
+        'domain'               => null,
+        'namespace'            => 'App\\Admin\\Controllers',
+        'middleware'           => ['admin'],
+        // 不包含额外路由, 配置后, 不会追加新增/详情/编辑页面路由
+        'without_extra_routes' => [
+            '/dashboard',
+        ],
     ],
 
     'auth' => [
         // 是否开启验证码
-        'login_captcha' => true,
+        'login_captcha' => env('ADMIN_LOGIN_CAPTCHA', true),
         // 是否开启鉴权
         'enable'        => true,
         // 用户模型
@@ -45,23 +49,16 @@ return [
         ],
     ],
 
-    'https'                                => false,
+    'https'                                => env('ADMIN_HTTPS', false),
 
     // 是否显示 [开发者工具]
-    'show_development_tools'               => true,
+    'show_development_tools'               => env('ADMIN_SHOW_DEVELOPMENT_TOOLS', true),
 
     // 是否显示 [权限] 功能中的自动生成按钮
-    'show_auto_generate_permission_button' => true,
-
-    'dev_tools' => [
-        'terminal' => [
-            'php_alias'      => 'php',
-            'composer_alias' => 'composer',
-        ],
-    ],
+    'show_auto_generate_permission_button' => env('ADMIN_SHOW_AUTO_GENERATE_PERMISSION_BUTTON', true),
 
     // 扩展
-    'extension' => [
+    'extension'                            => [
         'dir' => base_path('extensions'),
     ],
 
@@ -90,5 +87,12 @@ return [
         'keep_alive_exclude' => [],
         // 底部信息
         'footer'             => '<a href="https://github.com/slowlyo/owl-admin" target="_blank">Owl Admin</a>',
+    ],
+
+    'models' => [
+        'admin_user'       => \Slowlyo\OwlAdmin\Models\AdminUser::class,
+        'admin_role'       => \Slowlyo\OwlAdmin\Models\AdminRole::class,
+        'admin_menu'       => \Slowlyo\OwlAdmin\Models\AdminMenu::class,
+        'admin_permission' => \Slowlyo\OwlAdmin\Models\AdminPermission::class,
     ],
 ];

@@ -9,16 +9,18 @@ class CodeGeneratorController extends \Slowlyo\OwlAdmin\Controllers\DevTools\Cod
 {
     public function index(): \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\JsonResource
     {
-        $page = amisMake()->Page()
-            ->body($this->form())
-            ->css($this->css())
-            ->toolbar(
-                Components::make()->codeView(
-                    base_path('vendor/slowlyo/owl-admin/src/Controllers/DevTools/CodeGeneratorController.php')
-                )
-            );
+        if ($this->actionOfGetData()) {
+            return $this->response()->success($this->service->list());
+        }
 
-        return $this->response()->success($page);
+        return $this->response()->success(
+            amisMake()->Page()->css($this->css())->body($this->list())
+                ->toolbar(
+                    Components::make()->codeView(
+                        base_path('vendor/slowlyo/owl-admin/src/Controllers/DevTools/CodeGeneratorController.php')
+                    )
+                )
+        );
     }
 
     public function store(Request $request): \Illuminate\Http\JsonResponse|\Illuminate\Http\Resources\Json\JsonResource

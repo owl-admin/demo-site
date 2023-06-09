@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b7f7f0ecaf8ce0438b1e50f50ea3949",
+    "content-hash": "5ef658abd9f085cc8796d898ed7781b5",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,16 +3048,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.4.9",
+            "version": "v2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "64375483201d6677328dd6f16754ab6784c2fc46"
+                "reference": "c5cd3c0c77c87538e8d95b7b0177ee44eb550766"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/64375483201d6677328dd6f16754ab6784c2fc46",
-                "reference": "64375483201d6677328dd6f16754ab6784c2fc46",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/c5cd3c0c77c87538e8d95b7b0177ee44eb550766",
+                "reference": "c5cd3c0c77c87538e8d95b7b0177ee44eb550766",
                 "shasum": ""
             },
             "require": {
@@ -3077,7 +3077,7 @@
             },
             "autoload": {
                 "files": [
-                    "src/Libs/helpers.php"
+                    "src/Support/helpers.php"
                 ],
                 "psr-4": {
                     "Slowlyo\\OwlAdmin\\": "src/"
@@ -3099,13 +3099,14 @@
             "keywords": [
                 "OwlAdmin",
                 "admin",
+                "amis",
                 "laravel"
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.4.9"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.6.3"
             },
-            "time": "2023-04-27T05:35:15+00:00"
+            "time": "2023-06-09T07:30:17+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
@@ -8381,5 +8382,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
