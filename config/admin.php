@@ -2,7 +2,7 @@
 
 return [
     // 应用名称
-    'name'           => 'Owl Admin Demo',
+    'name'           => 'Owl Admin',
 
     // 应用 logo
     'logo'           => '/admin/logo.png',
