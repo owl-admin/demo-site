@@ -45,7 +45,7 @@ class FormController extends AdminController
 
     private function returnJsonPage($title, $path)
     {
-        $body = file_get_contents(admin_path($path));
+        $body = cache()->rememberForever(admin_path($path) . '_content', fn() => file_get_contents(admin_path($path)));
 
         $page = Page::make()->title($title)->body(json_decode($body))->toolbar(
             Components::make()->codeView([

@@ -12,12 +12,14 @@ class Components
     public function codeView($path)
     {
         if (is_string($path)) {
+            $body = cache()->rememberForever($path . '_content', fn() => file_get_contents($path));
+
             $content = amisMake()
                 ->EditorControl()
                 ->language('php')
                 ->readOnly(true)
                 ->size('xxl')
-                ->value(file_get_contents($path));
+                ->value($body);
         } else {
             $tabs = [];
             foreach ($path as $item) {
