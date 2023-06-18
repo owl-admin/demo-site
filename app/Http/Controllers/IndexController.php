@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
+
 class IndexController extends Controller
 {
     public function index()
@@ -30,7 +32,8 @@ class IndexController extends Controller
                         'url'    => '/readme',
                         'label'  => 'Readme',
                         'icon'   => 'fa fa-book',
-                        'schema' => $this->loadMD('/docs/guide/readme.md'),
+                        // 'schema' => $this->loadMD('/docs/guide/readme.md'),
+                        'schema' => $this->loadMD('https://gitee.com/slowlyo/owl-admin/raw/master/README.md'),
                     ],
                     [
                         'label'    => '入门',
@@ -274,9 +277,13 @@ class IndexController extends Controller
 
     public function loadMD($path)
     {
+        if (Str::startsWith($path, '/')) {
+            $path = __DIR__ . $path;
+        }
+
         return amisMake()->Wrapper()->className('pc:px-64 bg-gray-100')->body(
             amisMake()->Card()->body(
-                amisMake()->Markdown()->value(file_get_contents(__DIR__ . $path))->options([
+                amisMake()->Markdown()->value(file_get_contents($path))->options([
                     'html'    => true,
                     'linkify' => true,
                     'breaks'  => true,
