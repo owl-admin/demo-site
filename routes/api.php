@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => '/docs'], function () {
+    Route::get('/base', [\App\Http\Controllers\IndexController::class, 'base']);
+    Route::get('/changelog', [\App\Http\Controllers\ChangelogController::class, 'index']);
+});
