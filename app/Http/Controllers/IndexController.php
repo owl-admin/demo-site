@@ -244,7 +244,8 @@ class IndexController extends Controller
                 ->level('link');
         };
 
-        $changelog = cache('admin_changelog');
+        $changelog     = $this->getChangelog();
+        $latestVersion = $changelog[0]['tag_name'] ?? null;
 
         return amisMake()->Flex()
             ->className('w-full h-full')
@@ -254,14 +255,15 @@ class IndexController extends Controller
                 amisMake()
                     ->Wrapper()
                     ->className('w-full')
-                    ->body('最新版本: ' . $changelog[0]['tag_name']),
+                    ->body($latestVersion ? '最新版本: ' . $latestVersion : ''),
                 amisMake()->Flex()
                     ->className('w-full h-full')
                     ->justify('end')
                     ->alignItems('center')
                     ->items([
                         $link('论坛', 'http://admin-discuss.slowlyo.top'),
-                        $link('Q群', 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ftIIJ4kKr72mvBpoA7-ttvFafvKuu3F8&authKey=Y2nBcGpw%2FDxJ1V4jPtSyQgDJzTZXB2KEVQOm1mKYyxuVbM9SOEkQN4Mbhm%2BsAlTr&noverify=0&group_code=754544686'),
+                        $link('Q群',
+                            'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ftIIJ4kKr72mvBpoA7-ttvFafvKuu3F8&authKey=Y2nBcGpw%2FDxJ1V4jPtSyQgDJzTZXB2KEVQOm1mKYyxuVbM9SOEkQN4Mbhm%2BsAlTr&noverify=0&group_code=754544686'),
                         $link('GitHub', 'https://github.com/Slowlyo/owl-admin'),
                         $link('Gitee', 'https://gitee.com/slowlyo/owl-admin'),
                         $link('Demo', 'http://admin-demo.slowlyo.top'),

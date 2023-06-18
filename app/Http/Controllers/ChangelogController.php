@@ -29,29 +29,9 @@ class ChangelogController extends Controller
 
         return $this->response()->success(
             amisMake()->Page()->data([
-                'changelog_list' => $this->fetchData(),
+                'changelog_list' => $this->getChangelog(),
             ])->body($crud)
         );
-    }
-
-    public function fetchData()
-    {
-        return cache()->remember('admin_changelog', 3600, function () {
-            $data = array_merge($this->getGithub(), $this->getGitee());
-            $_arr = [];
-            foreach ($data as $item) {
-                $_time  = key_exists('published_at', $item) ? $item['published_at'] : $item['created_at'];
-                $_arr[] = [
-                    'tag_name'     => $item['tag_name'],
-                    'published_at' => date('Y-m-d H:i:s', strtotime($_time)),
-                    'body'         => $item['body'],
-                    'html_url'     => key_exists('html_url',
-                        $item) ? $item['html_url'] : 'https://gitee.com/slowlyo/owl-admin/releases/tag/' . $item['tag_name'],
-                ];
-            }
-
-            return $_arr;
-        });
     }
 
     public function getGithub($page = 1)
