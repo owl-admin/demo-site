@@ -285,7 +285,7 @@ class IndexController extends Controller
             amisMake()->Alert()->showIcon()->body(
                 amisMake()
                     ->Tpl()
-                    ->tpl("owl 核心在于 amis, 组件使用请参考官方文档: <a href='https://aisuda.bce.baidu.com/amis/zh-CN/components/index' target='_blank'>https://aisuda.bce.baidu.com/amis</a>")
+                    ->tpl("owl 核心在于 amis, 组件使用请参考官方文档 👉 <a href='https://aisuda.bce.baidu.com/amis/zh-CN/components/index' target='_blank'>https://aisuda.bce.baidu.com/amis</a>")
             ),
             amisMake()->Card()->body(
                 amisMake()->Markdown()->value(file_get_contents($path))->options([
