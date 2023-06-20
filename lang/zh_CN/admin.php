@@ -34,6 +34,7 @@ return [
 
     'developer'             => '开发',
     'code_generator'        => '代码生成器',
+    'visual_editor'         => '可视化编辑器',
     'terminal'              => '终端',
     'administrator'         => '管理员',
     'soft_delete'           => '软删除',
@@ -143,6 +144,7 @@ return [
         'slug_description'    => '角色的唯一标识, 不可重复',
         'name_already_exists' => '角色名称已存在',
         'slug_already_exists' => '角色标识已存在',
+        'set_permissions'     => '设置权限',
     ],
 
     'admin_permissions' => '权限',

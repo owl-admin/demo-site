@@ -34,6 +34,7 @@ return [
 
     'developer'             => 'Developer',
     'code_generator'        => 'Code Generator',
+    'visual_editor'         => 'Visual Editor',
     'terminal'              => 'Terminal',
     'administrator'         => 'Administrator',
     'soft_delete'           => 'Soft Delete',
@@ -45,6 +46,8 @@ return [
     'order_desc'            => 'Order Desc',
     'order_asc'             => 'Order Asc',
     'menus'                 => 'Menus',
+    'successfully'          => '成功',
+    'failed'                => '失败',
     'successfully_message'  => ':attribute Successfully',
     'failed_message'        => ':attribute Failed',
     'action_success'        => 'Action Success',
@@ -141,6 +144,7 @@ return [
         'slug_description'    => 'unique identifier of a role',
         'name_already_exists' => 'Role Name Already Exists',
         'slug_already_exists' => 'Role Slug Already Exists',
+        'set_permissions'     => 'Set Permissions',
     ],
 
     'admin_permissions' => 'Permissions',
