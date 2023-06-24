@@ -32,7 +32,7 @@ class LeftTreeRightTableController extends AdminController
     {
         return amisMake()->Page()->body(
             amisMake()->Flex()->items([
-                amisMake()->Card()->className('w-1/4 mr-3 mb-0')->body([
+                amisMake()->Card()->className('w-1/4 mr-5 mb-0')->body([
                     // 边栏切换
                     amisMake()->RadiosControl('treeType')->value('tree')->options([
                         ['label' => 'Tree', 'value' => 'tree'],
