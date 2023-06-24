@@ -94,12 +94,12 @@ class LeftTreeRightTableController extends AdminController
             ->footerToolbar([])
             ->filterTogglable(false)
             ->columns([
-                amisMake()->TableColumn('id', 'ID')->sortable(),
-                amisMake()->TableColumn('title', '名称')->searchable(),
+                amisMake()->TableColumn('id', 'ID'),
+                amisMake()->TableColumn('title', '名称'),
                 amisMake()->TableColumn('state', '状态')->type('status'),
                 amisMake()->TableColumn('image', '图片')->type('image'),
-                amisMake()->TableColumn('created_at', __('admin.created_at'))->type('datetime')->sortable(true),
-                amisMake()->TableColumn('updated_at', __('admin.updated_at'))->type('datetime')->sortable(true),
+                amisMake()->TableColumn('created_at', __('admin.created_at'))->type('datetime'),
+                amisMake()->TableColumn('updated_at', __('admin.updated_at'))->type('datetime'),
             ]);
 
         return $this->baseList($crud);
