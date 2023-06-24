@@ -15,7 +15,7 @@ Route::group([
 
     $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
-    $router->post('/_settings', function (){
+    $router->post('/_settings', function () {
         return \Slowlyo\OwlAdmin\Admin::response()->fail('演示环境禁止修改设置');
     });
 
@@ -63,6 +63,14 @@ Route::group([
         $router->post('terminal/exec', [\App\Admin\Controllers\TerminalController::class, 'exec']);
     });
 
+    // 图片上传
+    $router->any('upload_image', fn() => \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500));
+    // 文件上传
+    $router->any('upload_file', fn() => \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500));
+    // 富文本编辑器上传
+    $router->any('upload_rich', fn() => \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500));
+
+
     // example
     $router->group(['prefix' => 'example'], function (Router $router) {
         // form
@@ -75,17 +83,8 @@ Route::group([
         $router->get('wizard', [\App\Admin\Controllers\Example\FormController::class, 'wizard']);
     });
 
-    // 图片上传
-    $router->any('upload_image', function () {
-        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
-    });
-    // 文件上传
-    $router->any('upload_file', function () {
-        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
-    });
-
-    // 富文本编辑器上传
-    $router->any('upload_rich', function () {
-        return \Slowlyo\OwlAdmin\Admin::response()->fail('上传失败', 500);
+    // dev example
+    $router->group(['prefix' => 'dev_example'], function (Router $router) {
+        $router->resource('left_tree_right_table', \App\Admin\Controllers\DevExample\LeftTreeRightTableController::class)->only('index');
     });
 });
