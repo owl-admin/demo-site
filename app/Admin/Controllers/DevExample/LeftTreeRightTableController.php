@@ -82,7 +82,14 @@ class LeftTreeRightTableController extends AdminController
         $crud = $this->baseCRUD()
             ->headerToolbar([
                 // 查看源码的按钮
-                Components::make()->codeView(__FILE__)->align('right'),
+                Components::make()->codeView([
+                    ['title' => 'Controller', 'language' => 'php', 'path' => __FILE__],
+                    [
+                        'title'    => 'Service',
+                        'language' => 'php',
+                        'path'     => app_path('/Services/LeftTreeRightTableService.php'),
+                    ],
+                ])->align('right'),
             ])
             ->filterTogglable(false)
             ->columns([
