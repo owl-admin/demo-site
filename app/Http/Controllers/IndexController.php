@@ -218,6 +218,11 @@ class IndexController extends Controller
                                 'label'  => '在顶部操作栏添加内容',
                                 'schema' => $this->loadMD('/docs/examples/top-bar.md'),
                             ],
+                            [
+                                'url'    => '/examples/dynamic-add-menu',
+                                'label'  => '动态添加菜单',
+                                'schema' => $this->loadMD('/docs/examples/dynamic-add-menu.md'),
+                            ],
                         ],
                     ],
                     [
