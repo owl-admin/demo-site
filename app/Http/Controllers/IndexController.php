@@ -286,7 +286,7 @@ class IndexController extends Controller
             $path = __DIR__ . $path;
         }
 
-        return amisMake()->Wrapper()->className('pc:px-64 bg-gray-100')->body([
+        return amisMake()->Wrapper()->className('pc:px-64 bg-gray-100 h-full')->body([
             amisMake()->Alert()->showIcon()->body(
                 amisMake()
                     ->Tpl()
