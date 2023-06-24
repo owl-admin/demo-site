@@ -42,30 +42,48 @@ class LeftTreeRightTableController extends AdminController
                     amisMake()->Divider(),
 
                     // 用 Nav 实现边栏
-                    amisMake()->Nav()->stacked()->links($this->service->tree())->visibleOn('${treeType == "nav"}')->name('tree'),
+                    amisMake()
+                        ->Nav()
+                        ->stacked()
+                        ->links($this->service->tree())
+                        ->visibleOn('${treeType == "nav"}')
+                        ->name('tree'),
                     amisMake()->Alert()->className('mt-5')->body(
-                        amisMake()->Tpl()->tpl('这里使用 Nav 作为边栏, 选中项不会被选中, GitHub 上有相关 👉 <a href="https://github.com/baidu/amis/issues/5869" target="_blank">issue</a>, 当前暂无解决方案~')
+                        amisMake()
+                            ->Tpl()
+                            ->tpl('这里使用 Nav 作为边栏, 选中项不会被选中, GitHub 上有相关 👉 <a href="https://github.com/baidu/amis/issues/5869" target="_blank">issue</a>, 当前暂无解决方案~')
                     )->visibleOn('${treeType == "nav"}'),
 
                     // 用 Tree 实现边栏
-                    amisMake()->Form()->id('treeForm')->wrapWithPanel(false)->target('window')->visibleOn('${treeType == "tree"}')->body(
-                    // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
-                    // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
-                        amisMake()->TreeControl('tree')->submitOnChange()->options($this->service->tree())->showIcon(false)->onEvent([
-                            // 当选中项发生变化时, 触发事件
-                            'change' => [
-                                'actions' => [
-                                    // 跳转到指定路径, 并且将选中项的值作为参数传递
-                                    [
-                                        'actionType' => 'url',
-                                        'args'       => [
-                                            'url' => '/dev_example/left_tree_right_table?tree=${tree}',
+                    amisMake()
+                        ->Form()
+                        ->id('treeForm')
+                        ->wrapWithPanel(false)
+                        ->target('window')
+                        ->visibleOn('${treeType == "tree"}')
+                        ->body(
+                        // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
+                        // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
+                            amisMake()
+                                ->TreeControl('tree')
+                                ->submitOnChange()
+                                ->options($this->service->tree())
+                                ->showIcon(false)
+                                ->onEvent([
+                                    // 当选中项发生变化时, 触发事件
+                                    'change' => [
+                                        'actions' => [
+                                            // 跳转到指定路径, 并且将选中项的值作为参数传递
+                                            [
+                                                'actionType' => 'url',
+                                                'args'       => [
+                                                    'url' => '/dev_example/left_tree_right_table?tree=${tree}',
+                                                ],
+                                            ],
                                         ],
                                     ],
-                                ],
-                            ],
-                        ])
-                    ),
+                                ])
+                        ),
                 ]),
                 $this->list(),
             ])
