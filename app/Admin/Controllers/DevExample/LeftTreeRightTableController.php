@@ -91,6 +91,7 @@ class LeftTreeRightTableController extends AdminController
                     ],
                 ])->align('right'),
             ])
+            ->footerToolbar([])
             ->filterTogglable(false)
             ->columns([
                 amisMake()->TableColumn('id', 'ID')->sortable(),
