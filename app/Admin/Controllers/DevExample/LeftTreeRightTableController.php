@@ -51,7 +51,7 @@ class LeftTreeRightTableController extends AdminController
                     amisMake()->Form()->id('treeForm')->wrapWithPanel(false)->target('window')->visibleOn('${treeType == "tree"}')->body(
                     // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
                     // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
-                        amisMake()->TreeControl('tree')->submitOnChange()->options($this->service->tree())->onEvent([
+                        amisMake()->TreeControl('tree')->submitOnChange()->options($this->service->tree())->showIcon(false)->onEvent([
                             // 当选中项发生变化时, 触发事件
                             'change' => [
                                 'actions' => [
