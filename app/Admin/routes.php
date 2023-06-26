@@ -15,9 +15,9 @@ Route::group([
 
     $router->post('/login', [\App\Admin\Controllers\AuthController::class, 'login']);
 
-    $router->post('/_settings', function () {
-        return \Slowlyo\OwlAdmin\Admin::response()->fail('演示环境禁止修改设置');
-    });
+    // $router->post('/_settings', function () {
+    //     return \Slowlyo\OwlAdmin\Admin::response()->fail('演示环境禁止修改设置');
+    // });
 
 
     $router->group(['prefix' => 'system'], function (\Illuminate\Routing\Router $router) {
