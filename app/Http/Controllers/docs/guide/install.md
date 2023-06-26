@@ -6,8 +6,7 @@
 
 ## 开始安装
 
-首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`
-，请务必先阅读 [文档](https://learnku.com/docs/laravel/9.x/installation/12200) ！
+首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`，请务必先阅读 [文档](https://learnku.com/docs/laravel/9.x/installation/12200) ！
 
 ```bash
 composer create-project --prefer-dist laravel/laravel 项目名称 9.*
