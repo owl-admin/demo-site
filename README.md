@@ -1,9 +1,9 @@
-# Slow Admin Demo
+# Owl Admin Demo
 
-slow-admin demo站点源码
+owl-admin demo站点源码
 
 
-### 欢迎和我一起维护Demo
+### 欢迎和我一起维护 Demo / 框架文档
 
 - 数据库在根目录 `database.sql`
 - 文档基于 `amis` 的 `app` 组件构建
