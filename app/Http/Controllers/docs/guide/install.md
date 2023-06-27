@@ -25,6 +25,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
+如果有需要的话，在此时可以在`config/app.php`设置中文
+locale如下设置
+```
+'locale' => 'zh_CN',
+```
+
 安装`owl_admin`
 
 ```shell
