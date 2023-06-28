@@ -18,6 +18,16 @@ class AuthController extends AdminAuthController
 
     public function login(Request $request)
     {
+        if (config('admin.auth.login_captcha')) {
+            if (!$request->has('captcha')) {
+                return $this->response()->fail(__('admin.required', ['attribute' => __('admin.captcha')]));
+            }
+
+            if (strtolower(admin_decode($request->sys_captcha)) != strtolower($request->captcha)) {
+                return $this->response()->fail(__('admin.captcha_error'));
+            }
+        }
+
         try {
             $validator = Validator::make($request->all(), [
                 'username' => 'required',
@@ -30,9 +40,8 @@ class AuthController extends AdminAuthController
             if ($validator->fails()) {
                 abort(Response::HTTP_BAD_REQUEST, $validator->errors()->first());
             }
-
-            $user = AdminUser::query()->where('username', $request->username)->first();
-
+            $adminModel = config("admin.auth.model", AdminUser::class);
+            $user       = $adminModel::query()->where('username', $request->username)->first();
             if ($user && Hash::check($request->password, $user->password)) {
                 $token = $user->createToken('admin')->plainTextToken;
 
