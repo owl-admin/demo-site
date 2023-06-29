@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => '/docs'], function () {
-    Route::get('/base', [\App\Http\Controllers\IndexController::class, 'base']);
+    Route::get('/load_md', [\App\Http\Controllers\IndexController::class, 'loadMD']);
+    Route::any('/search', [\App\Http\Controllers\IndexController::class, 'search']);
     Route::get('/changelog', [\App\Http\Controllers\ChangelogController::class, 'index']);
 });
