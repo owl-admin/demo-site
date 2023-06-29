@@ -162,13 +162,12 @@ class IndexController extends Controller
                     ->justify('end')
                     ->alignItems('center')
                     ->items([
-                        $link('论坛', 'http://admin-discuss.slowlyo.top'),
-                        amisMake()->Divider(),
-                        $link('Q群',
-                            'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ftIIJ4kKr72mvBpoA7-ttvFafvKuu3F8&authKey=Y2nBcGpw%2FDxJ1V4jPtSyQgDJzTZXB2KEVQOm1mKYyxuVbM9SOEkQN4Mbhm%2BsAlTr&noverify=0&group_code=754544686'),
+                        $link('官网', 'https://owladmin.com'),
+                        $link('论坛', 'https://discuss.owladmin.com'),
+                        $link('Q群', 'https://jq.qq.com/?_wv=1027&k=5La4Ir6c'),
                         $link('GitHub', 'https://github.com/Slowlyo/owl-admin'),
                         $link('Gitee', 'https://gitee.com/slowlyo/owl-admin'),
-                        $link('Demo', 'http://admin-demo.slowlyo.top'),
+                        $link('Demo', 'http://demo.owladmin.com'),
                         $link('Amis', 'https://aisuda.bce.baidu.com/amis/zh-CN/docs/index')->className('text-danger'),
                     ]),
             ]);
