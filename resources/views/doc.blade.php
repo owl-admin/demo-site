@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Owl Admin 中文文档</title>
+    <link rel="icon" href="{{ asset('/admin/logo.png') }}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
