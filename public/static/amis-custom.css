@@ -1,0 +1,10 @@
+:root {
+    --colors-brand-4: #4080FF;
+    --Layout-asideLink-onHover-color: #4080FF;
+}
+
+.cxd-Layout-headerBar {
+    background-color: white;
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+

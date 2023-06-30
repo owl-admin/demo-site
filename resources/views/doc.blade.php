@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('/static/sdk/sdk.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/static/sdk/helper.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/static/sdk/iconfont.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/static/amis-custom.css') }}"/>
     <style>
         html,
         body,
