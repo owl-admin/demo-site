@@ -20,6 +20,10 @@ class IndexController extends Controller
 
     private function cachedPages()
     {
+        if (Str::contains(request()->url(), 'owl-admin-demo.test/doc')) {
+            return $this->pages();
+        }
+
         return cache()->rememberForever('docs.pages', fn() => $this->pages());
     }
 
@@ -57,6 +61,16 @@ class IndexController extends Controller
                             $item('/guide/custom', '自定义业务逻辑', '/docs/guide/custom.md'),
                             $item('/guide/component-use', '组件的使用', '/docs/guide/component-use.md'),
                             $item('/guide/export', '数据导出', '/docs/guide/export.md'),
+                        ],
+                    ],
+                    [
+                        'label'    => '原理',
+                        'icon'     => 'fa fa-book',
+                        'url'      => '/theory',
+                        'redirect' => '/theory/amis',
+                        'children' => [
+                            $item('/theory/amis', 'Amis', '/docs/theory/amis.md'),
+                            $item('/theory/frame', '框架', '/docs/theory/frame.md'),
                         ],
                     ],
                     [
