@@ -49,14 +49,14 @@ class IndexController extends Controller
                         'url'      => '/guide',
                         'redirect' => '/guide/install',
                         'children' => [
-                            $item('/guide/install', '安装', '/docs/guide/install.md', 'fa fa-download'),
-                            $item('/guide/upgrade', '升级', '/docs/guide/upgrade.md', 'fa fa-upload'),
-                            $item('/guide/structure', '项目结构', '/docs/guide/structure.md', 'fa fa-sitemap'),
-                            $item('/guide/helper', '助手函数', '/docs/guide/helper.md', 'fa fa-magic'),
-                            $item('/guide/modal', '弹窗操作', '/docs/guide/modal.md', 'fa fa-window-restore'),
-                            $item('/guide/custom', '自定义业务逻辑', '/docs/guide/custom.md', 'fas fa-cogs'),
-                            $item('/guide/component-use', '组件的使用', '/docs/guide/component-use.md', 'fas fa-puzzle-piece'),
-                            $item('/guide/export', '数据导出', '/docs/guide/export.md', 'fas fa-file-export'),
+                            $item('/guide/install', '安装', '/docs/guide/install.md'),
+                            $item('/guide/upgrade', '升级', '/docs/guide/upgrade.md'),
+                            $item('/guide/structure', '项目结构', '/docs/guide/structure.md'),
+                            $item('/guide/helper', '助手函数', '/docs/guide/helper.md'),
+                            $item('/guide/modal', '弹窗操作', '/docs/guide/modal.md'),
+                            $item('/guide/custom', '自定义业务逻辑', '/docs/guide/custom.md'),
+                            $item('/guide/component-use', '组件的使用', '/docs/guide/component-use.md'),
+                            $item('/guide/export', '数据导出', '/docs/guide/export.md'),
                         ],
                     ],
                     [
@@ -65,10 +65,10 @@ class IndexController extends Controller
                         'url'      => '/frontend',
                         'redirect' => '/frontend/start',
                         'children' => [
-                            $item('/frontend/start', '开始', '/docs/frontend/start.md', 'fas fa-play'),
-                            $item('/frontend/cors', '跨域', '/docs/frontend/cors.md', 'fas fa-exchange-alt'),
-                            $item('/frontend/dynamic', '动态加载资源', '/docs/frontend/dynamic.md', 'fas fa-sync'),
-                            $item('/frontend/global-function', '全局函数', '/docs/frontend/global-function.md', 'fas fa-code'),
+                            $item('/frontend/start', '开始', '/docs/frontend/start.md'),
+                            $item('/frontend/cors', '跨域', '/docs/frontend/cors.md'),
+                            $item('/frontend/dynamic', '动态加载资源', '/docs/frontend/dynamic.md'),
+                            $item('/frontend/global-function', '全局函数', '/docs/frontend/global-function.md'),
                         ],
                     ],
                     [
@@ -77,8 +77,8 @@ class IndexController extends Controller
                         'url'      => '/extension',
                         'redirect' => '/extension/use',
                         'children' => [
-                            $item('/extension/use', '使用', '/docs/extension/use.md', 'fas fa-check-circle'),
-                            $item('/extension/develop', '开发', '/docs/extension/develop.md', 'fas fa-laptop-code'),
+                            $item('/extension/use', '使用', '/docs/extension/use.md'),
+                            $item('/extension/develop', '开发', '/docs/extension/develop.md'),
                         ],
                     ],
                     [
@@ -87,8 +87,8 @@ class IndexController extends Controller
                         'url'      => '/modules',
                         'redirect' => '/modules/code-generator',
                         'children' => [
-                            $item('/modules/code-generator', '代码生成器', '/docs/modules/code-generator.md', 'fa fa-code'),
-                            $item('/modules/setting', '设置', '/docs/modules/setting.md', 'fa fa-cog'),
+                            $item('/modules/code-generator', '代码生成器', '/docs/modules/code-generator.md'),
+                            $item('/modules/setting', '设置', '/docs/modules/setting.md'),
                         ],
                     ],
                     [
