@@ -95,10 +95,9 @@ class IndexController extends Controller
                             $item('/extension/develop', '开发', '/docs/extension/develop.md'),
                         ],
                     ],
-                    // multi-application
                     [
                         'label' => '多应用',
-                        'icon'  => 'fa fa-cubes',
+                        'icon'  => 'fa fa-sitemap',
                         'url'   => '/multi-application',
                         'redirect' => '/multi-application/use',
                         'children' => [
