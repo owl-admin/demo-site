@@ -18,9 +18,9 @@ class IndexController extends Controller
         return view('doc', compact('app'));
     }
 
-    private function cachedPages()
+    public function cachedPages()
     {
-        if (Str::contains(request()->url(), 'owl-admin-demo.test/doc')) {
+        if (Str::contains(request()->url(), 'owl-admin-demo.test/doc') || app()->runningInConsole()) {
             return $this->pages();
         }
 
@@ -96,9 +96,9 @@ class IndexController extends Controller
                         ],
                     ],
                     [
-                        'label' => '多应用',
-                        'icon'  => 'fa fa-sitemap',
-                        'url'   => '/multi-application',
+                        'label'    => '多应用',
+                        'icon'     => 'fa fa-sitemap',
+                        'url'      => '/multi-application',
                         'redirect' => '/multi-application/use',
                         'children' => [
                             $item('/multi-application/use', '使用', '/docs/multi-application/use.md'),
@@ -176,11 +176,19 @@ class IndexController extends Controller
             ->justify('space-between')
             ->alignItems('center')
             ->items([
-                $this->searchDialog(),
                 amisMake()
-                    ->Wrapper()
+                    ->Flex()
                     ->className('w-full')
-                    ->body($latestVersion ? '最新版本: ' . $latestVersion : ''),
+                    ->justify('')
+                    ->alignItems('center')
+                    ->items([
+                        $this->searchDialog(),
+                        $link('文档镜像站', 'https://www.showdoc.com.cn/owladmin'),
+                        amisMake()
+                            ->Wrapper()
+                            ->className('text-success')
+                            ->body($latestVersion ? '最新版本: ' . $latestVersion : ''),
+                    ]),
                 amisMake()->Flex()
                     ->className('w-full h-full')
                     ->justify('end')

@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -213,4 +213,9 @@ return [
     ])->toArray(),
 
     'github_token' => env('GITHUB_TOKEN'),
+
+    'show_doc' => [
+        'api_key'   => env('SHOW_DOC_API_KEY'),
+        'api_token' => env('SHOW_DOC_API_TOKEN'),
+    ],
 ];
