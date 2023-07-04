@@ -140,12 +140,7 @@ class IndexController extends Controller
                             $item('/examples/dynamic-add-menu', '动态添加菜单', '/docs/examples/dynamic-add-menu.md'),
                         ],
                     ],
-                    [
-                        'url'       => '/changelog',
-                        'label'     => '更新日志',
-                        'icon'      => 'fa fa-list',
-                        'schemaApi' => url('/api/docs/changelog'),
-                    ],
+                    $item('/changelog', '更新日志', '/docs/changelog.md', 'fa fa-history'),
                 ],
             ],
         ];
