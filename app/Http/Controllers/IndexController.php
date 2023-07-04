@@ -195,7 +195,6 @@ class IndexController extends Controller
                     ->alignItems('center')
                     ->items([
                         $link('官网', 'https://owladmin.com'),
-                        $link('论坛', 'https://discuss.owladmin.com'),
                         $link('Q群', 'https://jq.qq.com/?_wv=1027&k=5La4Ir6c'),
                         $link('GitHub', 'https://github.com/Slowlyo/owl-admin'),
                         $link('Gitee', 'https://gitee.com/slowlyo/owl-admin'),
