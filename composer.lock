@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ef658abd9f085cc8796d898ed7781b5",
+    "content-hash": "53f22d5839031b61229e176302bd1060",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,16 +3048,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.6.10",
+            "version": "v2.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "7c0ed72b0c07ba10483c20f014618e31add8eac1"
+                "reference": "51f8f6ba1554ac903622eec2a6dd26b20bb683e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/7c0ed72b0c07ba10483c20f014618e31add8eac1",
-                "reference": "7c0ed72b0c07ba10483c20f014618e31add8eac1",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/51f8f6ba1554ac903622eec2a6dd26b20bb683e5",
+                "reference": "51f8f6ba1554ac903622eec2a6dd26b20bb683e5",
                 "shasum": ""
             },
             "require": {
@@ -3068,7 +3068,7 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Slowlyo\\OwlAdmin\\OwlAdminServiceProvider"
+                        "Slowlyo\\OwlAdmin\\AdminServiceProvider"
                     ],
                     "aliases": {
                         "OwlAdmin": "Slowlyo\\OwlAdmin\\Facades\\OwlAdmin"
@@ -3104,9 +3104,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.6.10"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.7.5"
             },
-            "time": "2023-06-26T11:52:26+00:00"
+            "time": "2023-07-24T03:44:14+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
