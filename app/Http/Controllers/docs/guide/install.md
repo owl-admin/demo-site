@@ -16,7 +16,7 @@ composer create-project --prefer-dist laravel/laravel 项目名称
 
 安装完`laravel`之后需要修改`.env`文件，设置数据库连接设置正确
 
-```dotenv
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -33,7 +33,7 @@ locale如下设置
 
 安装`owl_admin`
 
-```shell
+```bash
 cd {项目名称}
 
 composer require slowlyo/owl-admin
@@ -41,7 +41,7 @@ composer require slowlyo/owl-admin
 
 然后运行下面的命令来发布资源：
 
-```shell
+```bash
 php artisan admin:publish
 ```
 
@@ -50,7 +50,7 @@ php artisan admin:publish
 然后运行下面的命令完成安装：
 
 
-```shell
+```bash
 php artisan admin:install
 ```
 
@@ -63,7 +63,7 @@ php artisan admin:install
 上述步骤操作完成之后就可以配置 web 服务了，注意需要把 web 目录也就是运行目录指向 public 目录！
 
 如果用的是 nginx，还需要在配置中加上伪静态配置
-```shell
+```bash
 location / {
     try_files $uri $uri/ /index.php?$query_string;
 }

@@ -12,7 +12,7 @@
 
 ## 发布前端文件
 
-```shell
+```bash
 php artisan admin:publish --views
 ```
 
@@ -21,7 +21,7 @@ php artisan admin:publish --views
 
 ### 记得先安装依赖
 
-```shell
+```bash
 # 如果你没有pnpm, 请先安装pnpm (npm i -g pnpm)
 pnpm i
 ```
@@ -33,13 +33,13 @@ pnpm i
 
 #### 运行
 
-```shell
+```bash
 pnpm run dev
 ```
 
 #### 打包
 
-```shell
+```bash
 pnpm run build
 ```
 

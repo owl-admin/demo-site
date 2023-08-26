@@ -8,3 +8,7 @@
     border-bottom: 1px solid #e8e8e8 !important;
 }
 
+.amis-scope .cxd-Markdown .highlight pre, .amis-scope .cxd-Markdown pre{
+    background-color: #282C34;
+    color: #abb2bf;
+}

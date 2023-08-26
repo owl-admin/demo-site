@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('/static/sdk/helper.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/static/sdk/iconfont.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/static/amis-custom.css') }}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
     <style>
         html,
         body,
@@ -30,6 +31,8 @@
 <script src="{{ asset('/static/js/history.js') }}"></script>
 <script src="{{ asset('/static/js/jquery.js') }}"></script>
 <script src="{{ asset('/static/sdk/sdk.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
 
 <script type="text/javascript">
     (function () {
@@ -142,6 +145,13 @@
                     return axios[method](url, data, config)
                 },
                 isCurrentUrl: isCurrentUrl,
+                tracker: (eventTrack, props) => {
+                    if(eventTrack.eventType == 'pageLoaded'){
+                        setTimeout(() => {
+                            hljs.highlightAll();
+                        }, 100);
+                    }
+                }
             },
         )
 
@@ -211,6 +221,7 @@
             return decodeURI(pathname) === link
         }
     })()
+
 </script>
 </body>
 </html>

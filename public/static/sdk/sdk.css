@@ -58756,7 +58756,6 @@ readers do not read off random characters that represent icons */
   padding: 16px;
   overflow: auto;
   line-height: 1.45;
-  background-color: #f7f7f7;
   border-radius: 3px;
 }
 
