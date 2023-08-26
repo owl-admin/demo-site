@@ -30,6 +30,7 @@ trait ChangelogTrait
 
         if ($noCache) {
             Artisan::call('gen:changelog');
+            sleep(2);
         }
 
         return $data;
