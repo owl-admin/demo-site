@@ -1,3 +1,94 @@
+## v2.7.9
+
+扩展增加 change 事件
+
+_无需发布资源_
+
+<br>
+
+___2023-08-15 21:16:18___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.9)
+
+<br>
+
+## v2.7.8
+
+修复控制器代码生成错误问题
+
+_无需发布资源_
+
+<br>
+
+___2023-08-07 20:55:57___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.8)
+
+<br>
+
+## v2.7.6
+
+#### 更新内容
+
+- 支持菜单参数
+- 支持自定义菜单对应的组件
+- 支持无菜单页面
+- amis 更新 `v3.3.0`
+
+#### 更新方式
+
+1. `composer require slowlyo/owl-admin` 获取最新框架代码
+2. 执行 `php artisan admin:update --v=276` 升级框架
+
+<br>
+
+___2023-08-01 14:09:15___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.6)
+
+<br>
+
+## v2.7.5
+
+优化扩展管理
+
+_无需发布资源~_
+
+<br>
+
+___2023-07-24 14:16:23___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.5)
+
+<br>
+
+## v2.7.4
+
+管理员保存问题修复
+
+_无需发布资源_
+
+<br>
+
+___2023-07-18 15:01:07___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.4)
+
+<br>
+
+## v2.7.3
+
+多应用, 权限生成功能问题修复, 中间件调整
+
+
+<br>
+
+___2023-07-17 14:50:01___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.3)
+
+<br>
+
 ## v2.7.2
 
 #### 更新内容

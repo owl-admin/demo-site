@@ -2,13 +2,18 @@
 
 namespace App\Support;
 
+use Illuminate\Support\Facades\Artisan;
+
 trait ChangelogTrait
 {
     public function getChangelog()
     {
-        return cache()->remember('admin_changelog', 3600, function () {
-            $data = array_merge($this->getGithub(), $this->getGitee());
-            $_arr = [];
+        $noCache = false;
+
+        $data = cache()->remember('admin_changelog', 3600, function () use (&$noCache) {
+            $noCache = true;
+            $data    = array_merge($this->getGithub(), $this->getGitee());
+            $_arr    = [];
             foreach ($data as $item) {
                 $_time  = key_exists('published_at', $item) ? $item['published_at'] : $item['created_at'];
                 $_arr[] = [
@@ -22,6 +27,12 @@ trait ChangelogTrait
 
             return $_arr;
         });
+
+        if ($noCache) {
+            Artisan::call('gen:changelog');
+        }
+
+        return $data;
     }
 
     public function getGithub($page = 1)

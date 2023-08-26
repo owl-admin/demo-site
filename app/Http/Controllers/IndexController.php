@@ -61,6 +61,7 @@ class IndexController extends Controller
                             $item('/guide/custom', '自定义业务逻辑', '/docs/guide/custom.md'),
                             $item('/guide/component-use', '组件的使用', '/docs/guide/component-use.md'),
                             $item('/guide/export', '数据导出', '/docs/guide/export.md'),
+                            $item('/guide/artisan', '内置命令', '/docs/guide/artisan.md'),
                         ],
                     ],
                     [
