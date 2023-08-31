@@ -38,6 +38,7 @@ EOF;
 
         }
 
-        file_put_contents($path, $content);
+        chmod($path, 0777);
+        app('files')->put($path, $content);
     }
 }

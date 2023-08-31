@@ -1,3 +1,20 @@
+## v2.8.0
+
+### 修复
+
+- 菜单名称重复, 导致权限自动生成失败 (#34 )
+- 查询时携带排序条件, 需要清除默认排序条件 (#33 )
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v2.7.9...v2.8.0
+
+<br>
+
+___2023-08-29 14:03:49___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.0)
+
+<br>
+
 ## v2.7.9
 
 扩展增加 change 事件
@@ -1740,7 +1757,7 @@ ___2023-02-04 09:08:16___
 __注意:__
 此次更新涉及前端, 从旧版本升级需要重新发布(_覆盖_)前端资源
 如遇问题可尝试手动删除 `public/admin` 目录后重新发布资源
-```bash
+```shell
 php artisan admin:publish --assets --force
 ```
 
@@ -1988,7 +2005,7 @@ amis 更新内容可查看 [Release 2.6.0 baidu/amis](https://github.com/baidu/a
 __注意:__
 此次更新涉及前端, 从旧版本升级需要重新发布(_覆盖_)前端资源
 如遇问题可尝试手动删除 `public/admin` 目录后重新发布资源
-```bash
+```shell
 php artisan admin:publish --assets --force
 ```
 
@@ -2182,7 +2199,7 @@ ___2022-11-18 22:47:33___
 - 前端增加配置项, 增加页面过渡动画
 
 ##### 更新后需要重新发布前端资源
-```bash
+```shell
 php artisan admin:pulish --assets --force
 ```
 
@@ -2435,7 +2452,7 @@ ___2022-09-06 17:53:56___
 ##### 整体UI升级
 
 需要更新静态资源, 执行以下命令
-```bash
+```shell
 php artisan vendor:publish --provider="Slowlyo\SlowAdmin\SlowAdminServiceProvider" --force
 ```
 
@@ -2453,7 +2470,7 @@ ___2022-09-06 15:10:57___
 ##### amis 更新至 `2.2.0`
 
 需要更新静态资源, 执行以下命令
-```bash
+```shell
 php artisan vendor:publish --provider="Slowlyo\SlowAdmin\SlowAdminServiceProvider" --force
 ```
 
