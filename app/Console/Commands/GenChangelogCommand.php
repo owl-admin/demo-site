@@ -38,6 +38,6 @@ EOF;
 
         }
 
-        app('files')->put($path, $content);
+        @file_put_contents($path, $content);
     }
 }
