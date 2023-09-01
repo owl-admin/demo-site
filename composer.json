@@ -10,7 +10,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "slowlyo/owl-admin": "^2.7",
+        "slowlyo/owl-admin": "^2.8",
         "slowlyo/owl-amis-json-parse": "^1.1"
     },
     "require-dev": {

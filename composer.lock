@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53f22d5839031b61229e176302bd1060",
+    "content-hash": "f98131ae11ae48e503e6de80c9edee31",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,16 +3048,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v2.7.9",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "87a6bf89ad69e3b25d6e7bc32394d834088479b1"
+                "reference": "877bc199f90a4c7751e59981bfaf9bcca2246356"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/87a6bf89ad69e3b25d6e7bc32394d834088479b1",
-                "reference": "87a6bf89ad69e3b25d6e7bc32394d834088479b1",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/877bc199f90a4c7751e59981bfaf9bcca2246356",
+                "reference": "877bc199f90a4c7751e59981bfaf9bcca2246356",
                 "shasum": ""
             },
             "require": {
@@ -3104,9 +3104,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.7.9"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v2.8.1"
             },
-            "time": "2023-08-15T13:14:16+00:00"
+            "time": "2023-09-01T02:01:26+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
