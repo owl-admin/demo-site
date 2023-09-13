@@ -43,3 +43,5 @@ Admin::menu()->add([
         'order'    => 2,
     ],
 ]);
+
+Admin::scripts('window.localStorage.setItem("admin-api-loginParams", "JTdCJTIydXNlcm5hbWUlMjIlM0ElMjJhZG1pbiUyMiUyQyUyMnBhc3N3b3JkJTIyJTNBJTIyYWRtaW4lMjIlN0Q=")');
