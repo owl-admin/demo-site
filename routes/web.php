@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn() => redirect('/admin'));
 
 Route::get('/doc', [\App\Http\Controllers\IndexController::class, 'index']);
-Route::domain('doc.owladmin.com')->get('/', [\App\Http\Controllers\IndexController::class, 'index']);
+Route::name('doc.')->get('/', [\App\Http\Controllers\IndexController::class, 'index']);
