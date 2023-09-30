@@ -1,3 +1,37 @@
+## v2.8.2
+
+## What's Changed
+* 代码生成器与权限生成功能修复 by @wowthree in https://github.com/Slowlyo/owl-admin/pull/43
+
+## New Contributors
+* @wowthree made their first contribution in https://github.com/Slowlyo/owl-admin/pull/43
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v2.8.1...v2.8.2
+
+<br>
+
+___2023-09-26 15:27:56___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.2)
+
+<br>
+
+## v2.8.1
+
+__更新 `amis  v3.4.0`__
+
+### 更新方式
+- `composer require slowlyo/owl-admin` 获取最新框架代码
+- 执行 `php artisan admin:publish --assets --force` 发布前端资源
+
+<br>
+
+___2023-09-01 10:05:05___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.1)
+
+<br>
+
 ## v2.8.0
 
 ### 修复
