@@ -30,7 +30,7 @@ Admin::menu()->add([
         'id'        => 10001,
         'parent_id' => 9998,
         'title'     => '左树右表',
-        'url'       => '/dev_example/left_tree_right_table',
+        'url'       => '/dev_example/left_tree_right_table?tree=1',
         'icon'      => 'emojione:evergreen-tree',
     ],
 

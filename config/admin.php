@@ -10,11 +10,14 @@ return [
     // 默认头像
     'default_avatar' => '/admin/default-avatar.png',
 
-    'directory' => app_path('Admin'),
+    // 应用安装目录
+    'directory'      => app_path('Admin'),
 
-    'bootstrap' => app_path('Admin/bootstrap.php'),
+    // 引导文件
+    'bootstrap'      => app_path('Admin/bootstrap.php'),
 
-    'route' => [
+    // 应用路由
+    'route'          => [
         'prefix'               => 'admin-api',
         'domain'               => null,
         'namespace'            => 'App\\Admin\\Controllers',
@@ -28,12 +31,23 @@ return [
     'auth' => [
         // 是否开启验证码
         'login_captcha' => env('ADMIN_LOGIN_CAPTCHA', true),
-        // 是否开启鉴权
+        // 是否开启认证
         'enable'        => true,
-        // 用户模型
-        'model'         => \Slowlyo\OwlAdmin\Models\AdminUser::class,
-        'controller'    => \Slowlyo\OwlAdmin\Controllers\AuthController::class,
-        'guard'         => 'sanctum',
+        // 是否开启鉴权
+        'permission'    => true,
+        'guard'         => 'admin',
+        'guards'        => [
+            'admin' => [
+                'driver'   => 'sanctum',
+                'provider' => 'admin',
+            ],
+        ],
+        'providers'     => [
+            'admin' => [
+                'driver' => 'eloquent',
+                'model'  => \Slowlyo\OwlAdmin\Models\AdminUser::class,
+            ],
+        ],
         'except'        => [
 
         ],
@@ -68,6 +82,8 @@ return [
         'header'             => [
             // 是否显示 [刷新] 按钮
             'refresh'      => true,
+            // 是否显示 [暗色模式] 按钮
+            'dark'         => true,
             // 是否显示 [全屏] 按钮
             'full_screen'  => true,
             // 是否显示 [主题配置] 按钮
