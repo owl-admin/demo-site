@@ -3052,12 +3052,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "e1db692e28b2abb99fa6388aae281bd6d0b557d3"
+                "reference": "56ec00d03e72fe8824c3c59750e8890b4ac0d901"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/e1db692e28b2abb99fa6388aae281bd6d0b557d3",
-                "reference": "e1db692e28b2abb99fa6388aae281bd6d0b557d3",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/56ec00d03e72fe8824c3c59750e8890b4ac0d901",
+                "reference": "56ec00d03e72fe8824c3c59750e8890b4ac0d901",
                 "shasum": ""
             },
             "require": {
@@ -3107,7 +3107,7 @@
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
                 "source": "https://github.com/Slowlyo/owl-admin/tree/master"
             },
-            "time": "2023-10-13T07:38:19+00:00"
+            "time": "2023-10-13T07:49:20+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
