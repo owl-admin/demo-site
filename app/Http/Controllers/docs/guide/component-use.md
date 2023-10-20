@@ -80,5 +80,5 @@ amis('page')->title('我是标题');
 
 ```php
 // 当前用户不是超级管理员并且没有 user.index 权限时, 按钮将不会显示
-amisMake()->Action()->label('我是按钮')->permission('user.index');
+amis()->Action()->label('我是按钮')->permission('user.index');
 ```

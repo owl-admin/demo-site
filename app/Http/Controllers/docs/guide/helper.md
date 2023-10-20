@@ -14,7 +14,7 @@ Page::make()->title('title')->body('content');
 解决 复杂页面 use 语句过多 的问题
 
 ```php
-amisMake()->TextControl()->name('name')->label('label');
+amis()->TextControl()->name('name')->label('label');
 // 等效于
 TextControl::make()->name('name')->label('label');
 ```

@@ -14,7 +14,7 @@ class CodeGeneratorController extends \Slowlyo\OwlAdmin\Controllers\DevTools\Cod
         }
 
         return $this->response()->success(
-            amisMake()->Page()->css($this->css())->body($this->list())
+            amis()->Page()->css($this->css())->body($this->list())
                 ->toolbar(
                     Components::make()->codeView(
                         base_path('vendor/slowlyo/owl-admin/src/Controllers/DevTools/CodeGeneratorController.php')

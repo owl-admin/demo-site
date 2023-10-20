@@ -12,11 +12,11 @@ public function loginPage()
 
     // 验证码
     if ($enableCaptcha) {
-        $captcha = amisMake()->InputGroupControl()->body([
-            amisMake()->TextControl()->name('captcha')->placeholder(__('admin.captcha'))->required(true),
-            amisMake()->HiddenControl()->name('sys_captcha'),
-            amisMake()->Service()->id('captcha-service')->api('get:' . admin_url('/captcha'))->body(
-                amisMake()
+        $captcha = amis()->InputGroupControl()->body([
+            amis()->TextControl()->name('captcha')->placeholder(__('admin.captcha'))->required(true),
+            amis()->HiddenControl()->name('sys_captcha'),
+            amis()->Service()->id('captcha-service')->api('get:' . admin_url('/captcha'))->body(
+                amis()
                     ->Image()
                     ->src('${captcha_img}')
                     ->height('1.917rem')
@@ -29,19 +29,19 @@ public function loginPage()
         ]);
     }
 
-    $form = amisMake()->Form()->id('login-form')->title('')->api(admin_url('/login'))->body([
-        amisMake()->TextControl()->name('username')->placeholder(__('admin.username'))->required(true),
-        amisMake()
+    $form = amis()->Form()->id('login-form')->title('')->api(admin_url('/login'))->body([
+        amis()->TextControl()->name('username')->placeholder(__('admin.username'))->required(true),
+        amis()
             ->TextControl()
             ->type('input-password')
             ->name('password')
             ->placeholder(__('admin.password'))
             ->required(true),
         $captcha,
-        amisMake()->CheckboxControl()->name('remember_me')->option(__('admin.remember_me'))->value(true),
+        amis()->CheckboxControl()->name('remember_me')->option(__('admin.remember_me'))->value(true),
 
         // 登录按钮
-        amisMake()
+        amis()
             ->VanillaAction()
             ->actionType('submit')
             ->label(__('admin.login'))
@@ -104,10 +104,10 @@ JS,
         ],
     ], $failAction));
 
-    $card = amisMake()->Card()->className('w-96 m:w-full')->body([
-        amisMake()->Flex()->justify('space-between')->className('px-2.5 pb-2.5')->items([
-            amisMake()->Image()->src(url(config('admin.logo')))->width(40)->height(40),
-            amisMake()
+    $card = amis()->Card()->className('w-96 m:w-full')->body([
+        amis()->Flex()->justify('space-between')->className('px-2.5 pb-2.5')->items([
+            amis()->Image()->src(url(config('admin.logo')))->width(40)->height(40),
+            amis()
                 ->Tpl()
                 ->className('font-medium')
                 ->tpl('<div style="font-size: 24px">' . config('admin.name') . '</div>'),
@@ -115,7 +115,7 @@ JS,
         $form,
     ]);
 
-    return amisMake()->Page()->css([
+    return amis()->Page()->css([
         '.captcha-box .cxd-Image--thumb' => [
             'padding' => '0',
             'cursor'  => 'pointer',
@@ -126,7 +126,7 @@ JS,
         ],
         '.cxd-Image-thumb'               => ['width' => 'auto'],
     ])->body(
-        amisMake()->Wrapper()->className("h-screen w-full flex items-center justify-center")->body($card)
+        amis()->Wrapper()->className("h-screen w-full flex items-center justify-center")->body($card)
     );
 }
 

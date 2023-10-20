@@ -20,5 +20,5 @@ SvgIcon::make()->icon('ic:baseline-person');
 SvgIcon::make()->icon('ic:baseline-person')->className('text-red-500');
 
 // 或者这样
-amisMake()->SvgIcon()->icon('ic:baseline-person');
+amis()->SvgIcon()->icon('ic:baseline-person');
 ```

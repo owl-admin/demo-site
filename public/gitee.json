@@ -1028,7 +1028,7 @@
         "target_commitish": "50bd5fad0ea9993a7f31358925e4e26575290e77",
         "prerelease": false,
         "name": "v2.0.12",
-        "body": "##### 优化\r\n`index()` 方法挪到 `baseController` 中, 只在需要时重写\r\n\r\n##### 新增\r\n`amisMake()` 助手函数, 解决复杂页面 use 过多的问题",
+        "body": "##### 优化\r\n`index()` 方法挪到 `baseController` 中, 只在需要时重写\r\n\r\n##### 新增\r\n`amis()` 助手函数, 解决复杂页面 use 过多的问题",
         "author": {
             "id": 7440386,
             "login": "slowlyo",

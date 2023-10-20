@@ -52,5 +52,5 @@ WangEditor::make()->name('content')->label('内容');
 WangEditor::make()->static(true)->name('content')->label('内容');
 
 // 或者这样
-amisMake()->WangEditor()->name('content')->label('内容');
+amis()->WangEditor()->name('content')->label('内容');
 ```

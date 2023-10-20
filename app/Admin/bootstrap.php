@@ -5,7 +5,7 @@ use Slowlyo\OwlAdmin\Admin;
 
 // Navbar ==========================================================================================
 
-$msgBtn = amisMake()
+$msgBtn = amis()
     ->UrlAction()
     ->icon('fa-brands fa-github')
     ->blank()

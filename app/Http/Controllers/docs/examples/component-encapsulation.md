@@ -20,7 +20,7 @@ class Components
     }
     
     public function jumpToBaiDu(){
-        return amisMake()->UrlAction()->url('https://www.baidu.com')->type('link')->blank()->label('百度一下');
+        return amis()->UrlAction()->url('https://www.baidu.com')->type('link')->blank()->label('百度一下');
     }
 }
 ```

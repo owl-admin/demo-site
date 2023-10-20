@@ -8,7 +8,7 @@ public function currentUser()
     $userInfo = OwlAdmin::user()->only(['name', 'avatar']);
 
 	// 下拉按钮
-    $menus = amisMake()
+    $menus = amis()
         ->DropdownButton()
         ->hideCaret(true)
         ->trigger('hover')
@@ -18,7 +18,7 @@ public function currentUser()
         ->set('icon', $userInfo['avatar'])
         ->buttons([
 			// 用户设置 按钮
-            amisMake()
+            amis()
                 ->VanillaAction()
                 ->iconClassName('pr-2')
                 ->icon('fa fa-user-gear')
@@ -26,7 +26,7 @@ public function currentUser()
 				// 点击事件: 通过更改 hash 跳转到用户设置页面
                 ->onClick('window.location.hash = "#/user_setting"'),
 			// 退出登录 按钮
-            amisMake()
+            amis()
                 ->VanillaAction()
                 ->iconClassName('pr-2')
                 ->label(__('admin.logout'))

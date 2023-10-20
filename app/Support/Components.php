@@ -12,7 +12,7 @@ class Components
     public function codeView($path)
     {
         if (is_string($path)) {
-            $content = amisMake()
+            $content = amis()
                 ->EditorControl()
                 ->language('php')
                 ->readOnly(true)
@@ -23,7 +23,7 @@ class Components
             foreach ($path as $item) {
                 $tabs[] = [
                     'title' => $item['title'],
-                    'tab'   => amisMake()
+                    'tab'   => amis()
                         ->EditorControl()
                         ->language($item['language'] ?? 'php')
                         ->readOnly(true)
@@ -31,11 +31,11 @@ class Components
                         ->value(file_get_contents($item['path'])),
                 ];
             }
-            $content = amisMake()->Tabs()->tabs($tabs);
+            $content = amis()->Tabs()->tabs($tabs);
         }
 
-        return amisMake()->DialogAction()->label('页面源码')->icon('fa fa-code')->dialog(
-            amisMake()
+        return amis()->DialogAction()->label('页面源码')->icon('fa fa-code')->dialog(
+            amis()
                 ->Dialog()
                 ->title('页面源码')
                 ->actions([])

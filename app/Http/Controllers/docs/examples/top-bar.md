@@ -34,16 +34,16 @@
 <?php
 
 // 一个按钮, 点击后弹出消息框
-$msgBtn = amisMake()
+$msgBtn = amis()
     ->DrawerAction()
     ->icon('fa fa-bell')
     ->className('mr-2 rounded-full')
     ->drawer(
-        amisMake()->Drawer()->title('Message')->body('Message Content')
+        amis()->Drawer()->title('Message')->body('Message Content')
     );
 
 // 一个按钮, 点击后跳转到百度
-$urlBtn = amisMake()
+$urlBtn = amis()
     ->UrlAction()
     ->icon('fa fa-magnifying-glass')
     ->className('ml-2 rounded-full')

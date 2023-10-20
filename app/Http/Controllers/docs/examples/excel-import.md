@@ -36,10 +36,10 @@ _注意: 此处的 `Components` 是自己封装的, 里面可以放一些常用�
 // 你也可以直接放到对应的 Controller , 或者是直接塞到 headerToolbar 里面, 随你高兴~
 public function importAction($api)
 {
-    return amisMake()->DialogAction()->label('导入')->icon('fa fa-upload')->dialog(
-        amisMake()->Dialog()->title('导入')->body(
-            amisMake()->Form()->mode('normal')->api($api)->body([
-                amisMake()->FileControl()->name('file')->required(true)->drag(true),
+    return amis()->DialogAction()->label('导入')->icon('fa fa-upload')->dialog(
+        amis()->Dialog()->title('导入')->body(
+            amis()->Form()->mode('normal')->api($api)->body([
+                amis()->FileControl()->name('file')->required(true)->drag(true),
             ]),
         )
     );
@@ -57,7 +57,7 @@ _注: 这里我的模板文件路径为: `/public/template/XXX导入模板.xlsx`
 ```php
 public function downloadImportTemplate($path)
 {
-    return amisMake()
+    return amis()
         ->UrlAction()
         ->blank(true)
         ->label('下载模板')

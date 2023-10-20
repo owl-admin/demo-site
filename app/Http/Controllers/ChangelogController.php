@@ -6,29 +6,29 @@ class ChangelogController extends Controller
 {
     public function index()
     {
-        $crud = amisMake()->CRUDCards()->source('${changelog_list}')->card(
-            amisMake()->Card()->header(['title' => '${tag_name}'])->body([
-                amisMake()->TableColumn('html_url', '详情')
+        $crud = amis()->CRUDCards()->source('${changelog_list}')->card(
+            amis()->Card()->header(['title' => '${tag_name}'])->body([
+                amis()->TableColumn('html_url', '详情')
                     ->type('tpl')
                     ->tpl('<a href="${html_url}" target="_blank">点击查看</a>'),
-                amisMake()->TableColumn('', '更新内容')->popOver(
-                    amisMake()->Wrapper()->className('p-4')->trigger('hover')->position('right-bottom')->offset([
+                amis()->TableColumn('', '更新内容')->popOver(
+                    amis()->Wrapper()->className('p-4')->trigger('hover')->position('right-bottom')->offset([
                         'top' => 20,
                         'left' => 30
                     ])->body(
-                        amisMake()->Markdown()->name('body')->options([
+                        amis()->Markdown()->name('body')->options([
                             'html'    => true,
                             'linkify' => true,
                             'breaks'  => true,
                         ])
                     )
                 ),
-                amisMake()->TableColumn('published_at', '发布时间'),
+                amis()->TableColumn('published_at', '发布时间'),
             ])
         );
 
         return $this->response()->success(
-            amisMake()->Page()->data([
+            amis()->Page()->data([
                 'changelog_list' => $this->getChangelog(),
             ])->body($crud)
         );

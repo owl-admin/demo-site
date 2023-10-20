@@ -156,7 +156,7 @@ class IndexController extends Controller
     public function header()
     {
         $link = function ($label, $url, $icon = null) {
-            return amisMake()
+            return amis()
                 ->UrlAction()
                 ->label($label)
                 ->url($url)
@@ -168,12 +168,12 @@ class IndexController extends Controller
         $changelog     = $this->getChangelog();
         $latestVersion = $changelog[0]['tag_name'] ?? null;
 
-        return amisMake()->Flex()
+        return amis()->Flex()
             ->className('w-full h-full')
             ->justify('space-between')
             ->alignItems('center')
             ->items([
-                amisMake()
+                amis()
                     ->Flex()
                     ->className('w-full')
                     ->justify('')
@@ -181,12 +181,12 @@ class IndexController extends Controller
                     ->items([
                         $this->searchDialog(),
                         $link('文档镜像站', 'https://www.showdoc.com.cn/owladmin'),
-                        amisMake()
+                        amis()
                             ->Wrapper()
                             ->className('text-success')
                             ->body($latestVersion ? '最新版本: ' . $latestVersion : ''),
                     ]),
-                amisMake()->Flex()
+                amis()->Flex()
                     ->className('w-full h-full')
                     ->justify('end')
                     ->alignItems('center')
@@ -203,7 +203,7 @@ class IndexController extends Controller
 
     private function searchDialog()
     {
-        return amisMake()
+        return amis()
             ->DialogAction()
             ->id('search-dialog')
             ->label('搜索')
@@ -212,7 +212,7 @@ class IndexController extends Controller
             ->className('text-gray-700')
             ->hotKey('command+k,ctrl+k')
             ->dialog(
-                amisMake()
+                amis()
                     ->Dialog()
                     ->title()
                     ->actions([])
@@ -220,12 +220,12 @@ class IndexController extends Controller
                     ->closeOnOutside()
                     ->showCloseButton(false)
                     ->body(
-                        amisMake()->Form()->wrapWithPanel(false)->autoFocus()->body([
-                            amisMake()
+                        amis()->Form()->wrapWithPanel(false)->autoFocus()->body([
+                            amis()
                                 ->TextControl('keywords', false)
                                 ->placeholder('请输入关键字')
                                 ->description('可使用Ctrl+K快捷键打开搜索框'),
-                            amisMake()
+                            amis()
                                 ->Service()
                                 ->className('max-h-80 overflow-auto')
                                 ->schemaApi('/api/docs/search?keywords=${keywords}'),
@@ -259,9 +259,9 @@ class IndexController extends Controller
                     $excerpts = mb_substr($content, max($start, 0), 40);
                 }
 
-                $result[] = amisMake()->LinkAction()->className('w-full')->link($page['url'])
+                $result[] = amis()->LinkAction()->className('w-full')->link($page['url'])
                     ->body(
-                        amisMake()->Card()->className('bg-gray-50 hover:border-primary')->header([
+                        amis()->Card()->className('bg-gray-50 hover:border-primary')->header([
                             'title'    => $page['label'],
                             'subTitle' => $excerpts ?? '',
                         ])
@@ -290,14 +290,14 @@ class IndexController extends Controller
             $content = cache()->remember('docs_external_article_' . $path, 3600, fn() => file_get_contents($path));
         }
 
-        $schema = amisMake()->Wrapper()->className('pc:px-64 bg-gray-100 h-full')->body([
-            amisMake()->Alert()->showIcon()->body(
-                amisMake()
+        $schema = amis()->Wrapper()->className('pc:px-64 bg-gray-100 h-full')->body([
+            amis()->Alert()->showIcon()->body(
+                amis()
                     ->Tpl()
                     ->tpl("owl 核心在于 amis, 组件使用请参考官方文档 👉 <a href='https://aisuda.bce.baidu.com/amis/zh-CN/components/index' target='_blank'>https://aisuda.bce.baidu.com/amis</a>")
             ),
-            amisMake()->Card()->body(
-                amisMake()->Markdown()->value($content)->options([
+            amis()->Card()->body(
+                amis()->Markdown()->value($content)->options([
                     'html'    => true,
                     'linkify' => true,
                     'breaks'  => true,
@@ -306,7 +306,7 @@ class IndexController extends Controller
         ]);
 
         return $this->response()->success(
-            amisMake()->Page()->bodyClassName('p-0')->body($schema)
+            amis()->Page()->bodyClassName('p-0')->body($schema)
         );
     }
 }

@@ -30,32 +30,32 @@ class LeftTreeRightTableController extends AdminController
 
     public function page()
     {
-        return amisMake()->Page()->body(
-            amisMake()->Flex()->items([
-                amisMake()->Card()->className('w-1/4 mr-5 mb-0')->body([
+        return amis()->Page()->body(
+            amis()->Flex()->items([
+                amis()->Card()->className('w-1/4 mr-5 mb-0')->body([
                     // 边栏切换
-                    amisMake()->RadiosControl('treeType')->value('tree')->options([
+                    amis()->RadiosControl('treeType')->value('tree')->options([
                         ['label' => 'Tree', 'value' => 'tree'],
                         ['label' => 'Nav', 'value' => 'nav'],
                     ]),
 
-                    amisMake()->Divider(),
+                    amis()->Divider(),
 
                     // 用 Nav 实现边栏
-                    amisMake()
+                    amis()
                         ->Nav()
                         ->stacked()
                         ->links($this->service->tree())
                         ->visibleOn('${treeType == "nav"}')
                         ->name('tree'),
-                    amisMake()->Alert()->className('mt-5')->body(
-                        amisMake()
+                    amis()->Alert()->className('mt-5')->body(
+                        amis()
                             ->Tpl()
                             ->tpl('这里使用 Nav 作为边栏, 选中项不会被选中, GitHub 上有相关 👉 <a href="https://github.com/baidu/amis/issues/5869" target="_blank">issue</a>, 当前暂无解决方案~')
                     )->visibleOn('${treeType == "nav"}'),
 
                     // 用 Tree 实现边栏
-                    amisMake()
+                    amis()
                         ->Form()
                         ->id('treeForm')
                         ->wrapWithPanel(false)
@@ -64,7 +64,7 @@ class LeftTreeRightTableController extends AdminController
                         ->body(
                         // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
                         // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
-                            amisMake()
+                            amis()
                                 ->TreeControl('tree')
                                 ->submitOnChange()
                                 ->options($this->service->tree())
@@ -112,12 +112,12 @@ class LeftTreeRightTableController extends AdminController
             ->footerToolbar([])
             ->filterTogglable(false)
             ->columns([
-                amisMake()->TableColumn('id', 'ID'),
-                amisMake()->TableColumn('title', '名称'),
-                amisMake()->TableColumn('state', '状态')->type('status'),
-                amisMake()->TableColumn('image', '图片')->type('image'),
-                amisMake()->TableColumn('created_at', __('admin.created_at'))->type('datetime'),
-                amisMake()->TableColumn('updated_at', __('admin.updated_at'))->type('datetime'),
+                amis()->TableColumn('id', 'ID'),
+                amis()->TableColumn('title', '名称'),
+                amis()->TableColumn('state', '状态')->type('status'),
+                amis()->TableColumn('image', '图片')->type('image'),
+                amis()->TableColumn('created_at', __('admin.created_at'))->type('datetime'),
+                amis()->TableColumn('updated_at', __('admin.updated_at'))->type('datetime'),
             ]);
 
         return $this->baseList($crud);
