@@ -57,6 +57,7 @@ amisRequire('amis').registerLocale('de-DE', {
   'Pagination.totalCount': 'total {{total}} items',
   'Date.titleYear': '',
   'Date.titleMonth': '',
+  'Date.titleQuarter': '',
   'Date.titleDate': '',
   'Date.titleTime': '',
   'Date.daysago': 'Vor {{days}} Tag(en)',
@@ -183,6 +184,7 @@ amisRequire('amis').registerLocale('de-DE', {
   'Log.collapse': 'Falten',
   'link': 'Link',
   'loading': 'Wird geladen...',
+  'loadingFailed': 'Das Laden ist fehlgeschlagen',
   'LocationPicker.placeholder': 'Wählen Sie einen Ort',
   'Month.placeholder': 'Wählen Sie einen Monat',
   'Nav.sourceError': 'Fehler beim Abrufen des Links',
@@ -217,6 +219,7 @@ amisRequire('amis').registerLocale('de-DE', {
   'Select.createLabel': 'Neue Option',
   'Select.placeholder': 'Auswählen',
   'Select.searchPromptText': 'Eingeben zum Suchen',
+  'Select.selected': 'Ausgewählt',
   'sort': 'Sortieren',
   'SubForm.button': 'Configurieren',
   'SubForm.editDetail': 'Details bearbeiten',
@@ -373,6 +376,7 @@ amisRequire('amis').registerLocale('de-DE', {
   'Condition.formula_placeholder': 'Bitte geben Sie eine Formel ein',
   'Condition.fun_error': 'Funktion ist undefiniert',
   'Condition.configured': 'Konfiguriert',
+  'Condition.isRequired': 'Bedingung kann nicht leer sein',
   'InputTable.uniqueError': 'Column `{{label}}` unique validate failed',
   'Timeline.collapseText': 'Falten',
   'Timeline.expandText': 'Entfalten',
@@ -384,6 +388,8 @@ amisRequire('amis').registerLocale('de-DE', {
   'FormulaEditor.function': 'Funktion',
   'FormulaEditor.invalidData':
     'Überprüfungsfehler, position or reason is {{err}}',
+  'FormulaEditor.invalidValue':
+    'Überprüfungsfehler, reason is Falsches Werteformat',
   'pullRefresh.pullingText': 'Zum Aktualisieren nach unten ziehen...',
   'pullRefresh.loosingText': 'Zum Aktualisieren freigeben...',
   'pullRefresh.loadingText': 'Laden...',
@@ -409,6 +415,8 @@ amisRequire('amis').registerLocale('de-DE', {
   'JSONSchema.key': 'Key',
   'JSONSchema.array_items': 'Items',
   'TimeNow': 'Jetzt',
-  'Steps.step': 'Schritt {{index}}'
+  'Steps.step': 'Schritt {{index}}',
+  'FormulaInput.True': 'Treu',
+  'FormulaInput.False': 'Falsch'
 });
 

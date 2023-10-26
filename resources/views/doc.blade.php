@@ -22,6 +22,10 @@
             margin: 0;
             padding: 0;
         }
+        .doc-header-icon{
+            width: 24px !important;
+            height: 24px !important;
+        }
     </style>
 </head>
 <body>

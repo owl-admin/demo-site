@@ -162,6 +162,8 @@ class IndexController extends Controller
                 ->url($url)
                 ->icon($icon)
                 ->blank()
+                ->className('p-0 pr-3')
+                ->iconClassName('text-xl doc-header-icon')
                 ->level('link');
         };
 
@@ -184,7 +186,7 @@ class IndexController extends Controller
                         amis()
                             ->Wrapper()
                             ->className('text-success')
-                            ->body($latestVersion ? '最新版本: ' . $latestVersion : ''),
+                            ->body($latestVersion ? '最新版: ' . $latestVersion : ''),
                     ]),
                 amis()->Flex()
                     ->className('w-full h-full')
@@ -192,11 +194,11 @@ class IndexController extends Controller
                     ->alignItems('center')
                     ->items([
                         $link('官网', 'https://owladmin.com'),
-                        $link('Q群', 'https://jq.qq.com/?_wv=1027&k=5La4Ir6c'),
-                        $link('GitHub', 'https://github.com/Slowlyo/owl-admin'),
-                        $link('Gitee', 'https://gitee.com/slowlyo/owl-admin'),
                         $link('Demo', 'http://demo.owladmin.com'),
-                        $link('Amis', 'https://aisuda.bce.baidu.com/amis/zh-CN/docs/index')->className('text-danger'),
+                        $link('', 'https://github.com/Slowlyo/owl-admin', '/static/icon/github.svg'),
+                        $link('', 'https://gitee.com/slowlyo/owl-admin', '/static/icon/gitee.svg'),
+                        $link('', 'https://jq.qq.com/?_wv=1027&k=5La4Ir6c', '/static/icon/qq.svg'),
+                        $link('', 'https://bbs.csdn.net/forums/owladmin', '/static/icon/csdn.svg'),
                     ]),
             ]);
     }
