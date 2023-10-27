@@ -30,7 +30,7 @@ class IndexController extends Controller
     private function pages()
     {
         $item = function ($url, $label, $path, $icon = '') {
-            $schemaApi = $this->getSchemaApi($path);
+            $schemaApi = '/api/docs/load_md?path=' . urlencode($path);
             $item      = compact('url', 'label', 'schemaApi');
 
             $icon && $item['icon'] = $icon;
@@ -39,10 +39,7 @@ class IndexController extends Controller
         };
 
         return [
-            [
-                'url'      => '/',
-                'redirect' => '/readme',
-            ],
+            ['url' => '/', 'redirect' => '/readme'],
             [
                 'label'    => '文档',
                 'children' => [
@@ -146,11 +143,6 @@ class IndexController extends Controller
                 ],
             ],
         ];
-    }
-
-    private function getSchemaApi($path)
-    {
-        return '/api/docs/load_md?path=' . urlencode($path);
     }
 
     public function header()
@@ -296,7 +288,7 @@ class IndexController extends Controller
             amis()->Alert()->showIcon()->body(
                 amis()
                     ->Tpl()
-                    ->tpl("owl 核心在于 amis, 组件使用请参考官方文档 👉 <a href='https://aisuda.bce.baidu.com/amis/zh-CN/components/index' target='_blank'>https://aisuda.bce.baidu.com/amis</a>")
+                    ->tpl("Owl 核心在于 amis, 组件使用请参考官方文档 👉 <a href='https://aisuda.bce.baidu.com/amis/zh-CN/components/index' target='_blank'>https://aisuda.bce.baidu.com/amis</a>")
             ),
             amis()->Card()->body(
                 amis()->Markdown()->value($content)->options([
