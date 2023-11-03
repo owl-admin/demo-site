@@ -3052,12 +3052,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "81c607d2ca2ad30283e4334c67d9cb303c5c3321"
+                "reference": "29f593478663dc414c599d00d4a0cedd00916014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/81c607d2ca2ad30283e4334c67d9cb303c5c3321",
-                "reference": "81c607d2ca2ad30283e4334c67d9cb303c5c3321",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/29f593478663dc414c599d00d4a0cedd00916014",
+                "reference": "29f593478663dc414c599d00d4a0cedd00916014",
                 "shasum": ""
             },
             "require": {
@@ -3095,8 +3095,8 @@
                     "homepage": "https://gitee.com/slowlyo"
                 }
             ],
-            "description": "采用 laravel、amis 打造的后台框架，拥有 120+ 种组件，只用后端代码就能实现复杂的页面效果，让开发者能够快速构建高效的后台管理系统。",
-            "homepage": "https://gitee.com/slowlyo/owl-admin",
+            "description": "基于 laravel、amis 开发的后台框架~",
+            "homepage": "https://github.com/slowlyo/owl-admin",
             "keywords": [
                 "OwlAdmin",
                 "admin",
@@ -3105,9 +3105,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/master"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v3.0.2"
             },
-            "time": "2023-10-25T03:32:56+00:00"
+            "time": "2023-11-02T05:56:39+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
