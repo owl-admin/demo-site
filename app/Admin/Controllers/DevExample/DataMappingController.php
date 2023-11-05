@@ -17,7 +17,7 @@ class DataMappingController extends AdminController
 
     public function list()
     {
-        $crud = $this->baseCRUD()
+        return $this->baseCRUD()
             ->headerToolbar([
                 amis('reload'),
                 // 查看源码的按钮
@@ -53,7 +53,5 @@ class DataMappingController extends AdminController
                 amis()->TableColumn('${index}', '行索引'),
                 amis()->TableColumn('${items[index]}', '行数据')->breakpoint('*')->type('json')->jsonTheme('eighties'),
             ]);
-
-        return [$crud];
     }
 }
