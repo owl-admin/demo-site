@@ -86,5 +86,6 @@ Route::group([
     // dev example
     $router->group(['prefix' => 'dev_example'], function (Router $router) {
         $router->resource('left_tree_right_table', \App\Admin\Controllers\DevExample\LeftTreeRightTableController::class)->only('index');
+        $router->resource('data_mapping', \App\Admin\Controllers\DevExample\DataMappingController::class);
     });
 });
