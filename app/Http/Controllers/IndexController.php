@@ -137,6 +137,7 @@ class IndexController extends Controller
                             $item('/examples/top-bar', '在顶部操作栏添加内容', '/docs/examples/top-bar.md'),
                             $item('/examples/dynamic-add-menu', '动态添加菜单', '/docs/examples/dynamic-add-menu.md'),
                             $item('/examples/component-encapsulation', '组件封装', '/docs/examples/component-encapsulation.md'),
+                            // $item('/examples/condition-builder', '条件组合查询', '/docs/examples/condition-builder.md'),
                         ],
                     ],
                     $item('/changelog', '更新日志', '/docs/changelog.md', 'fa fa-history'),
