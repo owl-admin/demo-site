@@ -33,7 +33,13 @@ Admin::menu()->add([
         'url'       => '/dev_example/left_tree_right_table?tree=1',
         'icon'      => 'emojione:evergreen-tree',
     ],
-
+    [
+        'id'        => 10002,
+        'parent_id' => 9998,
+        'title'     => '数据映射',
+        'url'       => '/dev_example/data_mapping',
+        'icon'      => 'icon-park:data-display',
+    ],
     [
         'id'       => 11001,
         'title'    => 'AMIS 示例',
