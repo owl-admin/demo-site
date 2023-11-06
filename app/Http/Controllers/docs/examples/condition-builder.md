@@ -2,7 +2,7 @@
 
 # 条件组合查询
 
-> 注意： ConditionBuilder 组件产生的数据较大，建议使用 post 请求~
+在 `OwlAdmin` 中，可以使用 `ConditionBuilder` 组件来灵活的构建条件组合查询。
 
 ## __使用__
 
@@ -112,4 +112,9 @@ class User Extends Model
 }
 ```
 
-注意：在构建查询时，涉及循环&递归，请不要在 `extraConditionBuilderQuery` 方法中进行任何io操作~
+<br>
+
+注意：
+- 在构建查询时，涉及循环&递归，请不要在 `extraConditionBuilderQuery` 方法中进行任何io操作~
+- ConditionBuilder 组件产生的数据较大，建议使用 post 请求~
+
