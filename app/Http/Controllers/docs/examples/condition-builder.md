@@ -2,6 +2,8 @@
 
 # 条件组合查询
 
+> 注意： ConditionBuilder 组件产生的数据较大，建议使用 post 请求~
+
 ## __使用__
 
 ### 1. 在 `Model` 中引入 `ConditionBuilderScopeTrait`
