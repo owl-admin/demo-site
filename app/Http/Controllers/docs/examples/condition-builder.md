@@ -26,6 +26,8 @@ class User extends Model
 
 ```php
 User::query()->withConditionBuilder()->get();
+// 可以传入 true , 使构建的查询字段不拼接表名
+User::query()->withConditionBuilder(true)->get();
 ```
 
 <br>
