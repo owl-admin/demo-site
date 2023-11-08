@@ -1,3 +1,103 @@
+## v3.0.3
+
+- 新增
+    - 基于 `condition-builder` 组件实现的条件组合查询
+    - 代码生成器-字段配置: 新增字段配置保存功能
+
+- 调整
+    - 处理 `WangEditor` 上传文件提示登录问题
+    - `laravel-modules` 适配 `v10` 版本
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --lang --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update`
+
+
+<br>
+
+___2023-11-08 11:10:43___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.3)
+
+<br>
+
+## v3.0.2
+
+- 变更
+    - `amis` 更新 [v3.5.2](https://github.com/baidu/amis/releases/tag/3.5.2)
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update`
+
+
+<br>
+
+___2023-11-02 13:59:16___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.2)
+
+<br>
+
+## v3.0.1
+
+- 变更
+    - 部分样式优化
+    - `amis` 更新 `v3.5.1`
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update`
+
+
+<br>
+
+___2023-11-02 11:19:34___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.1)
+
+<br>
+
+## v3.0.0
+
+### 调整
+
+- __前端__
+    - __整体 `layout` 重写优化__
+    - 组件库由 `arco-design react` 更换为 `antd`
+    - 增加全局 `loading 遮罩`
+    - 增加 `深色主题`
+    - 弃用 `UnoCSS`, 改用 `TailwindCSS`
+    - `amis` 更新 `v3.5.0`
+    - `amis` 获取页面时携带当前 url 信息 (#41)
+    - 固定底部栏
+
+- __后端__
+    - 框架配置: `auth` 和 `permission` 开关分离 (#43)
+    - 弃用 `amisMake()`, 由 `amis()` 替代
+    - 新增 `admin_abort()` 、`admin_abort_if()` 方法
+
+### 修复
+
+- 多应用模式下, 设置权限不生效, 非超管无菜单 (#40)
+
+### 从低版本升级
+
+1. 获取最新框架代码: `composer require slowlyo/owl-admin:v3.0.0`
+2. 升级框架: `php artisan admin:update --v=300` _(如有需要, 请先备份 `config/admin.php`)_
+3. 全局搜索 `amisMake(` 替换为 `amis(`  (可选)
+
+<br>
+
+___2023-10-31 22:01:52___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.0)
+
+<br>
+
 ## v2.8.2
 
 ## What's Changed
@@ -74,20 +174,6 @@ _无需发布资源_
 ___2023-08-07 20:55:57___
 
 [查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.8)
-
-<br>
-
-## v2.7.7
-
-修复amis更新3.3导致的部分问题
-
-_无需发布资源_
-
-<br>
-
-___2023-08-07 17:26:35___
-
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.7)
 
 <br>
 

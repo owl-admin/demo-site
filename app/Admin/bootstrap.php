@@ -41,6 +41,13 @@ Admin::menu()->add([
         'icon'      => 'icon-park:data-display',
     ],
     [
+        'id'        => 10003,
+        'parent_id' => 9998,
+        'title'     => '条件组合查询',
+        'url'       => '/dev_example/condition_builder',
+        'icon'      => 'carbon:model-builder',
+    ],
+    [
         'id'       => 11001,
         'title'    => 'AMIS 示例',
         'url'      => 'https://aisuda.bce.baidu.com/amis/examples/index',
