@@ -19,7 +19,7 @@ class ConditionBuilderController extends AdminController
     public function index()
     {
         $page = $this->basePage()->body([
-                amis()->Form()->title()->debug()->api('post:/dev_example/condition_builder')->body([
+                amis()->Form()->title()->submitText('查看 SQL')->debug()->api('post:/dev_example/condition_builder')->body([
                     $this->baseFilterConditionBuilder()
                         ->description('适合让用户自己拼查询条件，然后后端根据数据生成 query where')
                         ->fields([
