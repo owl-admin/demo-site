@@ -46,6 +46,9 @@ class ConditionBuilderController extends AdminController
                                 ],
                             ],
                         ]),
+
+                    amis()->Divider(),
+
                     amis()->Tpl()->tpl('${formatted_sql|raw}'),
                 ]),
             ]
