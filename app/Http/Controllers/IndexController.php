@@ -175,11 +175,11 @@ class IndexController extends Controller
                     ->alignItems('center')
                     ->items([
                         $this->searchDialog(),
-                        $link('文档镜像站', 'https://www.showdoc.com.cn/owladmin'),
+                        $link('备用文档站', 'https://www.showdoc.com.cn/owladmin'),
                         amis()
                             ->Wrapper()
-                            ->className('text-success')
-                            ->body($latestVersion ? '最新版: ' . $latestVersion : ''),
+                            ->className('text-success font-bold')
+                            ->body($latestVersion ? 'Latest: ' . $latestVersion : ''),
                     ]),
                 amis()->Flex()
                     ->className('w-full h-full')
@@ -204,7 +204,7 @@ class IndexController extends Controller
             ->label('搜索')
             ->icon('fa fa-search')
             ->level('link')
-            ->className('text-gray-700')
+            ->className('text-gray-700 mr-5')
             ->hotKey('command+k,ctrl+k')
             ->dialog(
                 amis()
