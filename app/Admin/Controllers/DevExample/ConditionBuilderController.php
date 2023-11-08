@@ -51,6 +51,9 @@ class ConditionBuilderController extends AdminController
 
                     amis()->Tpl()->tpl('${formatted_sql|raw}'),
                 ]),
+
+                // 查看源码的按钮
+                Components::make()->codeView([['title' => 'Controller', 'language' => 'php', 'path' => __FILE__],]),
             ]
         );
 
