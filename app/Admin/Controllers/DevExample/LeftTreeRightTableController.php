@@ -48,11 +48,6 @@ class LeftTreeRightTableController extends AdminController
                         ->links($this->service->tree())
                         ->visibleOn('${treeType == "nav"}')
                         ->name('tree'),
-                    amis()->Alert()->className('mt-5')->body(
-                        amis()
-                            ->Tpl()
-                            ->tpl('这里使用 Nav 作为边栏, 选中项不会被选中, GitHub 上有相关 👉 <a href="https://github.com/baidu/amis/issues/5869" target="_blank">issue</a>, 当前暂无解决方案~')
-                    )->visibleOn('${treeType == "nav"}'),
 
                     // 用 Tree 实现边栏
                     amis()

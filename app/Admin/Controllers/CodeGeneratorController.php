@@ -28,6 +28,11 @@ class CodeGeneratorController extends \Slowlyo\OwlAdmin\Controllers\DevTools\Cod
         return $this->response()->fail('演示站点, 不支持该操作哟');
     }
 
+    public function saveComponentProperty(Request $request)
+    {
+        return $this->response()->fail('演示站点, 不支持该操作哟');
+    }
+
     private function css()
     {
         return [
