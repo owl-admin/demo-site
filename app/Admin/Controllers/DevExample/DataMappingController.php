@@ -32,19 +32,24 @@ class DataMappingController extends AdminController
             ])
             ->footable()
             ->data([
-                'genderMap' => $this->service->genderMap(),
+                'genderMap'   => $this->service->genderMap(),
+                'categoryMap' => $this->service->categoryMap(),
             ])->columns([
                 amis()->TableColumn('id', 'ID'),
                 // Mapping 组件
-                amis()
-                    ->TableColumn('category', '类型 (Mapping组件)')
+                amis()->TableColumn('category', '类型 (Mapping组件)')
                     ->type('mapping')
                     ->map($this->service->categoryMap()),
+                // Each 组件
+                amis()->TableColumn('categories', '类型 (Each组件)')
+                    ->type('each')
+                    ->items(
+                        amis()->Tpl()->tpl('<p><%= this.categoryMap[this.item] %></p>')
+                    ),
                 // Status 组件
                 amis()->TableColumn('state', '状态 (Status组件)')->type('status'),
                 // Mapping 组件渲染 Tag 组件
-                amis()
-                    ->TableColumn('category', '类型 (Tag组件)')
+                amis()->TableColumn('category', '类型 (Tag组件)')
                     ->type('mapping')
                     ->map($this->service->categoryTagMap()),
                 // 表达式

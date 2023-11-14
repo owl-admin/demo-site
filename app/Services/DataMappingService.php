@@ -42,11 +42,12 @@ class DataMappingService extends AdminService
 
         for ($i = 0; $i < $total; $i++) {
             $items[] = [
-                'id'       => $i + 1,
-                'state'    => rand(0, 1),
-                'category' => rand(1, 6),
-                'gender'   => rand(0, 2),
-                'deep'     => [
+                'id'         => $i + 1,
+                'state'      => rand(0, 1),
+                'category'   => rand(1, 6),
+                'categories' => array_map(fn() => rand(1, 6), range(0, rand(0, 2))),
+                'gender'     => rand(0, 2),
+                'deep'       => [
                     'title' => fake('zh_CN')->title,
                 ],
             ];
