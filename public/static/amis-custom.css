@@ -1,6 +1,87 @@
 :root {
-    --colors-brand-4: #4080FF;
+    --colors-brand-10: #e6f4ff;
+    --colors-link-10: #e6f4ff;
+    --colors-brand-9: #bae0ff;
+    --colors-link-9: #bae0ff;
+    --colors-brand-8: #91caff;
+    --colors-link-8: #91caff;
+    --colors-brand-7: #69b1ff;
+    --colors-link-7: #69b1ff;
+    --colors-brand-6: #4096ff;
+    --colors-link-6: #4096ff;
+    --colors-brand-5: #1677ff;
+    --colors-link-5: #1677ff;
+    --colors-brand-4: #0958d9;
+    --colors-link-4: #0958d9;
+    --colors-brand-3: #003eb3;
+    --colors-link-3: #003eb3;
+    --colors-brand-2: #002c8c;
+    --colors-link-2: #002c8c;
+    --colors-brand-1: #001d66;
+    --colors-link-1: #001d66;
+    --colors-warning-10: #fffbe6;
+    --colors-warning-9: #fff1b8;
+    --colors-warning-8: #ffe58f;
+    --colors-warning-7: #ffd666;
+    --colors-warning-6: #ffc53d;
+    --colors-warning-5: #faad14;
+    --colors-warning-4: #d48806;
+    --colors-warning-3: #ad6800;
+    --colors-warning-2: #874d00;
+    --colors-warning-1: #613400;
+    --colors-error-10: #fff1f0;
+    --colors-error-9: #ffccc7;
+    --colors-error-8: #ffa39e;
+    --colors-error-7: #ff7875;
+    --colors-error-6: #ff4d4f;
+    --colors-error-5: #f5222d;
+    --colors-error-4: #cf1322;
+    --colors-error-3: #a8071a;
+    --colors-error-2: #820014;
+    --colors-error-1: #5c0011;
+    --colors-success-10: #f6ffed;
+    --colors-success-9: #d9f7be;
+    --colors-success-8: #b7eb8f;
+    --colors-success-7: #95de64;
+    --colors-success-6: #73d13d;
+    --colors-success-5: #52c41a;
+    --colors-success-4: #389e0d;
+    --colors-success-3: #237804;
+    --colors-success-2: #135200;
+    --colors-success-1: #092b00;
+    --colors-info-10: #e6f4ff;
+    --colors-other-10: #e6f4ff;
+    --colors-info-9: #bae0ff;
+    --colors-other-9: #bae0ff;
+    --colors-info-8: #91caff;
+    --colors-other-8: #91caff;
+    --colors-info-7: #69b1ff;
+    --colors-other-7: #69b1ff;
+    --colors-info-6: #4096ff;
+    --colors-other-6: #4096ff;
+    --colors-info-5: #1677ff;
+    --colors-other-5: #1677ff;
+    --colors-info-4: #0958d9;
+    --colors-other-4: #0958d9;
+    --colors-info-3: #003eb3;
+    --colors-other-3: #003eb3;
+    --colors-info-2: #002c8c;
+    --colors-other-2: #002c8c;
+    --colors-info-1: #001d66;
+    --colors-other-1: #001d66;
+    --owl-body-bg: #f5f5f5;
+    --owl-main-bg: #fff;
+
     --Layout-asideLink-onHover-color: #4080FF;
+
+    --Alert--success-bg: var(--colors-success-9);
+    --Alert--success-borderColor: var(--colors-success-6);
+    --Alert--info-bg: var(--colors-info-9);
+    --Alert--info-borderColor: var(--colors-info-6);
+    --Alert--warning-bg: var(--colors-warning-9);
+    --Alert--warning-borderColor: var(--colors-warning-6);
+    --Alert--danger-bg: var(--colors-error-9);
+    --Alert--danger-borderColor: var(--colors-error-6);
 }
 
 .cxd-Layout-headerBar {
@@ -8,7 +89,7 @@
     border-bottom: 1px solid #e8e8e8 !important;
 }
 
-.amis-scope .cxd-Markdown .highlight pre, .amis-scope .cxd-Markdown pre{
+.amis-scope .cxd-Markdown .highlight pre, .amis-scope .cxd-Markdown pre {
     background-color: #282C34;
     color: #abb2bf;
 }

@@ -1,3 +1,23 @@
+## v3.0.4
+
+- 调整
+    - `BaseRenderer` 支持 `Macro`
+    - 修复无法导出 `Excel` 问题 (#49)
+    - 处理 `Nav` 不会根据地址自动选中的问题
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-11-13 15:21:25___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.4)
+
+<br>
+
 ## v3.0.3
 
 - 新增

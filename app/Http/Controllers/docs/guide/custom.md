@@ -63,15 +63,15 @@ class AdminRoleController extends AdminController
 			->filter($this->baseFilter()->body([
 				// 内容就是 Form 的 body 属性
 				// 数据筛选的查询需要在 listQuery() 方法中自行实现
-                InputText::make()->name('name')->label('名称')
+                amis()->InputText()->name('name')->label('名称')
             ]))
 			// 这是数据列
             ->columns([
-                Column::make()->label('ID')->name('id')->sortable(true),
-                Column::make()->label('名称')->name('name'),
-                Column::make()->label('标识')->name('slug')->type('tag'),
-                Column::make()->label('创建时间')->name('created_at')->type('datetime')->sortable(true),
-                Column::make()->label('更新时间')->name('updated_at')->type('datetime')->sortable(true),
+                amis()->TableColumn()->label('ID')->name('id')->sortable(true),
+                amis()->TableColumn()->label('名称')->name('name'),
+                amis()->TableColumn()->label('标识')->name('slug')->type('tag'),
+                amis()->TableColumn()->label('创建时间')->name('created_at')->type('datetime')->sortable(true),
+                amis()->TableColumn()->label('更新时间')->name('updated_at')->type('datetime')->sortable(true),
 				// 这个方法会添加操作列
 				// 默认会生成 ->rowActions()
                 $this->rowActionsOnlyEditAndDelete(),
