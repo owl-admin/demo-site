@@ -5,7 +5,8 @@ use Slowlyo\OwlAdmin\Admin;
 
 // Navbar ==========================================================================================
 
-$msgBtn = amis()
+// Github 链接
+$githubBtn = amis()
     ->UrlAction()
     ->icon('fa-brands fa-github')
     ->blank()
@@ -13,7 +14,22 @@ $msgBtn = amis()
     ->tooltip('demo 源码')
     ->className('mr-2 rounded-full');
 
-Admin::prependNav($msgBtn);
+// 版本信息
+$versionInfo = cache()->rememberForever('demo_version_info', function () {
+    $composer = \Slowlyo\OwlAdmin\Support\Composer::parse(base_path('composer.lock'))->toArray();
+
+    $info = collect($composer['packages'])->where('name', 'slowlyo/owl-admin');
+
+    $version  = $info->value('version');
+    $updateAt = \Carbon\Carbon::parse($info->value('time'))->timezone('Asia/Shanghai')->toDateTimeString();
+
+    return amis()
+        ->Alert()
+        ->className('m-0 mr-5')
+        ->body(sprintf('版本: <b>%s</b> &emsp; 更新于: %s', $version, $updateAt));
+});
+
+Admin::prependNav(amis()->Flex()->items([$versionInfo, $githubBtn]));
 
 
 // Menu ==========================================================================================
