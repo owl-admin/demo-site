@@ -15,19 +15,16 @@ $githubBtn = amis()
     ->className('mr-2 rounded-full');
 
 // 版本信息
-$versionInfo = cache()->rememberForever('demo_version_info', function () {
-    $composer = \Slowlyo\OwlAdmin\Support\Composer::parse(base_path('composer.lock'))->toArray();
+$composer = \Slowlyo\OwlAdmin\Support\Composer::parse(base_path('composer.lock'))->toArray();
+$info     = collect($composer['packages'])->where('name', 'slowlyo/owl-admin');
 
-    $info = collect($composer['packages'])->where('name', 'slowlyo/owl-admin');
+$version = $info->value('version');
+$diff    = \Carbon\Carbon::parse($info->value('time'))->timezone('Asia/Shanghai')->diffForHumans(now());
 
-    $version  = $info->value('version');
-    $updateAt = \Carbon\Carbon::parse($info->value('time'))->timezone('Asia/Shanghai')->toDateTimeString();
-
-    return amis()
-        ->Alert()
-        ->className('m-0 mr-5')
-        ->body(sprintf('版本: <b>%s</b> &emsp; 更新于: %s', $version, $updateAt));
-});
+$versionInfo = amis()
+    ->Alert()
+    ->className('m-0 mr-5')
+    ->body(sprintf('Version: <b>%s</b> (%s)', $version, $diff));
 
 Admin::prependNav(amis()->Flex()->items([$versionInfo, $githubBtn]));
 
