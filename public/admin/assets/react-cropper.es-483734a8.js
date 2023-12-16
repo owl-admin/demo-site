@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:public/admin/assets/react-cropper.es-483734a8.js
 import{R as dt,r as rt}from"./index-c5d15a42.js";/*!
-========
-import{R as dt,r as rt}from"./index-794802cd.js";/*!
->>>>>>>> origin/master:public/admin/assets/react-cropper.es-3b61b736.js
  * Cropper.js v1.6.1
  * https://fengyuanchen.github.io/cropperjs
  *
