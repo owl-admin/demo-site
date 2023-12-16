@@ -119,8 +119,9 @@ class IndexController extends Controller
                         'url'      => '/custom-components',
                         'redirect' => '/custom-components/iconify',
                         'children' => [
-                            $item('/custom-components/iconify', 'Iconify', '/docs/custom-components/iconify.md'),
+                            $item('/custom-components/iconify', '图标 Iconify', '/docs/custom-components/iconify.md'),
                             $item('/custom-components/wangeditor', 'WangEditor', '/docs/custom-components/wangeditor.md'),
+                            $item('/custom-components/watermark', '水印 Watermark', '/docs/custom-components/watermark.md'),
                         ],
                     ],
                     [

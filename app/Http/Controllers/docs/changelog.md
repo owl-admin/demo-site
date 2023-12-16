@@ -1,3 +1,128 @@
+## v3.1.0
+
+- 调整
+    - 退出登录, 保留当前页面路径
+    - 增加自定义组件 `Watermark`
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-16 14:48:13___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.0)
+
+<br>
+
+## v3.0.9
+
+- 调整
+    - 滚动条样式优化
+    - `amis` 更新 [v3.6.3](https://github.com/baidu/amis/releases/tag/v3.6.3)
+    - `Top` 布局菜单优化 (#54 )
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-16 10:45:25___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.9)
+
+<br>
+
+## v3.0.8
+
+- 调整
+    - 整体边框颜色减淡
+    - `amis` 更新 [v3.6.1](https://github.com/baidu/amis/releases/tag/v3.6.1)
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-01 23:02:11___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.8)
+
+<br>
+
+## v3.0.7
+
+- 调整
+    - `双栏布局` 二级菜单顶部展示文字更改为 应用名称
+    - 扩展管理&代码生成器, 部分框架代码优化
+    - `amis` 更新 [v3.6.0](https://github.com/baidu/amis/releases/tag/v3.6.0)  (#51)
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-01 09:07:57___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.7)
+
+<br>
+
+## v3.0.6
+
+- 调整
+    - 修复 **双栏布局** 显示不完整问题
+    - 补充前端代码注释
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-11-24 22:09:00___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.6)
+
+<br>
+
+## v3.0.5
+
+- 调整
+    - `amis` 更新 [v3.5.3](https://github.com/baidu/amis/releases/tag/v3.5.3)
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-11-22 10:21:11___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.5)
+
+<br>
+
 ## v3.0.4
 
 - 调整
