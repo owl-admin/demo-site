@@ -1,4 +1,4 @@
-### WangEditor
+### __WangEditor__
 _可能会更好用的富文本编辑器~_
 
 | 属性名 | 说明 |
@@ -37,8 +37,9 @@ _可能会更好用的富文本编辑器~_
 | uploadVideoMaxNumber | 上传视频的最大数量 默认 5 |
 | height | 编辑器高度 px |
 
+<br>
 
-##### 示例
+### __示例__
 
 ```php
 use Slowlyo\OwlAdmin\Renderers\WangEditor;

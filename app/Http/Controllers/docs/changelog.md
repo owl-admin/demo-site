@@ -1,3 +1,44 @@
+## v3.1.2
+
+- 调整
+    - 更改应用访问逻辑, 适配 `laravel-debugbar`
+
+
+
+- 升级步骤
+    - 为了避免产生意料以外的问题, 请删除 `/public/admin` 目录
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --config --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-28 10:57:19___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.2)
+
+<br>
+
+## v3.1.1
+
+- 调整
+    - 顶部菜单异常展开问题修复 (#57 )
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-28 10:55:28___
+
+[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.1)
+
+<br>
+
 ## v3.1.0
 
 - 调整

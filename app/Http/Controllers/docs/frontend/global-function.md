@@ -1,6 +1,6 @@
 > 前端提供了一些前端方法, 可在后端 `amis` 中 通过 `window` 调用
 
-## 退出登录
+## __退出登录__
 
 ```js
 window.$owl.logout()
@@ -8,7 +8,7 @@ window.$owl.logout()
 
 <br>
 
-## 登录成功后的回调
+## __登录成功后的回调__
 
 ```js
 window.$owl.afterLoginSuccess({
@@ -19,7 +19,7 @@ window.$owl.afterLoginSuccess({
 
 <br>
 
-## 刷新当前 amis 页面
+## __刷新当前 amis 页面__
 
 仅刷新 `content` 部分, 不会刷新 `layout` 部分, 仅在 `amis` 页面中生效
 
@@ -29,7 +29,7 @@ window.$owl.refreshAmisPage()
 
 <br>
 
-## 刷新前端路由
+## __刷新前端路由__
 
 ```js
 // 重新获取菜单及路由
@@ -38,7 +38,7 @@ window.$owl.refreshRoutes()
 
 <br>
 
-## 根据 path 关闭tab
+## __根据 path 关闭tab__
 
 ```js
 window.$owl.closeTabByPath(path)

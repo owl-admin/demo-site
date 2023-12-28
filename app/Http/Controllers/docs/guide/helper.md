@@ -1,4 +1,4 @@
-## amis
+## __amis__
 
 调用 Component 类, 实现万能组件
 
@@ -24,7 +24,7 @@ TextControl::make()->name('name')->label('label');
 
 <br>
 
-## admin_encode
+## __admin_encode__
 
 加密字符串
 
@@ -34,7 +34,7 @@ admin_encode(string $str):string
 
 <br>
 
-## admin_decode
+## __admin_decode__
 
 解密字符串
 
@@ -44,7 +44,7 @@ admin_decode(string $str):string
 
 <br>
 
-## array2tree
+## __array2tree__
 
 递归生成树状数据，确保数组中包含键 `parent_id`
 
@@ -54,7 +54,7 @@ array2tree($arr):array
 
 <br>
 
-## admin_url
+## __admin_url__
 
 ```php
 admin_url($path = null, $needPrefix = false):string
@@ -66,7 +66,7 @@ admin_url('user', true); // /admin-api/user
 
 <br>
 
-## table_columns
+## __table_columns__
 
 获取数据表的字段
 
@@ -76,7 +76,7 @@ table_columns(string $table):array
 
 <br>
 
-## admin_resource_full_path
+## __admin_resource_full_path__
 
 返回资源完整路径
 
@@ -86,7 +86,7 @@ admin_resource_full_path(string $path):string
 
 <br>
 
-## admin_path
+## __admin_path__
 
 返回 admin 目录路径
 
@@ -96,7 +96,7 @@ admin_path(string $path = null):string
 
 <br>
 
-## file_upload_handle
+## __file_upload_handle__
 
 处理文件上传回显问题, set 时去除域名, get 加上域名
 
@@ -106,7 +106,7 @@ file_upload_handle():\Illuminate\Database\Eloquent\Casts\Attribute
 
 <br>
 
-## is_json
+## __is_json__
 
 判断是否是 json 字符串
 
@@ -116,7 +116,7 @@ is_json(string $str):bool
 
 <br>
 
-## settings
+## __settings__
 
 ```php
 settings():\Slowlyo\OwlAdmin\Services\AdminSettingService;
@@ -124,13 +124,17 @@ settings():\Slowlyo\OwlAdmin\Services\AdminSettingService;
 
 <br>
 
-## admin_user
+## __admin_user__
 
 获取当前登录用户信息
 
+```php
+$userId = admin_user()->id;
+```
+
 <br>
 
-## admin_abort & admin_abort_if
+## __admin_abort & admin_abort_if__
 
 抛出异常, 并返回错误信息
 

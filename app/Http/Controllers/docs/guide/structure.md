@@ -1,4 +1,5 @@
-## 安装完成后生成的目录
+## __安装完成后生成的目录__
+
 ```
 app/Admin
 ├── Controllers
@@ -8,9 +9,16 @@ app/Admin
 └── routes.php
 ```
 
-## 配置文件
+<br>
+
+## __配置文件__
+
 ```
 config/admin.php
 ```
-## 静态文件
-后台所需的前端静态文件在 `/public/admin` 目录下
+
+<br>
+
+## __静态文件__
+
+后台所需的前端静态文件在 `/public/admin-assets` 目录下

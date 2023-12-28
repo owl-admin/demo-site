@@ -54,10 +54,7 @@ class IndexController extends Controller
                             $item('/guide/upgrade', '升级', '/docs/guide/upgrade.md'),
                             $item('/guide/structure', '项目结构', '/docs/guide/structure.md'),
                             $item('/guide/helper', '助手函数', '/docs/guide/helper.md'),
-                            $item('/guide/modal', '弹窗操作', '/docs/guide/modal.md'),
-                            $item('/guide/custom', '自定义业务逻辑', '/docs/guide/custom.md'),
                             $item('/guide/component-use', '组件的使用', '/docs/guide/component-use.md'),
-                            $item('/guide/export', '数据导出', '/docs/guide/export.md'),
                             $item('/guide/artisan', '内置命令', '/docs/guide/artisan.md'),
                         ],
                     ],
@@ -69,6 +66,21 @@ class IndexController extends Controller
                         'children' => [
                             $item('/theory/amis', 'Amis', '/docs/theory/amis.md'),
                             $item('/theory/frame', '框架', '/docs/theory/frame.md'),
+                        ],
+                    ],
+                    [
+                        'label'    => 'CRUD',
+                        'icon'     => 'fa fa-code',
+                        'url'      => '/crud',
+                        'redirect' => '/crud/base',
+                        'children' => [
+                            $item('/crud/base', '基础概念', '/docs/crud/base.md'),
+                            $item('/crud/create', '增', '/docs/crud/create.md'),
+                            $item('/crud/delete', '删', '/docs/crud/delete.md'),
+                            $item('/crud/update', '改', '/docs/crud/update.md'),
+                            $item('/crud/read', '查', '/docs/crud/read.md'),
+                            $item('/crud/modal', '弹窗操作', '/docs/crud/modal.md'),
+                            $item('/crud/export', '数据导出', '/docs/crud/export.md'),
                         ],
                     ],
                     [

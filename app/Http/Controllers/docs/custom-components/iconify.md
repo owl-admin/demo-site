@@ -1,4 +1,4 @@
-### SvgIcon
+### __SvgIcon__
 _用于显示 iconify 图标_
 
 | 属性名  | 说明 |
@@ -6,8 +6,9 @@ _用于显示 iconify 图标_
 | className | Dom 的类名 |
 | icon | 图标名称<br>查找图标: [https://icones.js.org](https://icones.js.org) |
 
+<br>
 
-##### 示例
+### __示例__
 
 ```php
 use Slowlyo\OwlAdmin\Renderers\WangEditor;

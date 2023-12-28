@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "517a5b3ad685a08c4632d8cac2f53318",
+    "content-hash": "12ac95ff6d5dd614cfb688825e1d0844",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,22 +3048,23 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v3.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "12dd88197601b70d3e4a6ac9c7e11181d84d8344"
+                "reference": "3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/12dd88197601b70d3e4a6ac9c7e11181d84d8344",
-                "reference": "12dd88197601b70d3e4a6ac9c7e11181d84d8344",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a",
+                "reference": "3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~9|~10",
                 "php": ">=8.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3104,9 +3105,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v3.1.0"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/master"
             },
-            "time": "2023-12-16T06:37:33+00:00"
+            "time": "2023-12-28T02:46:28+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
@@ -8375,7 +8376,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "slowlyo/owl-admin": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

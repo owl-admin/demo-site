@@ -2,7 +2,7 @@
 
 <br>
 
-## 安装 `laravel-modules`
+## __安装 `laravel-modules`__
 
 获取依赖
 ```bash
@@ -33,7 +33,7 @@ composer dump-autoload
 
 <br>
 
-## 创建模块
+## __创建模块__
 
 建议首字母大写
 ```bash
@@ -41,7 +41,7 @@ php artisan module:make <module-name>
 # eg: php artisan module:make Master
 ```
 
-#### 在模块中初始化 `owl-admin`
+#### __在模块中初始化 `owl-admin`__
 
 配置
 ```php

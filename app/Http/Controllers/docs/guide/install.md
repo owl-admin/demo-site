@@ -1,10 +1,11 @@
-## 环境
+## __环境__
 
 - PHP >= `8.0`
 - Laravel `9.*`
 
+<br>
 
-## 开始安装
+## __开始安装__
 
 首先需要安装`laravel`框架，如已安装可以跳过此步骤。如果您是第一次使用`laravel`，请务必先阅读 [文档](https://learnku.com/docs/laravel/9.x/installation/12200) ！
 
@@ -59,8 +60,9 @@ php artisan admin:install
 > 方法中加上代码`\Schema::defaultStringLength(191);`
 > 然后删除掉数据库中的所有数据表，再重新运行一遍`php artisan admin:install`命令即可。<br>
 
+<br>
 
-上述步骤操作完成之后就可以配置 web 服务了，注意需要把 web 目录也就是运行目录指向 public 目录！
+上述步骤操作完成之后就可以配置 web 服务了，注意需要把 web 目录也就是运行目录指向 public 目录
 
 如果用的是 nginx，还需要在配置中加上伪静态配置
 ```bash
@@ -69,6 +71,8 @@ location / {
 }
 ```
 
-另外注意文件权限设置755，否则可能报错
+<br>
+
+另外注意文件权限设置 `755`, 否则可能报错
 
 启动服务后，在浏览器打开 `http://localhost/admin`，使用用户名 `admin` 和密码 `admin`登陆。
