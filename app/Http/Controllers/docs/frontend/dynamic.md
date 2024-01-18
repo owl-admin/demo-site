@@ -72,13 +72,13 @@ Admin::styles([
 
 ```php
 // 加载单个script
-Admin::script($script);
+Admin::scripts($script);
 // 加载多个script
-Admin::script([$script1, $script2]);
+Admin::scripts([$script1, $script2]);
 
 // eg:
-Admin::script('console.log("hello world")');
-Admin::script([
+Admin::scripts('console.log("hello world")');
+Admin::scripts([
     'console.log("hello world")',
     'console.log("hello world2")',
 ]);
