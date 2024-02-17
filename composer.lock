@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12ac95ff6d5dd614cfb688825e1d0844",
+    "content-hash": "c0ad9559e4c4c043eb2bfc873a451404",
     "packages": [
         {
             "name": "brick/math",
@@ -3048,23 +3048,22 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "dev-master",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a"
+                "reference": "9968dab1f9da429c0cf2c07e406628da7f834cd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a",
-                "reference": "3f0ab7e6daf7cd48416e9ba8973c21873dd9ac6a",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/9968dab1f9da429c0cf2c07e406628da7f834cd0",
+                "reference": "9968dab1f9da429c0cf2c07e406628da7f834cd0",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~9|~10",
                 "php": ">=8.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3104,10 +3103,13 @@
                 "laravel"
             ],
             "support": {
+                "email": "slowlyo_email@qq.com.com",
+                "forum": "https://github.com/Slowlyo/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/master"
+                "source": "https://github.com/Slowlyo/owl-admin/tree/v3.2.2",
+                "wiki": "http://doc.owladmin.com/"
             },
-            "time": "2023-12-28T02:46:28+00:00"
+            "time": "2024-02-17T07:27:58+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
@@ -8376,14 +8378,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "slowlyo/owl-admin": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.0.0"
 }

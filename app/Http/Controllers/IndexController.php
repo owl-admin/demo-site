@@ -204,7 +204,7 @@ class IndexController extends Controller
                         $link('', 'https://github.com/Slowlyo/owl-admin', '/static/icon/github.svg'),
                         $link('', 'https://gitee.com/slowlyo/owl-admin', '/static/icon/gitee.svg'),
                         $link('', 'https://jq.qq.com/?_wv=1027&k=5La4Ir6c', '/static/icon/qq.svg'),
-                        $link('', 'https://bbs.csdn.net/forums/owladmin', '/static/icon/csdn.svg'),
+                        // $link('', 'https://bbs.csdn.net/forums/owladmin', '/static/icon/csdn.svg'),
                     ]),
             ]);
     }
