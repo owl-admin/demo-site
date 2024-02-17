@@ -66,7 +66,7 @@ class ConditionBuilderController extends AdminController
 
         $sql = array_reduce($query->getBindings(), fn($sql, $binding) => preg_replace('/\?/', is_numeric($binding) ? $binding : "'" . $binding . "'", $sql, 1), $query->toSql());
 
-        $url = 'https://c.runoob.com/wp-content/themes/toolrunoob/option/ajax.php?type=SqlFormatter';
+        $url = 'https://www.jyshare.com/wp-content/themes/toolrunoob/option/ajax.php?type=SqlFormatter';
 
         $response = Http::asForm()->post($url, ['query' => $sql]);
 
