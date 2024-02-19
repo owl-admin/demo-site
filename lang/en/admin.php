@@ -60,6 +60,7 @@ return [
     'cancel'                => 'Cancel',
     'please_login'          => 'Please Login',
     'unauthorized'          => 'Unauthorized',
+    'user_disabled'         => 'The user has been disabled',
 
     'code_generators' => [
         'remark1'                   => 'For more parameters, please refer to',
@@ -194,6 +195,7 @@ return [
         'parent_id_not_allow'    => 'The parent menu cannot be set to the current submenu',
         'component'              => 'Component',
         'component_desc'         => 'amis by default. Not a custom front-end page, please do not modify it',
+        'url_exists'             => 'menu path duplication',
     ],
 
     'extensions' => [
