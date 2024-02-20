@@ -90,4 +90,14 @@ Route::group([
         $router->resource('data_mapping', \App\Admin\Controllers\DevExample\DataMappingController::class);
         $router->resource('condition_builder', \App\Admin\Controllers\DevExample\ConditionBuilderController::class);
     });
+
+    // dcat demo
+    $router->group(['prefix' => 'dcat'], function (Router $router){
+        $router->get('layout', [\App\Admin\Controllers\Dcat\LayoutController::class, 'index']);
+
+        $router->group(['prefix' => 'list'], function (Router $router){
+            $router->get('table', [\App\Admin\Controllers\Dcat\TableController::class, 'index']);
+            $router->get('table_faker_filter', [\App\Admin\Controllers\Dcat\TableController::class, 'fakerFilter']);
+        });
+    });
 });

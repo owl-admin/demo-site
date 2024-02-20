@@ -28,10 +28,13 @@ $versionInfo = amis()
 
 Admin::prependNav(amis()->Flex()->items([$versionInfo, $githubBtn]));
 
+// 密码填充
+Admin::scripts('window.localStorage.setItem("admin-api-loginParams", "JTdCJTIydXNlcm5hbWUlMjIlM0ElMjJhZG1pbiUyMiUyQyUyMnBhc3N3b3JkJTIyJTNBJTIyYWRtaW4lMjIlN0Q=")');
 
 // Menu ==========================================================================================
 
 Admin::menu()->add([
+    // dev example
     [
         'id'    => 9998,
         'title' => '开发示例',
@@ -68,6 +71,37 @@ Admin::menu()->add([
         'icon'     => 'twemoji:link',
         'order'    => 2,
     ],
-]);
 
-Admin::scripts('window.localStorage.setItem("admin-api-loginParams", "JTdCJTIydXNlcm5hbWUlMjIlM0ElMjJhZG1pbiUyMiUyQyUyMnBhc3N3b3JkJTIyJTNBJTIyYWRtaW4lMjIlN0Q=")');
+    // dcat demo
+    [
+        'id'    => 200,
+        'title' => 'Dcat Demo 复刻',
+        'url'   => '/dcat',
+        'icon'  => 'carbon:demo',
+        'order' => 1,
+    ],
+    [
+        'id'        => 201,
+        'parent_id' => 200,
+        'title'     => '布局',
+        'url'       => '/dcat/layout',
+        'icon'      => 'ri:layout-5-line',
+        'order'     => 1,
+    ],
+    [
+        'id'        => 202,
+        'parent_id' => 200,
+        'title'     => '列表',
+        'url'       => '/dcat/list',
+        'icon'      => 'material-symbols-light:lists',
+        'order'     => 1,
+    ],
+    [
+        'id'        => 203,
+        'parent_id' => 202,
+        'title'     => '默认表格',
+        'url'       => '/dcat/list/table',
+        'icon'      => 'material-symbols:backup-table-rounded',
+        'order'     => 1,
+    ],
+]);
