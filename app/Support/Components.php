@@ -2,6 +2,8 @@
 
 namespace App\Support;
 
+use Faker\Factory;
+
 class Components
 {
     public static function make()
@@ -71,5 +73,33 @@ class Components
             ->type('tpl')
             ->tpl('${' . $name . '|truncate:' . $limit . '}')
             ->popOver(amis()->SchemaPopOver()->body('${' . $name . '}')->trigger('hover')->position('left-bottom'));
+    }
+
+    /**
+     * 模拟用户表格
+     *
+     * @return \Slowlyo\OwlAdmin\Renderers\CRUDTable
+     */
+    public function fakerUserTable()
+    {
+        $faker = Factory::create();
+        $users = [];
+        foreach (range(1, 20) as $i) {
+            $users[] = [
+                'id'         => $i,
+                'username'   => $faker->userName,
+                'name'       => $faker->name,
+                'created_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
+                'updated_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
+            ];
+        }
+
+        return amis()->CRUDTable()->data(['faker_users' => $users])->source('${faker_users}')->loadDataOnce()->columns([
+            amis()->TableColumn('id', 'ID')->sortable(),
+            amis()->TableColumn('username', 'Username'),
+            amis()->TableColumn('name', 'Name'),
+            amis()->TableColumn('created_at', 'Created At'),
+            amis()->TableColumn('updated_at', 'Updated At'),
+        ]);
     }
 }

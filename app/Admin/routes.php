@@ -92,18 +92,33 @@ Route::group([
     });
 
     // dcat demo
-    $router->group(['prefix' => 'dcat'], function (Router $router){
+    $router->group(['prefix' => 'dcat'], function (Router $router) {
         // 布局
         $router->get('layout', [\App\Admin\Controllers\Dcat\LayoutController::class, 'index']);
 
         // 列表
-        $router->group(['prefix' => 'list'], function (Router $router){
+        $router->group(['prefix' => 'list'], function (Router $router) {
             // 默认表格
             $router->get('table', [\App\Admin\Controllers\Dcat\TableController::class, 'index']);
             $router->get('table_faker_filter', [\App\Admin\Controllers\Dcat\TableController::class, 'fakerFilter']);
 
             // 组合表头
             $router->get('table_head', [\App\Admin\Controllers\Dcat\TableHeadController::class, 'index']);
+
+            // 固定列
+            $router->get('fixed_column', [\App\Admin\Controllers\Dcat\FixedColumnController::class, 'index']);
+
+            // 异步加载
+            $router->get('async_table', [\App\Admin\Controllers\Dcat\AsyncTableController::class, 'index']);
+
+            // 树形表格
+            $router->get('tree_table', [\App\Admin\Controllers\Dcat\TreeTableController::class, 'index']);
+
+            // 筛选器
+            $router->get('selector', [\App\Admin\Controllers\Dcat\SelectorTableController::class, 'index']);
+
+            // 自定义视图
+            $router->get('custom', [\App\Admin\Controllers\Dcat\CustomTableController::class, 'index']);
         });
     });
 });
