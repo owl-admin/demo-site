@@ -101,24 +101,39 @@ Route::group([
             // 默认表格
             $router->get('table', [\App\Admin\Controllers\Dcat\TableController::class, 'index']);
             $router->get('table_faker_filter', [\App\Admin\Controllers\Dcat\TableController::class, 'fakerFilter']);
-
             // 组合表头
             $router->get('table_head', [\App\Admin\Controllers\Dcat\TableHeadController::class, 'index']);
-
             // 固定列
             $router->get('fixed_column', [\App\Admin\Controllers\Dcat\FixedColumnController::class, 'index']);
-
             // 异步加载
             $router->get('async_table', [\App\Admin\Controllers\Dcat\AsyncTableController::class, 'index']);
-
             // 树形表格
             $router->get('tree_table', [\App\Admin\Controllers\Dcat\TreeTableController::class, 'index']);
-
             // 筛选器
             $router->get('selector', [\App\Admin\Controllers\Dcat\SelectorTableController::class, 'index']);
-
             // 自定义视图
             $router->get('custom', [\App\Admin\Controllers\Dcat\CustomTableController::class, 'index']);
+        });
+
+        // 表单
+        $router->group(['prefix' => 'form'], function (Router $router) {
+            // 表单字段
+            $router->get('column', [\App\Admin\Controllers\Dcat\FormColumnController::class, 'index']);
+            // 弹窗表单
+            $router->get('modal', [\App\Admin\Controllers\Dcat\FormModalController::class, 'index']);
+            // 分步表单
+            $router->get('step', [\App\Admin\Controllers\Dcat\FormStepController::class, 'index']);
+            // 表单动态显示
+            $router->get('when', [\App\Admin\Controllers\Dcat\FormWhenController::class, 'index']);
+            // 表单布局
+            $router->group(['prefix' => 'layout'], function (Router $router) {
+                // column
+                $router->get('column', [\App\Admin\Controllers\Dcat\FormLayoutColumnController::class, 'index']);
+                // tab
+                $router->get('tab', [\App\Admin\Controllers\Dcat\FormLayoutTabController::class, 'index']);
+                // raw
+                $router->get('raw', [\App\Admin\Controllers\Dcat\FormLayoutRawController::class, 'index']);
+            });
         });
     });
 });

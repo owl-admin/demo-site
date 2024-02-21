@@ -94,12 +94,15 @@ class Components
             ];
         }
 
-        return amis()->CRUDTable()->data(['faker_users' => $users])->source('${faker_users}')->loadDataOnce()->columns([
-            amis()->TableColumn('id', 'ID')->sortable(),
-            amis()->TableColumn('username', 'Username'),
-            amis()->TableColumn('name', 'Name'),
-            amis()->TableColumn('created_at', 'Created At'),
-            amis()->TableColumn('updated_at', 'Updated At'),
-        ]);
+        return amis()->CRUDTable()
+            ->data(['faker_users' => $users])
+            ->source('${faker_users}')
+            ->columns([
+                amis()->TableColumn('id', 'ID')->sortable(),
+                amis()->TableColumn('username', 'Username'),
+                amis()->TableColumn('name', 'Name'),
+                amis()->TableColumn('created_at', 'Created At'),
+                amis()->TableColumn('updated_at', 'Updated At'),
+            ]);
     }
 }
