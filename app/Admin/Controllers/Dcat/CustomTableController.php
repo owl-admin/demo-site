@@ -22,7 +22,11 @@ class CustomTableController extends AdminController
 
     public function view()
     {
-        return amis()->Tabs()->tabs([
+        return amis()->Tabs()->toolbar([
+            // 查看源码的按钮
+            Components::make()->codeView([['title' => 'Controller', 'language' => 'php', 'path' => __FILE__]])->level('link'),
+        ])->tabs([
+            // 表格视图
             amis()->Tab()->title('表格视图')->body([
                 amis()->CRUDTable()->source('${list_data}')->columns([
                     amis()->TableColumn('id', 'ID'),
@@ -30,6 +34,7 @@ class CustomTableController extends AdminController
                     amis()->TableColumn('image', 'Image')->type('image'),
                 ]),
             ]),
+            // 卡片视图
             amis()->Tab()->title('卡片视图')->body([
                 amis()->CRUDCards()->source('${list_data}')->card(
                     amis()->Card()->body([
@@ -39,6 +44,7 @@ class CustomTableController extends AdminController
                     ])
                 ),
             ]),
+            // 列表视图
             amis()->Tab()->title('列表视图')->body([
                 amis()->CRUDList()->source('${list_data}')->listItem(
                     amis()->ListItem()->avatar('${image | raw}')->body(
