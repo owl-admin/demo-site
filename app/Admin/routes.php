@@ -93,6 +93,8 @@ Route::group([
 
     // dcat demo
     $router->group(['prefix' => 'dcat'], function (Router $router) {
+        $router->get('statement', [\App\Admin\Controllers\Dcat\StatementController::class, 'index']);
+
         // 布局
         $router->get('layout', [\App\Admin\Controllers\Dcat\LayoutController::class, 'index']);
 

@@ -206,4 +206,12 @@ Admin::menu()->add([
         'url'       => '/dcat/form/layout/raw',
         'icon'      => 'material-symbols:featured-play-list-outline',
     ],
+
+    [
+        'id'        => 299,
+        'parent_id' => 200,
+        'title'     => '说明',
+        'url'       => '/dcat/statement',
+        'icon'      => 'noto:warning',
+    ],
 ]);
