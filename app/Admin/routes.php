@@ -93,11 +93,17 @@ Route::group([
 
     // dcat demo
     $router->group(['prefix' => 'dcat'], function (Router $router){
+        // 布局
         $router->get('layout', [\App\Admin\Controllers\Dcat\LayoutController::class, 'index']);
 
+        // 列表
         $router->group(['prefix' => 'list'], function (Router $router){
+            // 默认表格
             $router->get('table', [\App\Admin\Controllers\Dcat\TableController::class, 'index']);
             $router->get('table_faker_filter', [\App\Admin\Controllers\Dcat\TableController::class, 'fakerFilter']);
+
+            // 组合表头
+            $router->get('table_head', [\App\Admin\Controllers\Dcat\TableHeadController::class, 'index']);
         });
     });
 });

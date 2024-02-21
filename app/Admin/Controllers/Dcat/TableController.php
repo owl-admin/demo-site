@@ -20,15 +20,20 @@ class TableController extends AdminController
 
         // 页面结构
         $schema = amis()->Page()->body([
-            amis()->Grid()->className('mt-2')->columns([
-                amis()->GridColumn()->md(4)->body($this->totalUsers()),
-                amis()->GridColumn()->md(4)->body($this->newUsers()),
-                amis()->GridColumn()->md(4)->body($this->newDevices()),
-            ]),
+            $this->chartLine(),
             $this->table(),
         ]);
 
         return $this->response()->success($schema);
+    }
+
+    public function chartLine()
+    {
+        return amis()->Grid()->className('mt-2')->columns([
+            amis()->GridColumn()->md(4)->body($this->totalUsers()),
+            amis()->GridColumn()->md(4)->body($this->newUsers()),
+            amis()->GridColumn()->md(4)->body($this->newDevices()),
+        ]);
     }
 
     /**
@@ -121,11 +126,12 @@ class TableController extends AdminController
             ->toolbar([$this->filterSelect('a')])
             ->body([
                 amis()->Chart()->height(100)->api('/dcat/list/table_faker_filter?q=${a}&type=new_users')->config([
-                    'xAxis'   => ['show' => false, 'data' => '${date}'],
-                    'yAxis'   => ['show' => false],
-                    'tooltip' => ['trigger' => 'axis', 'position' => [10, 10]],
-                    'grid'    => ['left' => -50, 'right' => -50, 'top' => 0, 'bottom' => 0],
-                    'series'  => [
+                    'backgroundColor' => '',
+                    'xAxis'           => ['show' => false, 'data' => '${date}'],
+                    'yAxis'           => ['show' => false],
+                    'tooltip'         => ['trigger' => 'axis', 'position' => [10, 10]],
+                    'grid'            => ['left' => -50, 'right' => -50, 'top' => 0, 'bottom' => 0],
+                    'series'          => [
                         [
                             'name'      => 'New Users',
                             'data'      => '${list}',
@@ -146,6 +152,7 @@ class TableController extends AdminController
             ->toolbar([$this->filterSelect('q')])
             ->body([
                 amis()->Chart()->height(100)->api('/dcat/list/table_faker_filter?q=${q}&type=new_devices')->config([
+                    'backgroundColor' => '',
                     'tooltip' => ['trigger' => 'item', 'position' => [10, 10]],
                     'legend'  => ['top' => 'center', 'left' => 'start', 'orient' => 'vertical'],
                     'series'  => [

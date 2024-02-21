@@ -9,6 +9,13 @@ class Components
         return new self();
     }
 
+    /**
+     * 查看源码按钮
+     *
+     * @param $path
+     *
+     * @return \Slowlyo\OwlAdmin\Renderers\DialogAction
+     */
     public function codeView($path)
     {
         if (is_string($path)) {
@@ -45,5 +52,24 @@ class Components
                 ->closeOnOutside(true)
                 ->body($content)
         );
+    }
+
+    /**
+     * 列表长文字
+     *
+     * @param     $name
+     * @param     $label
+     * @param int $limit
+     *
+     * @return mixed
+     */
+    public function listLongText($name, $label, int $limit = 20)
+    {
+        return amis()->TableColumn()
+            ->name($name)
+            ->label($label)
+            ->type('tpl')
+            ->tpl('${' . $name . '|truncate:' . $limit . '}')
+            ->popOver(amis()->SchemaPopOver()->body('${' . $name . '}')->trigger('hover')->position('left-bottom'));
     }
 }

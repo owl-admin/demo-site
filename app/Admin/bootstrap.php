@@ -86,7 +86,6 @@ Admin::menu()->add([
         'title'     => '布局',
         'url'       => '/dcat/layout',
         'icon'      => 'ri:layout-5-line',
-        'order'     => 1,
     ],
     [
         'id'        => 202,
@@ -94,7 +93,6 @@ Admin::menu()->add([
         'title'     => '列表',
         'url'       => '/dcat/list',
         'icon'      => 'material-symbols-light:lists',
-        'order'     => 1,
     ],
     [
         'id'        => 203,
@@ -102,6 +100,12 @@ Admin::menu()->add([
         'title'     => '默认表格',
         'url'       => '/dcat/list/table',
         'icon'      => 'material-symbols:backup-table-rounded',
-        'order'     => 1,
+    ],
+    [
+        'id'        => 204,
+        'parent_id' => 202,
+        'title'     => '组合表头',
+        'url'       => '/dcat/list/table_head',
+        'icon'      => 'mdi:table-headers-eye',
     ],
 ]);
