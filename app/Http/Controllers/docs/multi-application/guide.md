@@ -18,6 +18,7 @@ admin-modules/                              # 模块根目录
      │   └── AdminUser.php
      ├── Services/                          # Service 目录
      ├── bootstrap.php                      # 框架会自动加载这个文件, 可以在里面动态添加菜单或导航栏按钮
+     ├── config.php                         # 模块的配置文件
      ├── MasterServiceProvider.php          # 模块的服务提供者, 可以在里面处理一些其他的高级操作
      └── routes.php                         # 模块的路由文件
 ```
