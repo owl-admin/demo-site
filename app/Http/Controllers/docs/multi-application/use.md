@@ -1,66 +1,45 @@
-> 多应用模块基于 `laravel-modules` 实现
+## __创建模块__
 
-<br>
+这个命令会创建 `owl-admin` 所需的文件和目录, 以及相关的数据库及基础数据
+建议首字母大写, 使用大驼峰格式
 
-## __安装 `laravel-modules`__
-
-获取依赖
 ```bash
-composer require nwidart/laravel-modules
+php artisan admin-module:init --module=<module-name>
+# eg: php artisan admin-module:init --module=Master
 ```
 
-发布配置文件
-```bash
-php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+## __更改配置文件__
+
+```php
+// file: config/admin.php
+
+// 配置 modules
+// 建议首字母大写, 大驼峰格式
+// ...
+'modules' => [
+    'Master' => true // 在这里配置模块名, 以及启用状态
+]
 ```
 
-配置 `composer.json`
+## __配置 `composer.json`__
 
-添加 `psr-4` 到 `autoload` 下
+配置模块目录(admin-modules)自动加载
+
 ```json
 "autoload": {
     "psr-4": {
         "App\\": "app/",
-        "Modules\\": "Modules/"
+        "AdminModules\\": "admin-modules/"
     }
 }
 ```
 
 重新生成自动加载文件
+
 ```bash
 composer dump-autoload
 ```
 
 <br>
 
-## __创建模块__
-
-建议首字母大写
-```bash
-php artisan module:make <module-name>
-# eg: php artisan module:make Master
-```
-
-#### __在模块中初始化 `owl-admin`__
-
-配置
-```php
-// file: config/admin.php
-
-// 配置 modules
-// 建议首字母大写
-// ...
-'modules' => [
-    'Master' // 在这里配置模块名
-]
-```
-
-这个命令会在模块中创建 `owl-admin` 所需的文件和目录, 以及相关的数据库及基础数据
-```bash
-php artisan admin-module:init --module=<module-name>
-# eg: php artisan admin-module:init --module=Master
-```
-
-<br>
-
-现在, 你可以通过 `/master` 来访问你的新模块了~
+__现在, 你可以通过 `/master` 来访问你的新模块了~__
