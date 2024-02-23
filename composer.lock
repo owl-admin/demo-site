@@ -964,6 +964,38 @@
             "time": "2022-08-28T14:45:39+00:00"
         },
         {
+            "name": "iconify/json",
+            "version": "2.2.185",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iconify/icon-sets.git",
+                "reference": "ebd01d8edec44f52c61e763c610124a6b02efe43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/ebd01d8edec44f52c61e763c610124a6b02efe43",
+                "reference": "ebd01d8edec44f52c61e763c610124a6b02efe43",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Iconify\\IconsJSON\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Iconify icons collection in JSON format",
+            "homepage": "https://iconify.design/icon-sets/",
+            "support": {
+                "issues": "https://github.com/iconify/icon-sets/issues",
+                "source": "https://github.com/iconify/icon-sets/tree/2.2.185"
+            },
+            "time": "2024-02-21T06:47:51+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v9.28.0",
             "source": {
@@ -3047,22 +3079,75 @@
             "time": "2022-08-05T17:58:37+00:00"
         },
         {
+            "name": "slowlyo/laravel-support",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Slowlyo/laravel-support.git",
+                "reference": "8c6d3b2cb176518a8e0cc87eb35fcce93c72c49b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Slowlyo/laravel-support/zipball/8c6d3b2cb176518a8e0cc87eb35fcce93c72c49b",
+                "reference": "8c6d3b2cb176518a8e0cc87eb35fcce93c72c49b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=8",
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Slowlyo\\Support\\SupportServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "./src/functions.php"
+                ],
+                "psr-4": {
+                    "Slowlyo\\Support\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Slowlyo",
+                    "email": "slowlyo_email@qq.com"
+                }
+            ],
+            "description": "php/laravel部分代码封装",
+            "support": {
+                "issues": "https://github.com/Slowlyo/laravel-support/issues",
+                "source": "https://github.com/Slowlyo/laravel-support/tree/v0.0.1"
+            },
+            "time": "2024-02-22T09:48:11+00:00"
+        },
+        {
             "name": "slowlyo/owl-admin",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "e2e2d29e20e4f2c80785468eb2773661b7c5a0a2"
+                "reference": "e443a905dc8603df60e58c022a015ac83c87dc4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/e2e2d29e20e4f2c80785468eb2773661b7c5a0a2",
-                "reference": "e2e2d29e20e4f2c80785468eb2773661b7c5a0a2",
+                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/e443a905dc8603df60e58c022a015ac83c87dc4c",
+                "reference": "e443a905dc8603df60e58c022a015ac83c87dc4c",
                 "shasum": ""
             },
             "require": {
+                "iconify/json": "*",
                 "illuminate/support": "~9|~10",
-                "php": ">=8.0"
+                "php": ">=8.0",
+                "slowlyo/laravel-support": "*"
             },
             "default-branch": true,
             "type": "library",
@@ -3091,8 +3176,8 @@
             "authors": [
                 {
                     "name": "Slowlyo",
-                    "email": "slowlyo_email@qq.com.com",
-                    "homepage": "https://gitee.com/slowlyo"
+                    "email": "slowlyo_email@qq.com",
+                    "homepage": "https://github.com/slowlyo"
                 }
             ],
             "description": "基于 laravel、amis 开发的后台框架~",
@@ -3104,13 +3189,13 @@
                 "laravel"
             ],
             "support": {
-                "email": "slowlyo_email@qq.com.com",
+                "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/Slowlyo/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
                 "source": "https://github.com/Slowlyo/owl-admin/tree/master",
                 "wiki": "http://doc.owladmin.com/"
             },
-            "time": "2024-02-19T02:29:39+00:00"
+            "time": "2024-02-23T03:07:46+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
@@ -8388,5 +8473,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.6.0"
 }

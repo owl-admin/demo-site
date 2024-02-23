@@ -7,14 +7,7 @@
 ```php
 // file: /routes/web.php
 
-app('router')->get('/master', function (){
-    $view = app(\Illuminate\View\Factory::class);
-
-    $view->addExtension('html', 'file');
-
-    return $view->make('admin::index');
-});
-// 当然, 你可以吧返回 view() 放到 Controller , 这里只是为了方便演示~
+app('router')->get('/master', fn() => \Slowlyo\OwlAdmin\Admin::view());
 ```
 <br>
 
