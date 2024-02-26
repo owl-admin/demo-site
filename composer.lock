@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3bb53e99f75994f1a2e93f35fb996ae",
+    "content-hash": "c134d9a430052011ce780e44d40e4b20",
     "packages": [
         {
             "name": "brick/math",
@@ -3195,62 +3195,6 @@
                 "wiki": "http://doc.owladmin.com/"
             },
             "time": "2024-02-26T05:55:38+00:00"
-        },
-        {
-            "name": "slowlyo/owl-amis-json-parse",
-            "version": "v1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Slowlyo/owl-amis-json-parse.git",
-                "reference": "14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-amis-json-parse/zipball/14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5",
-                "reference": "14d1ba8b1abca2e1b716ce4ef21b0f2bb8eba2b5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0",
-                "slowlyo/owl-admin": "*"
-            },
-            "type": "library",
-            "extra": {
-                "owl-admin": "Slowlyo\\OwlAmisJsonParse\\OwlAmisJsonParseServiceProvider",
-                "laravel": {
-                    "providers": [
-                        "Slowlyo\\OwlAmisJsonParse\\OwlAmisJsonParseServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Slowlyo\\OwlAmisJsonParse\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "slowlyo",
-                    "email": "slowlyo_email@qq.com"
-                }
-            ],
-            "description": "将 amis 的 json 结构转换为 OwlAdmin 代码",
-            "homepage": "https://gitee.com/slowlyo/slow-amis-json-parse",
-            "keywords": [
-                "amis",
-                "extension",
-                "json-parse",
-                "owl-admin"
-            ],
-            "support": {
-                "issues": "https://github.com/Slowlyo/owl-amis-json-parse/issues",
-                "source": "https://github.com/Slowlyo/owl-amis-json-parse/tree/v1.1.4"
-            },
-            "time": "2023-04-27T01:57:14+00:00"
         },
         {
             "name": "symfony/console",
