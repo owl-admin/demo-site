@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86751e53bb9b2239a602db8f26691e24",
+    "content-hash": "f3bb53e99f75994f1a2e93f35fb996ae",
     "packages": [
         {
             "name": "brick/math",
@@ -3131,16 +3131,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v3.2.7",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Slowlyo/owl-admin.git",
-                "reference": "7587c43a30af0b81ddbc324357bdbb3d59dd78fd"
+                "url": "https://github.com/slowlyo/owl-admin.git",
+                "reference": "ee5e1d0e58cfe3de8f5ebc564f4385725cb48f94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Slowlyo/owl-admin/zipball/7587c43a30af0b81ddbc324357bdbb3d59dd78fd",
-                "reference": "7587c43a30af0b81ddbc324357bdbb3d59dd78fd",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/ee5e1d0e58cfe3de8f5ebc564f4385725cb48f94",
+                "reference": "ee5e1d0e58cfe3de8f5ebc564f4385725cb48f94",
                 "shasum": ""
             },
             "require": {
@@ -3191,10 +3191,10 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/Slowlyo/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/Slowlyo/owl-admin/tree/v3.2.7",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v3.2.9",
                 "wiki": "http://doc.owladmin.com/"
             },
-            "time": "2024-02-22T15:23:13+00:00"
+            "time": "2024-02-26T05:55:38+00:00"
         },
         {
             "name": "slowlyo/owl-amis-json-parse",
@@ -8470,5 +8470,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
