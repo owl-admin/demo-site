@@ -3135,15 +3135,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "a0b7079626fedfc4686a18459ef69199116ecb5c"
+                "reference": "0888f4483ef63bc0bea0fa4dc61479c3b2e20054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/a0b7079626fedfc4686a18459ef69199116ecb5c",
-                "reference": "a0b7079626fedfc4686a18459ef69199116ecb5c",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/0888f4483ef63bc0bea0fa4dc61479c3b2e20054",
+                "reference": "0888f4483ef63bc0bea0fa4dc61479c3b2e20054",
                 "shasum": ""
             },
             "require": {
+                "ext-gd": "*",
+                "ext-zip": "*",
                 "iconify/json": "*",
                 "illuminate/support": "~9|~10",
                 "php": ">=8.0",
@@ -3195,7 +3197,7 @@
                 "source": "https://github.com/slowlyo/owl-admin/tree/master",
                 "wiki": "http://doc.owladmin.com/"
             },
-            "time": "2024-03-01T13:42:18+00:00"
+            "time": "2024-03-01T15:36:41+00:00"
         },
         {
             "name": "symfony/console",
