@@ -1,3 +1,439 @@
+## v3.3.1
+
+- 调整
+    - 修复 `admin:gen-code-clear` 命令中的错误
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-02-28 23:59:37___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.1)
+
+<br>
+
+## v3.3.0
+
+- 调整
+    - `AdminMenu` 模型中, 处理扩展的菜单多语言 (#77 )
+    - 修复 `message` 不显示问题 (#76 )
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+
+
+<br>
+
+___2024-02-28 15:18:44___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.0)
+
+<br>
+
+## v3.2.9
+
+- 调整
+    - 修复收起菜单白屏问题
+    - 优化: 关闭用户认证时, 保证系统可正常使用
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+
+
+<br>
+
+___2024-02-26 13:57:49___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.9)
+
+<br>
+
+## v3.2.8
+
+- 调整
+    - 配置文件优化: 后台数据库连接配置
+    - 扩展管理: 更多扩展按钮调整
+    - 代码生成器: 替换图标选择器
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --config --force`
+
+
+<br>
+
+___2024-02-25 15:03:30___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.8)
+
+<br>
+
+## v3.2.7
+
+- 调整
+    - 新增: 应用开启 `debug` 时, 接口响应包含 `sql` 执行记录
+    - 前端优化
+        - 消息气泡优化
+        - 系统错误消息提示优化
+        - 新增手风琴菜单
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+
+
+<br>
+
+___2024-02-22 23:27:58___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.7)
+
+<br>
+
+## v3.2.6
+
+- 调整
+    - 重构 `modules` 功能, 弃用 `nwidart/laravel-modules`  (#73 )
+    - 移除 `admin-module:update` 命令, 现在视图部分由框架自动处理
+    - 各模块之间的主题配置隔离
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+- __❗注意__
+    - 更新后, `modules` 与之前的版本并不兼容, 如果你已经使用了该功能, 需要手动迁移你的代码
+
+<br>
+
+___2024-02-22 15:45:28___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.6)
+
+<br>
+
+## v3.2.5
+
+
+## What's Changed
+* add: 增加生成代码可选保存指定目录 by @lphkxd in https://github.com/Slowlyo/owl-admin/pull/72
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 执行命令: `php artisan admin:update --v=325`
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.2.4...v3.2.5
+
+<br>
+
+___2024-02-21 09:14:31___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.5)
+
+<br>
+
+## v3.2.4
+
+- 调整
+    - iconify图标选择器: 搜索逻辑本地化, 避免网络原因无法使用
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+<br>
+
+___2024-02-19 17:01:21___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.4)
+
+<br>
+
+## v3.2.3
+
+- 调整
+    - 增加助手函数: 多文件上传处理
+    - 菜单管理优化: 列表拖拽排序、图标选择器
+    - 系统用户管理: 增加启用禁用字段
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 执行命令: `php artisan admin:update --v=323`
+
+<br>
+
+___2024-02-19 13:41:05___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.3)
+
+<br>
+
+## v3.2.2
+
+- 调整
+    - 代码生成器, 代码清理异常问题修复
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+<br>
+
+___2024-02-19 11:21:30___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.2)
+
+<br>
+
+## v3.2.1
+
+- 调整
+    - 首页问题修复
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 安装 `3.2.0` 出现问题的, 在 `app/Admin/Controllers/HomeController.php`  加上 `use Slowlyo\OwlAdmin\Controllers\AdminController;`
+
+<br>
+
+___2024-02-10 15:41:52___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.1)
+
+<br>
+
+## v3.2.0
+
+- 调整
+    - 代码生成器优化: 组件值识别 `json 字符串`, 并转换为 `php 数组` (#70)
+    - 框架默认首页调整: 原 `一言 卡片`, 更改为 `bing 壁纸轮播`
+    - 各 `service` 移除方法返回值类型
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+## What's Changed
+* optimize:优化代码生成器中需要用到多个数组的字段类型。 by @taotecode in https://github.com/Slowlyo/owl-admin/pull/70
+
+## New Contributors
+* @taotecode made their first contribution in https://github.com/Slowlyo/owl-admin/pull/70
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.11...v3.2.0
+
+<br>
+
+___2024-02-07 10:22:10___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.2.0)
+
+<br>
+
+## v3.1.11
+
+- 调整
+    - `listQuery` 新增: 根据 tableColumn 配置, 自动加载关联关系
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+## What's Changed
+* add:新增自动with功能，根据column配置，字段名以 user.name 方式，只要模型定义的有user这个关联关系，即可自动启用 by @lphkxd in https://github.com/Slowlyo/owl-admin/pull/69
+
+## New Contributors
+* @lphkxd made their first contribution in https://github.com/Slowlyo/owl-admin/pull/69
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.10...v3.1.11
+
+<br>
+
+___2024-02-06 14:13:40___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.11)
+
+<br>
+
+## v3.1.10
+
+- 调整
+    - 菜单无法快速编辑问题修复
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+<br>
+
+___2024-02-01 21:01:54___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.10)
+
+<br>
+
+## v3.1.9
+
+- 调整
+    - `amis` 更新 `v6.1.0`
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源文件: `php artisan admin:publish --assets --force`
+   
+- __注意:__ `v3.1.8` 版本中需要发布 `--lang` 如果跳过 `v3.1.8` 直接更新 `v3.1.9` 的, 需要发布 `--lang`
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.8...v3.1.9
+
+<br>
+
+___2024-01-31 23:24:18___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.9)
+
+<br>
+
+## v3.1.8
+
+- 调整
+    - 菜单增加路径唯一限制
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布语言文件: `php artisan admin:publish --lang --force`
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.7...v3.1.8
+
+<br>
+
+___2024-01-31 13:37:50___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.8)
+
+<br>
+
+## v3.1.7
+
+- 调整
+    - 排序异常问题修复
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.6...v3.1.7
+
+<br>
+
+___2024-01-28 17:38:48___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.7)
+
+<br>
+
+## v3.1.6
+
+- 调整
+    - 部分代码优化
+
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.5...v3.1.6
+
+<br>
+
+___2024-01-15 11:17:22___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.6)
+
+<br>
+
+## v3.1.5
+
+- 调整
+    - 合并 PR (#63 )
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+## What's Changed
+* 在获取数据前先过滤 null 值 by @NotMings in https://github.com/Slowlyo/owl-admin/pull/63
+
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.4...v3.1.5
+
+<br>
+
+___2024-01-11 09:26:47___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.5)
+
+<br>
+
+## v3.1.4
+
+- 调整
+    - 可独立配置 `admin` 数据库连接
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+***
+
+## What's Changed
+* 数据库连接可配置 by @NotMings in https://github.com/Slowlyo/owl-admin/pull/61
+
+## New Contributors
+* @NotMings made their first contribution in https://github.com/Slowlyo/owl-admin/pull/61
+
+**Full Changelog**: https://github.com/Slowlyo/owl-admin/compare/v3.1.3...v3.1.4
+
+<br>
+
+___2024-01-05 09:57:28___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.4)
+
+<br>
+
+## v3.1.3
+
+- 调整
+    - `amis` 更新 [v6.0.0](https://github.com/baidu/amis/releases/tag/v6.0.0)
+    - 修复 `v3.1.2` 产生的部分问题 (#60)
+
+
+
+- 升级步骤
+    - 为了避免产生意料以外的问题, 请删除 `/public/admin` 目录
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --config --force`
+        - 如果使用了 `modules` 需要执行: `php artisan admin-module:update` 
+
+<br>
+
+___2023-12-30 22:18:43___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.3)
+
+<br>
+
 ## v3.1.2
 
 - 调整
@@ -15,7 +451,7 @@
 
 ___2023-12-28 10:57:19___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.2)
 
 <br>
 
@@ -35,7 +471,7 @@ ___2023-12-28 10:57:19___
 
 ___2023-12-28 10:55:28___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.1)
 
 <br>
 
@@ -56,7 +492,7 @@ ___2023-12-28 10:55:28___
 
 ___2023-12-16 14:48:13___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.1.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.1.0)
 
 <br>
 
@@ -78,7 +514,7 @@ ___2023-12-16 14:48:13___
 
 ___2023-12-16 10:45:25___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.9)
 
 <br>
 
@@ -99,7 +535,7 @@ ___2023-12-16 10:45:25___
 
 ___2023-12-01 23:02:11___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.8)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.8)
 
 <br>
 
@@ -121,7 +557,7 @@ ___2023-12-01 23:02:11___
 
 ___2023-12-01 09:07:57___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.7)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.7)
 
 <br>
 
@@ -141,7 +577,7 @@ ___2023-12-01 09:07:57___
 
 ___2023-11-24 22:09:00___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.6)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.6)
 
 <br>
 
@@ -160,7 +596,7 @@ ___2023-11-24 22:09:00___
 
 ___2023-11-22 10:21:11___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.5)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.5)
 
 <br>
 
@@ -180,7 +616,7 @@ ___2023-11-22 10:21:11___
 
 ___2023-11-13 15:21:25___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.4)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.4)
 
 <br>
 
@@ -204,7 +640,7 @@ ___2023-11-13 15:21:25___
 
 ___2023-11-08 11:10:43___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.3)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.3)
 
 <br>
 
@@ -223,7 +659,7 @@ ___2023-11-08 11:10:43___
 
 ___2023-11-02 13:59:16___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.2)
 
 <br>
 
@@ -243,7 +679,7 @@ ___2023-11-02 13:59:16___
 
 ___2023-11-02 11:19:34___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.1)
 
 <br>
 
@@ -280,7 +716,7 @@ ___2023-11-02 11:19:34___
 
 ___2023-10-31 22:01:52___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v3.0.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.0.0)
 
 <br>
 
@@ -298,7 +734,7 @@ ___2023-10-31 22:01:52___
 
 ___2023-09-26 15:27:56___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.8.2)
 
 <br>
 
@@ -314,7 +750,7 @@ __更新 `amis  v3.4.0`__
 
 ___2023-09-01 10:05:05___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.8.1)
 
 <br>
 
@@ -331,7 +767,7 @@ ___2023-09-01 10:05:05___
 
 ___2023-08-29 14:03:49___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.8.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.8.0)
 
 <br>
 
@@ -345,7 +781,7 @@ _无需发布资源_
 
 ___2023-08-15 21:16:18___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.9)
 
 <br>
 
@@ -359,7 +795,7 @@ _无需发布资源_
 
 ___2023-08-07 20:55:57___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.8)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.8)
 
 <br>
 
@@ -381,7 +817,7 @@ ___2023-08-07 20:55:57___
 
 ___2023-08-01 14:09:15___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.6)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.6)
 
 <br>
 
@@ -395,7 +831,7 @@ _无需发布资源~_
 
 ___2023-07-24 14:16:23___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.5)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.5)
 
 <br>
 
@@ -409,7 +845,7 @@ _无需发布资源_
 
 ___2023-07-18 15:01:07___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.4)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.4)
 
 <br>
 
@@ -422,7 +858,7 @@ ___2023-07-18 15:01:07___
 
 ___2023-07-17 14:50:01___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.3)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.3)
 
 <br>
 
@@ -442,7 +878,7 @@ ___2023-07-17 14:50:01___
 
 ___2023-07-04 22:25:01___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.2)
 
 <br>
 
@@ -463,7 +899,7 @@ ___2023-07-04 22:25:01___
 
 ___2023-07-03 22:58:50___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.1)
 
 <br>
 
@@ -484,7 +920,7 @@ ___2023-07-03 22:58:50___
 
 ___2023-07-02 22:54:52___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.7.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.0)
 
 <br>
 
@@ -496,7 +932,7 @@ ___2023-07-02 22:54:52___
 
 ___2023-06-26 19:56:03___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.10)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.10)
 
 <br>
 
@@ -517,7 +953,7 @@ ___2023-06-26 19:56:03___
 
 ___2023-06-26 00:03:10___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.9)
 
 <br>
 
@@ -535,7 +971,7 @@ ___2023-06-26 00:03:10___
 
 ___2023-06-24 15:58:13___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.8)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.8)
 
 <br>
 
@@ -557,7 +993,7 @@ ___2023-06-24 15:58:13___
 
 ___2023-06-21 00:29:28___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.7)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.7)
 
 <br>
 
@@ -577,7 +1013,7 @@ ___2023-06-21 00:29:28___
 
 ___2023-06-18 20:42:42___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.6)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.6)
 
 <br>
 
@@ -599,7 +1035,7 @@ ___2023-06-18 20:42:42___
 
 ___2023-06-14 17:28:47___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.5)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.5)
 
 <br>
 
@@ -619,7 +1055,7 @@ ___2023-06-14 17:28:47___
 
 ___2023-06-14 09:28:40___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.4)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.4)
 
 <br>
 
@@ -642,7 +1078,7 @@ ___2023-06-14 09:28:40___
 
 ___2023-06-09 17:00:32___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.3)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.3)
 
 <br>
 
@@ -662,7 +1098,7 @@ ___2023-06-09 17:00:32___
 
 ___2023-06-08 17:50:00___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.2)
 
 <br>
 
@@ -686,7 +1122,7 @@ ___2023-06-08 17:50:00___
 
 ___2023-06-07 21:36:41___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.1)
 
 <br>
 
@@ -710,7 +1146,7 @@ ___2023-06-07 21:36:41___
 
 ___2023-06-06 22:45:10___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.6.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.6.0)
 
 <br>
 
@@ -732,7 +1168,7 @@ ___2023-06-06 22:45:10___
 
 ___2023-06-05 15:03:11___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.9)
 
 <br>
 
@@ -762,7 +1198,7 @@ ___2023-06-05 15:03:11___
 
 ___2023-06-04 22:32:17___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.8)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.8)
 
 <br>
 
@@ -794,7 +1230,7 @@ ___2023-06-04 22:32:17___
 
 ___2023-06-04 01:48:29___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.7)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.7)
 
 <br>
 
@@ -812,7 +1248,7 @@ __amis 调试工具__  现在可由 `admin.show_development_tools` 控制
 
 ___2023-05-17 20:49:05___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.6)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.6)
 
 <br>
 
@@ -845,7 +1281,7 @@ php artisan admin:publish --config --lang --assets --views --force
 
 ___2023-05-17 10:18:50___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.5)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.5)
 
 <br>
 
@@ -857,7 +1293,7 @@ ___2023-05-17 10:18:50___
 
 ___2023-05-15 08:37:30___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.4)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.4)
 
 <br>
 
@@ -875,7 +1311,7 @@ ___2023-05-15 08:37:30___
 
 ___2023-05-13 20:11:31___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.3)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.3)
 
 <br>
 
@@ -896,7 +1332,7 @@ ___2023-05-13 20:11:31___
 
 ___2023-05-13 19:50:49___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.2)
 
 <br>
 
@@ -909,7 +1345,7 @@ ___2023-05-13 19:50:49___
 
 ___2023-05-13 19:44:47___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.1)
 
 <br>
 
@@ -924,7 +1360,7 @@ ___2023-05-13 19:44:47___
 
 ___2023-04-27 16:23:35___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.5.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.5.0)
 
 <br>
 
@@ -937,7 +1373,7 @@ ___2023-04-27 16:23:35___
 
 ___2023-04-27 13:41:33___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.9)
 
 <br>
 
@@ -949,7 +1385,7 @@ Renderer 优化
 
 ___2023-04-23 15:19:50___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.8)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.8)
 
 <br>
 
@@ -965,7 +1401,7 @@ ___2023-04-23 15:19:50___
 
 ___2023-04-23 15:18:28___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.7)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.7)
 
 <br>
 
@@ -983,7 +1419,7 @@ ___2023-04-23 15:18:28___
 
 ___2023-04-21 09:45:20___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.6)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.6)
 
 <br>
 
@@ -1004,7 +1440,7 @@ ___2023-04-21 09:45:20___
 
 ___2023-04-20 15:53:19___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.5)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.5)
 
 <br>
 
@@ -1026,7 +1462,7 @@ Tab 栏样式问题
 
 ___2023-04-20 14:48:16___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.4)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.4)
 
 <br>
 
@@ -1046,7 +1482,7 @@ ___2023-04-20 14:48:16___
 
 ___2023-04-19 20:24:36___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.3)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.3)
 
 <br>
 
@@ -1059,7 +1495,7 @@ ___2023-04-19 20:24:36___
 
 ___2023-04-19 10:06:47___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.2)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.2)
 
 <br>
 
@@ -1074,7 +1510,7 @@ ___2023-04-19 10:06:47___
 
 ___2023-04-18 23:12:18___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.1)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.1)
 
 <br>
 
@@ -1092,7 +1528,7 @@ Tab 关闭逻辑优化
 
 ___2023-04-17 21:52:05___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.4.0)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.4.0)
 
 <br>
 
@@ -1110,7 +1546,7 @@ ___2023-04-17 21:52:05___
 
 ___2023-04-17 16:40:00___
 
-[查看详情](https://github.com/Slowlyo/owl-admin/releases/tag/v2.3.9)
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.3.9)
 
 <br>
 

@@ -79,6 +79,7 @@ class IndexController extends Controller
                             $item('/crud/delete', '删', '/docs/crud/delete.md'),
                             $item('/crud/update', '改', '/docs/crud/update.md'),
                             $item('/crud/read', '查', '/docs/crud/read.md'),
+                            $item('/crud/service-rewrite', '重写 Service', '/docs/crud/service-rewrite.md'),
                             $item('/crud/modal', '弹窗操作', '/docs/crud/modal.md'),
                             $item('/crud/export', '数据导出', '/docs/crud/export.md'),
                         ],
