@@ -82,10 +82,12 @@ public function import(Request $request)
 {
     $file = storage_path('app/public/' . $request->input('file'));
 
-    Excel::import(new XXXRecordImport, $file);
+    $data = fastexcel()->import($file);
+    
+    XXXRecord::insert($data->toArray());
 
     return $this->response()->successMessage('导入成功');
 }
 ```
 
-_注: 此处使用 [laravel-excel](https://docs.laravel-excel.com) 实现了最基础的数据导入, 其他逻辑自行添加~_
+_注: 此处使用 [fast-excel](https://github.com/rap2hpoutre/fast-excel) 实现了最基础的数据导入, 其他逻辑自行添加~_

@@ -1,9 +1,7 @@
 框架提供了基础的数据导出功能, 可以很方便的实现导出数据到 `.xlsx` 文件
 
 
-> 此功能依赖于 [laravel-excel](https://docs.laravel-excel.com) ( maatwebsite/excel )
-> 如果 `maatwebsite/excel` 安装时报错, 请先安装 `psr/simple-cache:^2.0`
-> 相关 [issue](https://github.com/SpartnerNL/Laravel-Excel/issues/3815)
+> 此功能依赖于 [fast-excel](https://github.com/rap2hpoutre/fast-excel) ( rap2hpoutre/fast-excel )
 
 <br>
 
@@ -31,7 +29,7 @@ public function list(): Page
 
 <br>
 
-## 部分自定义配置
+## 自定义导出信息
 
 ### 导出文件名
 
@@ -44,33 +42,18 @@ protected function exportFileName()
 ```
 <br>
 
-### 表头
+### 导出列信息
 
 ```php
-// 在控制器中重写 exportHeadings 方法
-protected function exportHeadings()
+// 在控制器中重写 exportMap 方法, $row 是数组格式
+// 该方法会被循环调用, 请不要在里面执行 IO 操作
+protected function exportMap($row)
 {
     return [
-        '姓名',
-        '年龄',
-        '性别',
+        '姓名' => $row['name'],
+        '年龄' => $row['age'],
+        '性别' => $row['gender'],
         '...'
-    ];
-}
-```
-<br>
-
-### 导出列
-
-```php
-// 在控制器中重写 exportColumns 方法
-protected function exportColumns($row)
-{
-    return [
-        $row->name,
-        $row->age,
-        // 可以在这里自定义处理数据, 如:
-        $row->gender == 1 ? '男' : '女',
     ];
 }
 ```
@@ -92,13 +75,14 @@ protected function export()
     $ids = request()->input('_ids');
 
     // listQuery() 为列表查询条件，与获取列表数据一致
-    $query = $this->service->listQuery()->when($ids, fn($query) => $query->whereIn('id', explode(',', $ids)));
+    $query = $this->service->listQuery()
+        ->when($ids, fn($query) => $query->whereIn($this->service->primaryKey(), explode(',', $ids)));
 
-    // 此处使用 laravel-excel 导出，可自行修改
-    AdminExport::make($query)
-        ->setHeadings($this->exportHeadings())
-        ->setMap(fn($row) => $this->exportColumns($row))
-        ->store($path);
+    try {
+        fastexcel($query->get())->export(storage_path('app/' . $path), fn($row) => $this->exportMap($row));
+    } catch (\Throwable $e) {
+        admin_abort(__('admin.action_failed'));
+    }
 
     return $this->response()->success(compact('path'));
 }
