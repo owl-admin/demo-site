@@ -4,8 +4,10 @@
 建议首字母大写, 使用大驼峰格式
 
 ```bash
-php artisan admin-module:init --module=<module-name>
-# eg: php artisan admin-module:init --module=Master
+php artisan admin-module:init <module-name>
+# eg: php artisan admin-module:init Master
+# 支持多个模块同时创建
+# eg: php artisan admin-module:init Master Store
 ```
 
 ## __更改配置文件__
