@@ -64,11 +64,25 @@ Admin::menu()->add([
         'icon'      => 'carbon:model-builder',
     ],
     [
+        'id'        => 10004,
+        'parent_id' => 9998,
+        'title'     => '使用 blade 视图',
+        'url'       => '/dev_example/blade_view',
+        'icon'      => 'vscode-icons:file-type-blade',
+    ],
+    [
         'id'       => 11001,
         'title'    => 'AMIS 示例',
         'url'      => 'https://aisuda.bce.baidu.com/amis/examples/index',
         'url_type' => 2,
         'icon'     => 'twemoji:link',
+        'order'    => 2,
+    ],
+    [
+        'id'       => 12001,
+        'title'    => 'iframe',
+        'url'      => '/iframe',
+        'icon'     => 'material-symbols:iframe-outline-rounded',
         'order'    => 2,
     ],
 

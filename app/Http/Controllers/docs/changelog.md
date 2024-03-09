@@ -1,3 +1,135 @@
+## v3.3.8
+
+- 调整
+    - `admin-module:init` 命令支持一次性创建多个模块
+        - eg: `php artisan admin-module:init Master Store User` 
+    - admin-modules 目录及命名空间支持在 `config/admin.php` 配置文件中配置
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-03-06 14:39:11___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.8)
+
+<br>
+
+## v3.3.7
+
+- 调整
+    - 文件上传处理辅助函数优化
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-03-05 23:59:39___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.7)
+
+<br>
+
+## v3.3.6
+
+- 调整
+    - service  saving 问题修复
+    - 系统用户 / 角色 删除增加判断
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-03-05 13:56:33___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.6)
+
+<br>
+
+## v3.3.5
+
+- 调整
+    - 导出按钮优化, 增加 loading 效果
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-03-02 11:21:53___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.5)
+
+<br>
+
+## v3.3.4
+
+### ❗ 注意, 此版本更新对于 [ Excel 导出 ] 功能是破坏性的, 从低版本升级需要手动处理历史的导出逻辑代码
+
+<br>
+
+- 调整
+    - 默认使用的 Excel 导出扩展替换为 `rap2hpoutre/fast-excel`  ( laravel-excel经常由于各种依赖版本问题导致安装失败 )
+        - 新增: exportMap 方法
+        - 移除: exportHeadings & exportColumns 方法
+    - 优化导出菜单只能点击文字的问题
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --lang --assets --force`
+
+
+<br>
+
+___2024-03-02 00:06:30___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.4)
+
+<br>
+
+## v3.3.3
+
+- 调整
+    - `amis` 更新 `6.2.2`
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+    - 发布资源: `php artisan admin:publish --assets --force`
+
+
+<br>
+
+___2024-03-01 10:52:28___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.3)
+
+<br>
+
+## v3.3.2
+
+- 调整
+    - `service` 中新增部分方法, 更方便重写逻辑
+
+
+- 升级步骤
+    - 获取最新版本: `composer update slowlyo/owl-admin`
+
+
+<br>
+
+___2024-03-01 10:11:36___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v3.3.2)
+
+<br>
+
 ## v3.3.1
 
 - 调整
@@ -796,6 +928,20 @@ _无需发布资源_
 ___2023-08-07 20:55:57___
 
 [查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.8)
+
+<br>
+
+## v2.7.7
+
+修复amis更新3.3导致的部分问题
+
+_无需发布资源_
+
+<br>
+
+___2023-08-07 17:26:35___
+
+[查看详情](https://github.com/slowlyo/owl-admin/releases/tag/v2.7.7)
 
 <br>
 
