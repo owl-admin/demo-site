@@ -18,7 +18,7 @@ class IframeController extends AdminController
             // 查看源码的按钮
             Components::make()
                 ->codeView([['title' => 'Controller', 'language' => 'php', 'path' => __FILE__]])
-                ->className('absolute bottom-2 right-2')
+                ->className('absolute bottom-20 right-2')
                 ->level('success'),
 
             amis()->IFrame()->className('my-iframe')->src('http://doc.owladmin.com'),
