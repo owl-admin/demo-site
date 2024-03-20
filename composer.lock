@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3aa2b38543f623edac7097aebd293f47",
+    "content-hash": "3d83d46add4d13d87b8e49985c8457a0",
     "packages": [
         {
             "name": "brick/math",
@@ -962,38 +962,6 @@
                 }
             ],
             "time": "2022-08-28T14:45:39+00:00"
-        },
-        {
-            "name": "iconify/json",
-            "version": "2.2.185",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iconify/icon-sets.git",
-                "reference": "ebd01d8edec44f52c61e763c610124a6b02efe43"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iconify/icon-sets/zipball/ebd01d8edec44f52c61e763c610124a6b02efe43",
-                "reference": "ebd01d8edec44f52c61e763c610124a6b02efe43",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Iconify\\IconsJSON\\": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Iconify icons collection in JSON format",
-            "homepage": "https://iconify.design/icon-sets/",
-            "support": {
-                "issues": "https://github.com/iconify/icon-sets/issues",
-                "source": "https://github.com/iconify/icon-sets/tree/2.2.185"
-            },
-            "time": "2024-02-21T06:47:51+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3131,27 +3099,25 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "dev-master",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "26ac85d83632ff1245f8c3e054a9883ecca1b1f8"
+                "reference": "dd134a763c89286d6a1429d956607d6d09bcaeca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/26ac85d83632ff1245f8c3e054a9883ecca1b1f8",
-                "reference": "26ac85d83632ff1245f8c3e054a9883ecca1b1f8",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/dd134a763c89286d6a1429d956607d6d09bcaeca",
+                "reference": "dd134a763c89286d6a1429d956607d6d09bcaeca",
                 "shasum": ""
             },
             "require": {
                 "ext-gd": "*",
                 "ext-zip": "*",
-                "iconify/json": "*",
-                "illuminate/support": "~9|~10",
+                "illuminate/support": ">=9",
                 "php": ">=8.0",
                 "slowlyo/laravel-support": "*"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3177,7 +3143,7 @@
             ],
             "authors": [
                 {
-                    "name": "Slowlyo",
+                    "name": "slowlyo",
                     "email": "slowlyo_email@qq.com",
                     "homepage": "https://github.com/slowlyo"
                 }
@@ -3185,19 +3151,19 @@
             "description": "基于 laravel、amis 开发的后台框架~",
             "homepage": "https://github.com/slowlyo/owl-admin",
             "keywords": [
-                "OwlAdmin",
                 "admin",
                 "amis",
-                "laravel"
+                "laravel",
+                "owl-admin"
             ],
             "support": {
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/Slowlyo/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v3.3.6",
-                "wiki": "http://doc.owladmin.com/"
+                "source": "https://github.com/slowlyo/owl-admin/tree/v3.4.1",
+                "wiki": "https://doc.owladmin.com/"
             },
-            "time": "2024-03-05T05:54:55+00:00"
+            "time": "2024-03-20T02:27:04+00:00"
         },
         {
             "name": "symfony/console",
@@ -8410,14 +8376,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "slowlyo/owl-admin": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -147,6 +147,7 @@ return [
         'old_password_required'   => '请输入原密码',
         'old_password_error'      => '原密码错误',
         'username_already_exists' => '用户名已存在',
+        'cannot_delete'           => '不可删除超级管理员',
     ],
 
     'admin_roles' => '角色',
@@ -158,6 +159,8 @@ return [
         'name_already_exists' => '角色名称已存在',
         'slug_already_exists' => '角色标识已存在',
         'set_permissions'     => '设置权限',
+        'cannot_delete'       => '不可删除超级管理员',
+        'used'                => '不可删除正在使用的角色',
     ],
 
     'admin_permissions' => '权限',
@@ -184,9 +187,12 @@ return [
         'url'                    => '链接',
         'visible'                => '可见',
         'type'                   => '类型',
+        'iframe'                    => 'Iframe',
+        'iframe_description'        => '开启后页面将缓存，重新打开时不会重新加载',
         'api'                    => '页面Api',
         'api_description'        => 'schemaApi, 页面初始化请求的api, 需要与Controller中的queryPath一致',
         'route'                  => '路由',
+        'keep_alive'             => '缓存页面',
         'link'                   => '外链',
         'class_name'             => '类名',
         'class_name_description' => '菜单的CSS类名, 一般用于自定义样式',
@@ -256,6 +262,6 @@ return [
         'selected_rows'                => '选中行',
         'page_no_data'                 => '本页无数据',
         'selected_rows_no_data'        => '请选择要导出的数据',
-        'please_install_laravel_excel' => '请先安装 laravel-excel 扩展',
+        'please_install_laravel_excel' => '请先安装 rap2hpoutre/fast-excel 扩展',
     ],
 ];

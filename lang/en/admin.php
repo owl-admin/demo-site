@@ -147,6 +147,7 @@ return [
         'old_password_required'   => 'Old Password Required',
         'old_password_error'      => 'Old Password Error',
         'username_already_exists' => 'Username Already Exists',
+        'cannot_delete'           => 'The super administrator cannot be deleted',
     ],
 
     'admin_roles' => 'Admin Roles',
@@ -158,6 +159,8 @@ return [
         'name_already_exists' => 'Role Name Already Exists',
         'slug_already_exists' => 'Role Slug Already Exists',
         'set_permissions'     => 'Set Permissions',
+        'cannot_delete'       => 'The super administrator cannot be deleted',
+        'used'                => 'You cannot delete a role that is in use',
     ],
 
     'admin_permissions' => 'Permissions',
@@ -182,8 +185,11 @@ return [
         'icon'                   => 'Icon',
         'icon_description'       => 'Please refer to ',
         'url'                    => 'Url',
+        'iframe'                    => 'Iframe',
+        'iframe_description'        => 'After opening, the page will be cached and will not be reloaded when reopened',
         'visible'                => 'Visible',
         'type'                   => 'Type',
+        'keep_alive'             => 'KeepAlive',
         'api'                    => 'Page API',
         'api_description'        => 'schemaApi, the api for page initialization requests, needs to be consistent with queryPath in Controller',
         'route'                  => 'Route',
@@ -256,6 +262,6 @@ Backup important data before performing operations!!!<br>
         'selected_rows'                => 'Selected Rows',
         'page_no_data'                 => 'Current page has no data',
         'selected_rows_no_data'        => 'No data is selected',
-        'please_install_laravel_excel' => 'Please install the package "maatwebsite/excel" first',
+        'please_install_laravel_excel' => 'Please install the package "rap2hpoutre/fast-excel" first',
     ],
 ];
