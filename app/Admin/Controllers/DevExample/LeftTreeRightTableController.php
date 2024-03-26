@@ -57,8 +57,6 @@ class LeftTreeRightTableController extends AdminController
                         ->target('window')
                         ->visibleOn('${treeType == "tree"}')
                         ->body(
-                        // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
-                        // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
                             amis()
                                 ->TreeControl('tree')
                                 ->submitOnChange()
@@ -68,13 +66,26 @@ class LeftTreeRightTableController extends AdminController
                                     // 当选中项发生变化时, 触发事件
                                     'change' => [
                                         'actions' => [
-                                            // 跳转到指定路径, 并且将选中项的值作为参数传递
+                                            // 方法1， 点击选中项跳转到指定路径, 并且将选中项的值作为参数传递
+                                            // 按照 amis 示例, 这里应该是设置完 submitOnChange 和 target:window 之后就可以了
+                                            // 但是不生效, 曲线救国使用 onEvent 结合路径跳转实现
                                             [
                                                 'actionType' => 'url',
-                                                'args'       => [
+                                                'args' => [
                                                     'url' => '/dev_example/left_tree_right_table?tree=${tree}',
                                                 ],
                                             ],
+                                            // 方法2 ，点击选中项，刷新目标组件，https://aisuda.bce.baidu.com/amis/zh-CN/docs/concepts/event-action#%E5%88%B7%E6%96%B0%E7%BB%84%E4%BB%B6%E8%AF%B7%E6%B1%82
+
+                                            [
+                                                'actionType' => 'reload',
+                                                'componentId' => 'reload_crud', // 刷新的目标组件id，$this->baseCRUD()->id('reload_crud')...
+                                                'data' => [
+                                                    'treeId' => '${tree}' // 传递的参数
+                                                ]
+                                            ]
+
+
                                         ],
                                     ],
                                 ])
@@ -92,7 +103,7 @@ class LeftTreeRightTableController extends AdminController
      */
     public function list()
     {
-        $crud = $this->baseCRUD()
+        $crud = $this->baseCRUD()->id('reload_crud')
             ->headerToolbar([
                 // 查看源码的按钮
                 Components::make()->codeView([
