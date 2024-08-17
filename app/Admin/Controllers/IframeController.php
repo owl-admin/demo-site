@@ -12,7 +12,7 @@ class IframeController extends AdminController
         $schema = $this->basePage()->bodyClassName('custom-page')->css([
             '.bg-\[var\(--owl-body-bg\)\]' => ['background' => 'white'],
             '.custom-page'                 => ['height' => 'calc(100vh - 65px)', 'overflow' => 'hidden'],
-            '.p-5'                         => ['padding' => '0 !important'],
+            '.owl-container'                         => ['padding' => '0 !important'],
         ])->body([
             // 查看源码的按钮
             Components::make()
