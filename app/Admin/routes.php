@@ -69,6 +69,18 @@ Route::group([
         $router->resource('condition_builder', \App\Admin\Controllers\DevExample\ConditionBuilderController::class);
         $router->resource('blade_view', \App\Admin\Controllers\DevExample\BladeViewController::class);
         $router->resource('articles', \App\Admin\Controllers\DevExample\ArticleController::class);
+
+        // 表单
+        $router->group(['prefix' => 'form'], function (Router $router) {
+            $router->get('select_linkage', [
+                \App\Admin\Controllers\DevExample\Form\SelectLinkageController::class,
+                'index',
+            ]);
+            $router->get('select_linkage_options', [
+                \App\Admin\Controllers\DevExample\Form\SelectLinkageController::class,
+                'options',
+            ]);
+        });
     });
 
     // dcat demo

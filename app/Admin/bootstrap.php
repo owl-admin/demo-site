@@ -42,10 +42,10 @@ Admin::scripts('window.localStorage.setItem("admin-api-loginParams", "JTdCJTIydX
 Admin::menu()->add([
     // region dev example
     [
-        'id'    => 9998,
-        'title' => '开发示例',
-        'url'   => '/dev_example',
-        'icon'  => 'vscode-icons:file-type-bolt',
+        'id'           => 9998,
+        'title'        => '开发示例',
+        'url'          => '/dev_example',
+        'icon'         => 'vscode-icons:file-type-bolt',
         'custom_order' => 1,
     ],
     [
@@ -83,30 +83,44 @@ Admin::menu()->add([
         'url'       => '/dev_example/articles',
         'icon'      => 'fluent-emoji-flat:bookmark-tabs',
     ],
+    [
+        'id'        => 10006,
+        'parent_id' => 9998,
+        'title'     => '表单',
+        'url'       => '/dev_example/form',
+        'icon'      => 'twemoji:avocado',
+    ],
+    [
+        'id'        => 100061,
+        'parent_id' => 10006,
+        'title'     => '下拉联动',
+        'url'       => '/dev_example/form/select_linkage',
+        'icon'      => 'hugeicons:cursor-magic-selection-02',
+    ],
     // endregion
 
     [
-        'id'       => 11001,
-        'title'    => 'AMIS 示例',
-        'url'      => 'https://aisuda.bce.baidu.com/amis/examples/index',
-        'url_type' => 2,
-        'icon'     => 'twemoji:link',
-        'custom_order'    => 2,
+        'id'           => 11001,
+        'title'        => 'AMIS 示例',
+        'url'          => 'https://aisuda.bce.baidu.com/amis/examples/index',
+        'url_type'     => 2,
+        'icon'         => 'twemoji:link',
+        'custom_order' => 2,
     ],
     [
-        'id'    => 12001,
-        'title' => 'iframe',
-        'url'   => '/iframe',
-        'icon'  => 'material-symbols:iframe-outline-rounded',
+        'id'           => 12001,
+        'title'        => 'iframe',
+        'url'          => '/iframe',
+        'icon'         => 'material-symbols:iframe-outline-rounded',
         'custom_order' => 2,
     ],
 
     // region dcat demo
     [
-        'id'    => 200,
-        'title' => 'Dcat Demo',
-        'url'   => '/dcat',
-        'icon'  => 'carbon:demo',
+        'id'           => 200,
+        'title'        => 'Dcat Demo',
+        'url'          => '/dcat',
+        'icon'         => 'carbon:demo',
         'custom_order' => 1,
     ],
     [
