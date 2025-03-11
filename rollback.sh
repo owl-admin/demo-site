@@ -33,13 +33,13 @@ EOF
 
 # 恢复代码文件 ==========================================================================================
 
-git checkout .
-git clean -f
-git pull
+sudo git checkout .
+sudo git clean -f
+sudo git pull
 
 # 清除缓存 ==========================================================================================
-php artisan optimize:clear
-php artisan storage:link
+sudo php artisan optimize:clear
+sudo php artisan storage:link
 
 
 echo
