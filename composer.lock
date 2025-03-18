@@ -3405,7 +3405,7 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.1.2",
+            "version": "v4.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
