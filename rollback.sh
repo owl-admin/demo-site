@@ -87,15 +87,53 @@ EOF
 restore_code() {
     log "开始恢复代码文件..."
     
-    # 检查git状态
-    if ! git status &> /dev/null; then
-        handle_error "当前目录不是git仓库"
+    # 检查git命令是否可用
+    if ! command -v git &> /dev/null; then
+        handle_error "git命令未找到，请确保git已安装"
+    fi
+    
+    # 显示git版本信息
+    GIT_VERSION=$(git --version 2>&1)
+    log "Git版本: $GIT_VERSION"
+    
+    # 检查当前目录
+    CURRENT_DIR=$(pwd)
+    log "当前目录: $CURRENT_DIR"
+    
+    # 检查.git目录权限
+    if [ -d ".git" ]; then
+        log "找到.git目录"
+        ls -la .git > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+            handle_error "无法访问.git目录，请检查目录权限"
+        fi
+    else
+        handle_error "当前目录 $CURRENT_DIR 不是git仓库，请确保在正确的目录下执行脚本"
+    fi
+    
+    # 检查git仓库状态
+    GIT_STATUS=$(git status 2>&1)
+    GIT_STATUS_CODE=$?
+    if [ $GIT_STATUS_CODE -ne 0 ]; then
+        log "Git状态检查失败，错误码: $GIT_STATUS_CODE"
+        log "Git错误信息: $GIT_STATUS"
+        
+        # 尝试修复git仓库
+        log "尝试修复git仓库..."
+        git fsck --full 2>&1
+        if [ $? -ne 0 ]; then
+            handle_error "git仓库可能已损坏，请尝试手动修复"
+        fi
     fi
     
     # 获取当前分支
-    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>&1)
+    if [ $? -ne 0 ]; then
+        handle_error "获取当前分支失败: $CURRENT_BRANCH"
+    fi
+    
     if [ -z "$CURRENT_BRANCH" ]; then
-        handle_error "无法获取当前分支"
+        handle_error "无法获取当前分支，可能处于分离头指针状态"
     fi
     
     log "当前分支: $CURRENT_BRANCH"
