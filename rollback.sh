@@ -6,7 +6,7 @@ set -o pipefail
 
 # 配置git安全目录
 REPO_DIR=$(pwd)
-git config --global --add safe.directory "$REPO_DIR"
+git config --local --add safe.directory "$REPO_DIR"
 
 # 日志函数
 log() {
