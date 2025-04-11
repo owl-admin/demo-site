@@ -87,81 +87,12 @@ EOF
 restore_code() {
     log "开始恢复代码文件..."
     
-    # 检查git命令是否可用
-    if ! command -v git &> /dev/null; then
-        handle_error "git命令未找到，请确保git已安装"
-    fi
-    
-    # 显示git版本信息
-    GIT_VERSION=$(git --version 2>&1)
-    log "Git版本: $GIT_VERSION"
-    
-    # 检查当前目录
-    CURRENT_DIR=$(pwd)
-    log "当前目录: $CURRENT_DIR"
-    
-    # 检查.git目录权限
-    if [ -d ".git" ]; then
-        log "找到.git目录"
-        ls -la .git > /dev/null 2>&1
-        if [ $? -ne 0 ]; then
-            handle_error "无法访问.git目录，请检查目录权限"
-        fi
-    else
-        handle_error "当前目录 $CURRENT_DIR 不是git仓库，请确保在正确的目录下执行脚本"
-    fi
-    
-    # 检查git仓库状态
-    GIT_STATUS=$(git status 2>&1)
-    GIT_STATUS_CODE=$?
-    if [ $GIT_STATUS_CODE -ne 0 ]; then
-        log "Git状态检查失败，错误码: $GIT_STATUS_CODE"
-        log "Git错误信息: $GIT_STATUS"
-        
-        # 尝试修复git仓库
-        log "尝试修复git仓库..."
-        git fsck --full 2>&1
-        if [ $? -ne 0 ]; then
-            handle_error "git仓库可能已损坏，请尝试手动修复"
-        fi
-    fi
-    
-    # 获取当前分支
-    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>&1)
-    if [ $? -ne 0 ]; then
-        handle_error "获取当前分支失败: $CURRENT_BRANCH"
-    fi
-    
-    if [ -z "$CURRENT_BRANCH" ]; then
-        handle_error "无法获取当前分支，可能处于分离头指针状态"
-    fi
-    
-    log "当前分支: $CURRENT_BRANCH"
-    
-    # 清理所有本地更改
-    log "清理本地更改..."
-    
-    # 丢弃所有未提交的更改
-    git reset --hard HEAD || handle_error "重置本地更改失败"
-    
-    # 清理所有未跟踪的文件和目录
-    git clean -fd || handle_error "清理未跟踪文件失败"
-    
-    # 如果有stash，清理所有stash
-    if git stash list &> /dev/null; then
-        git stash clear || handle_error "清理stash失败"
-    fi
-    
-    # 获取远程最新代码
-    log "获取远程最新代码..."
-    git fetch --all --prune || handle_error "获取远程代码失败"
-    
-    # 重置到远程分支
-    if git show-ref --verify --quiet "refs/remotes/origin/$CURRENT_BRANCH"; then
-        git reset --hard "origin/$CURRENT_BRANCH" || handle_error "重置到远程分支失败"
-    else
-        handle_error "远程分支 $CURRENT_BRANCH 不存在"
-    fi
+    # 直接执行git命令
+    git checkout .
+    git fetch --all
+    git reset --hard origin/master
+    git clean -fd
+    git pull
     
     log "代码恢复完成"
 }
