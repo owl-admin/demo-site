@@ -7,6 +7,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- 删除数据库
+DROP DATABASE IF EXISTS `owl_admin_demo`;
+
 CREATE DATABASE IF NOT EXISTS `owl_admin_demo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `owl_admin_demo`;
 
