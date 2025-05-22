@@ -34,7 +34,7 @@ EOF
 # 恢复代码文件 ==========================================================================================
 
 sudo git checkout .
-sudo git clean -f
+sudo git clean -fd
 sudo git fetch --all
 sudo git reset --hard origin/master
 sudo git pull
