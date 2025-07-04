@@ -1,0 +1,174 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class AdminPermissionsSeeder extends Seeder
+{
+    /**
+     * 运行数据库填充
+     */
+    public function run(): void
+    {
+        $permissions = [
+            [
+                'id' => 1,
+                'name' => '首页',
+                'slug' => 'dashboard',
+                'http_method' => null,
+                'http_path' => '["\/dashboard*"]',
+                'custom_order' => 0,
+                'parent_id' => 0,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
+            [
+                'id' => 2,
+                'name' => '系统管理',
+                'slug' => 'system',
+                'http_method' => null,
+                'http_path' => '["\/system*"]',
+                'custom_order' => 10,
+                'parent_id' => 0,
+                'created_at' => null,
+                'updated_at' => '2023-01-31 06:54:21',
+            ],
+            [
+                'id' => 3,
+                'name' => '管理员',
+                'slug' => 'system.admin_users',
+                'http_method' => null,
+                'http_path' => '["\/system\/admin_users*"]',
+                'custom_order' => 0,
+                'parent_id' => 2,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
+            [
+                'id' => 4,
+                'name' => '角色',
+                'slug' => 'system.admin_roles',
+                'http_method' => null,
+                'http_path' => '["\/system\/admin_roles*"]',
+                'custom_order' => 10,
+                'parent_id' => 2,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
+            [
+                'id' => 5,
+                'name' => '权限',
+                'slug' => 'system.admin_permissions',
+                'http_method' => null,
+                'http_path' => '["\/system\/admin_permissions*"]',
+                'custom_order' => 20,
+                'parent_id' => 2,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
+            [
+                'id' => 6,
+                'name' => '菜单',
+                'slug' => 'system.admin_menus',
+                'http_method' => null,
+                'http_path' => '["\/system\/admin_menus*"]',
+                'custom_order' => 30,
+                'parent_id' => 2,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
+            [
+                'id' => 8,
+                'name' => 'Json示例',
+                'slug' => 'example',
+                'http_method' => null,
+                'http_path' => '["\/example*"]',
+                'custom_order' => 20,
+                'parent_id' => 0,
+                'created_at' => '2022-09-06 10:32:40',
+                'updated_at' => '2023-01-31 06:54:21',
+            ],
+            [
+                'id' => 9,
+                'name' => '所有Form示例',
+                'slug' => 'example.form_all',
+                'http_method' => null,
+                'http_path' => '["\/example\/form_all*"]',
+                'custom_order' => 10,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 10:34:10',
+                'updated_at' => '2022-09-06 11:05:12',
+            ],
+            [
+                'id' => 10,
+                'name' => '表单展示模式',
+                'slug' => 'example.form',
+                'http_method' => null,
+                'http_path' => '["\/example\/form*"]',
+                'custom_order' => 60,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:05:57',
+                'updated_at' => '2022-09-06 11:05:57',
+            ],
+            [
+                'id' => 11,
+                'name' => '显隐切换示例',
+                'slug' => 'example.reaction',
+                'http_method' => null,
+                'http_path' => '["\/example\/reaction*"]',
+                'custom_order' => 0,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:16:26',
+                'updated_at' => '2022-09-06 11:16:34',
+            ],
+            [
+                'id' => 12,
+                'name' => '条件生成器',
+                'slug' => 'example.condition_builder',
+                'http_method' => null,
+                'http_path' => '["\/example\/condition_builder*"]',
+                'custom_order' => 20,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:20:12',
+                'updated_at' => '2022-09-06 11:20:12',
+            ],
+            [
+                'id' => 13,
+                'name' => '弹框',
+                'slug' => 'example.dialog',
+                'http_method' => null,
+                'http_path' => '["\/example\/dialog*"]',
+                'custom_order' => 30,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:23:46',
+                'updated_at' => '2022-09-06 11:23:46',
+            ],
+            [
+                'id' => 14,
+                'name' => '选项卡',
+                'slug' => 'example.tabs',
+                'http_method' => null,
+                'http_path' => '["\/example\/tabs*"]',
+                'custom_order' => 40,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:23:46',
+                'updated_at' => '2022-09-06 11:23:46',
+            ],
+            [
+                'id' => 15,
+                'name' => '步骤表单',
+                'slug' => 'example.wizard',
+                'http_method' => null,
+                'http_path' => '["\/example\/wizard*"]',
+                'custom_order' => 50,
+                'parent_id' => 8,
+                'created_at' => '2022-09-06 11:23:46',
+                'updated_at' => '2022-09-06 11:23:46',
+            ],
+        ];
+
+        DB::table('admin_permissions')->insert($permissions);
+    }
+}
