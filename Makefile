@@ -1,6 +1,6 @@
 # Docker 配置
 IMAGE_NAME = owl-admin-demo
-CONTAINER_NAME = owl-demo
+CONTAINER_NAME = owl-admin-demo
 DOCKER_HUB_USER = slowlyo
 TAG = latest
 VERSION = v4.3.0
