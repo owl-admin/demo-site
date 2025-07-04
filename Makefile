@@ -1,9 +1,10 @@
 # Docker 配置
 IMAGE_NAME = owl-admin-demo
-CONTAINER_NAME = owl-admin-demo
+CONTAINER_NAME = owl-demo
 DOCKER_HUB_USER = slowlyo
 TAG = latest
-PORT = 8077
+VERSION = v4.3.0
+PORT = 8080
 
 # 默认目标
 .PHONY: help
@@ -16,8 +17,17 @@ help:
 	@echo "  clean      - 停止并删除容器"
 	@echo "  logs       - 查看容器日志"
 	@echo "  shell      - 进入容器shell"
+	@echo "  tag        - 给镜像打标签 (latest + 版本号)"
 	@echo "  push       - 推送到Docker Hub"
-	@echo "  tag        - 给镜像打标签"
+	@echo "  login      - 登录Docker Hub"
+	@echo "  release    - 完整发布流程 (构建+标签+推送)"
+	@echo "  dev        - 开发模式 (构建+运行+查看日志)"
+	@echo ""
+	@echo "配置信息:"
+	@echo "  镜像名称: $(IMAGE_NAME):$(TAG)"
+	@echo "  容器名称: $(CONTAINER_NAME)"
+	@echo "  访问端口: http://localhost:$(PORT)"
+	@echo "  Docker Hub: $(DOCKER_HUB_USER)/$(IMAGE_NAME)"
 	@echo ""
 
 # 构建镜像
@@ -77,14 +87,20 @@ shell:
 tag:
 	@echo "正在给镜像打标签..."
 	docker tag $(IMAGE_NAME):$(TAG) $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)
-	@echo "标签已创建: $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)"
+	docker tag $(IMAGE_NAME):$(TAG) $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(VERSION)
+	@echo "标签已创建:"
+	@echo "  $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)"
+	@echo "  $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(VERSION)"
 
 # 推送到Docker Hub
 .PHONY: push
 push: tag
 	@echo "正在推送镜像到Docker Hub..."
 	docker push $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)
-	@echo "镜像推送完成: $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)"
+	docker push $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(VERSION)
+	@echo "镜像推送完成:"
+	@echo "  $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(TAG)"
+	@echo "  $(DOCKER_HUB_USER)/$(IMAGE_NAME):$(VERSION)"
 
 # 登录Docker Hub
 .PHONY: login

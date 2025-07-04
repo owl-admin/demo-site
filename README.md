@@ -2,7 +2,45 @@
 
 owl-admin demo站点源码
 
+## Docker 快速运行
+
+### 方式一：直接拉取运行（推荐）
+```bash
+# 拉取并运行最新版本
+docker run -d --name owl-demo -p 8080:80 slowlyo/owl-admin-demo:latest
+
+# 或者指定版本
+docker run -d --name owl-demo -p 8080:80 slowlyo/owl-admin-demo:v4.3.0
+```
+
+### 方式二：本地构建运行
+```bash
+# 构建镜像
+make build
+
+# 运行容器
+make run
+
+# 或者一键构建并运行
+make build run
+```
+
+### 访问应用
+- 应用地址：http://localhost:8080
+- 管理后台：http://localhost:8080/admin
+
+### 其他命令
+```bash
+# 推送到 DockerHub
+make push
+
+# 停止容器
+docker stop owl-demo
+
+# 查看日志
+docker logs owl-demo
+```
+
+## 传统部署
 
 ### 欢迎和我一起维护 Demo / 框架文档
-
-- 数据库在根目录 `database.sql`
