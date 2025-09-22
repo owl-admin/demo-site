@@ -54,4 +54,4 @@ jobs:
       - name: Notify hook
         if: ${{ success() }}
         run: |
-          curl -sS -X POST "http://hook.slowlyo.top/h/56b2c86a-52d5-44bc-b6f5-b0986db0bdbe?signature=${{ secrets.HOOK_SCRECT }}"
+          curl -sS -X POST "http://hook.slowlyo.top/h/56b2c86a-52d5-44bc-b6f5-b0986db0bdbe?signature=${{ secrets.HOOK_SECRET }}"
