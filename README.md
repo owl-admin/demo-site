@@ -7,10 +7,7 @@ owl-admin demo站点源码
 ### 方式一：直接拉取运行（推荐）
 ```bash
 # 拉取并运行最新版本
-docker run -d --name owl-demo -p 8080:80 slowlyo/owl-admin-demo:latest
-
-# 或者指定版本
-docker run -d --name owl-demo -p 8080:80 slowlyo/owl-admin-demo:v4.3.0
+docker run -d --name owl-demo -p 8080:80 ghcr.io/owl-admin/demo-site::master
 ```
 
 ### 方式二：本地构建运行
