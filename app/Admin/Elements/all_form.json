@@ -2,7 +2,7 @@
     {
         "type": "form",
         "api": "",
-        "title": "表单项",
+        "title": "所有表单项",
         "mode": "horizontal",
         "autoFocus": true,
         "body": [
