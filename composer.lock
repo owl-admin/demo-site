@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e31195d5c687a0583e14c3a8f7d6280b",
+    "content-hash": "129f69d5076e5a4f6aab68985e5c066c",
     "packages": [
         {
             "name": "brick/math",
@@ -3602,16 +3602,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.4.5",
+            "version": "v4.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "e02507e1be242ce309f6b1a1ec8623cb2a362c7c"
+                "reference": "67c257fcfe7353c67775a15023d835f213c8dc5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/e02507e1be242ce309f6b1a1ec8623cb2a362c7c",
-                "reference": "e02507e1be242ce309f6b1a1ec8623cb2a362c7c",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/67c257fcfe7353c67775a15023d835f213c8dc5e",
+                "reference": "67c257fcfe7353c67775a15023d835f213c8dc5e",
                 "shasum": ""
             },
             "require": {
@@ -3663,10 +3663,10 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/orgs/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v4.4.5",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v4.4.6",
                 "wiki": "https://doc.owladmin.com/"
             },
-            "time": "2025-11-03T08:14:25+00:00"
+            "time": "2025-11-21T13:43:30+00:00"
         },
         {
             "name": "symfony/clock",
