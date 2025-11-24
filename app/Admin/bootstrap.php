@@ -17,20 +17,20 @@ $githubBtn = amis()
     ->blank()
     ->url('https://github.com/Slowlyo/owl-admin-demo')
     ->tooltip('demo 源码')
-    ->iconClassName('text-xl pt-1')
-    ->className('mr-2 bcustom_order-0 hover:bcustom_order-0');
+    ->iconClassName('text-xl')
+    ->className('mr-2 bcustom_order-0 hover:bcustom_order-0 border-0');
 
 // 版本信息
 $composer = \Slowlyo\OwlAdmin\Support\Composer::parse(base_path('composer.lock'))->toArray();
 $info     = collect($composer['packages'])->where('name', 'slowlyo/owl-admin');
 
 $version = $info->value('version');
-$diff    = \Carbon\Carbon::parse($info->value('time'))->timezone('Asia/Shanghai')->diffForHumans(now());
+$link = 'https://github.com/slowlyo/owl-admin/releases/tag/' . $version;
 
 $versionInfo = amis()
     ->Alert()
     ->className('m-0 mr-5')
-    ->body(sprintf('Version: <b>%s</b> (%s)', $version, $diff));
+    ->body(sprintf('<a href="%s" target="_blank"><b>%s</b></a>', $link, $version));
 
 Admin::prependNav(amis()->Flex()->items([$versionInfo, $githubBtn]));
 
