@@ -3,7 +3,7 @@ IMAGE_NAME = owl-admin-demo
 CONTAINER_NAME = owl-admin-demo
 DOCKER_HUB_USER = slowlyo
 TAG = latest
-VERSION = v4.5.1
+VERSION = v4.5.2
 PORT = 8080
 
 # 默认目标
