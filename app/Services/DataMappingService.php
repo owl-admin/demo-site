@@ -2,20 +2,32 @@
 
 namespace App\Services;
 
+use App\Support\InteractsWithFaker;
 use Slowlyo\OwlAdmin\Services\AdminService;
 
 class DataMappingService extends AdminService
 {
+    use InteractsWithFaker;
+
+    /**
+     * 返回主键字段。
+     */
     public function primaryKey()
     {
         return 'id';
     }
 
+    /**
+     * 返回分类映射。
+     */
     public function categoryMap()
     {
         return [1 => '科技', 2 => '财经', 3 => '娱乐', 4 => '体育', 5 => '教育', 6 => '游戏',];
     }
 
+    /**
+     * 返回分类标签映射。
+     */
     public function categoryTagMap()
     {
         $map = ['', '', 'active', 'inactive', 'error', 'success', 'warning'];
@@ -25,6 +37,9 @@ class DataMappingService extends AdminService
         });
     }
 
+    /**
+     * 返回性别映射。
+     */
     public function genderMap()
     {
         return [0 => '保密', 1 => '男', 2 => '女'];
@@ -37,6 +52,7 @@ class DataMappingService extends AdminService
      */
     public function list()
     {
+        $zhFaker = $this->faker('zh_CN');
         $total = rand(5, 10); // 随机生成 5~10 条数据
         $items = [];
 
@@ -48,7 +64,7 @@ class DataMappingService extends AdminService
                 'categories' => array_map(fn() => rand(1, 6), range(0, rand(0, 2))),
                 'gender'     => rand(0, 2),
                 'deep'       => [
-                    'title' => fake('zh_CN')->title,
+                    'title' => $zhFaker->title(),
                 ],
             ];
         }

@@ -38,8 +38,7 @@ tests/
 
 # Environment files
 .env
+.env.testing
 
 # Vendor (will be installed in container)
 vendor/
-
-composer.lock

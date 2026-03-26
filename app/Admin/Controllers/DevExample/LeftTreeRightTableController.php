@@ -111,8 +111,8 @@ class LeftTreeRightTableController extends AdminController
                 amis()->TableColumn('title', '名称'),
                 amis()->TableColumn('state', '状态')->type('status'),
                 amis()->TableColumn('image', '图片')->type('image'),
-                amis()->TableColumn('created_at', __('admin.created_at'))->type('datetime'),
-                amis()->TableColumn('updated_at', __('admin.updated_at'))->type('datetime'),
+                amis()->TableColumn('created_at', admin_trans('admin.created_at'))->type('datetime'),
+                amis()->TableColumn('updated_at', admin_trans('admin.updated_at'))->type('datetime'),
             ]);
 
         return $this->baseList($crud);

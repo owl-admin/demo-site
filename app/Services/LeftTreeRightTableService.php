@@ -2,19 +2,31 @@
 
 namespace App\Services;
 
+use App\Support\DemoImage;
+use App\Support\InteractsWithFaker;
 use Slowlyo\OwlAdmin\Services\AdminService;
 
 class LeftTreeRightTableService extends AdminService
 {
+    use InteractsWithFaker;
+
+    /**
+     * 返回主键字段。
+     */
     public function primaryKey()
     {
         return 'id';
     }
 
+    /**
+     * 生成列表示例数据。
+     */
     public function list()
     {
         $tree   = request('tree');
         $suffix = $tree ? " (tree: {$tree})" : '';
+        $faker = $this->faker();
+        $zhFaker = $this->faker('zh_CN');
 
         $total = rand(1, 5);
         $items = [];
@@ -22,17 +34,20 @@ class LeftTreeRightTableService extends AdminService
         for ($i = 0; $i < $total; $i++) {
             $items[] = [
                 'id'         => $i + 1,
-                'title'      => fake('zh_CN')->title . $suffix,
+                'title'      => $zhFaker->title() . $suffix,
                 'state'      => rand(0, 1),
-                'image'      => fake()->imageUrl,
-                'created_at' => fake()->dateTime->format('Y-m-d H:i:s'),
-                'updated_at' => fake()->dateTime->format('Y-m-d H:i:s'),
+                'image'      => DemoImage::make(($tree ?: 'root') . '-' . $i, sprintf('ITEM %02d', $i + 1)),
+                'created_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
+                'updated_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
             ];
         }
 
         return compact('total', 'items');
     }
 
+    /**
+     * 返回左侧树结构。
+     */
     public function tree()
     {
         return [

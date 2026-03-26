@@ -2,6 +2,9 @@
 
 owl-admin demo站点源码
 
+- Laravel 13
+- PHP 8.4 Docker 镜像
+
 ## Docker 快速运行
 
 ### 方式一：直接拉取运行（推荐）

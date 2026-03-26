@@ -1,5 +1,10 @@
-# 使用 Debian slim 基础镜像 - 在大小和兼容性之间平衡
-FROM php:8.2-fpm-bullseye
+# syntax=docker/dockerfile:1.7
+
+# 使用 PHP 8.4 基础镜像，满足 Laravel 13 的运行要求
+FROM php:8.4-fpm-bullseye
+
+ENV COMPOSER_ALLOW_SUPERUSER=1 \
+    COMPOSER_CACHE_DIR=/tmp/composer-cache
 
 # 设置工作目录
 WORKDIR /var/www/html
@@ -56,10 +61,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # 安装 Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# 复制项目文件
+# 先复制依赖清单，避免源码改动打穿 Composer 缓存层
+COPY composer.json composer.lock ./
+
+# 只在依赖变化时重装 vendor，同时复用 Composer 下载缓存
+RUN --mount=type=cache,target=/tmp/composer-cache \
+    composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction --no-scripts
+
+# 再复制项目文件，后续源码改动不会触发依赖重装
 COPY . .
+
+# 依赖已就绪后再生成自动加载，Composer 会顺带触发 Laravel 包发现
+RUN composer dump-autoload --optimize --no-dev --no-interaction
 
 # 设置权限
 RUN chown -R www-data:www-data /var/www/html \
@@ -67,9 +82,6 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 777 /var/www/html/storage \
     && chmod -R 777 /var/www/html/bootstrap/cache \
     && chmod +x /var/www/html/init.sh
-
-# 安装 PHP 依赖
-RUN composer install --no-dev --optimize-autoloader
 
 # 复制 Nginx 配置
 COPY docker/nginx.conf /etc/nginx/sites-available/default

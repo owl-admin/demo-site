@@ -2,8 +2,9 @@
 
 namespace App\Admin\Controllers\Dcat;
 
-use Faker\Factory;
 use App\Support\Components;
+use App\Support\DemoImage;
+use Faker\Factory;
 use Slowlyo\OwlAdmin\Controllers\AdminController;
 
 /**
@@ -11,6 +12,9 @@ use Slowlyo\OwlAdmin\Controllers\AdminController;
  */
 class CustomTableController extends AdminController
 {
+    /**
+     * 渲染自定义视图示例页。
+     */
     public function index()
     {
         $schema = amis()->Page()->data(['list_data' => $this->fakerData()])->body([
@@ -20,6 +24,9 @@ class CustomTableController extends AdminController
         return $this->response()->success($schema);
     }
 
+    /**
+     * 构建多种展示形态的示例视图。
+     */
     public function view()
     {
         return amis()->Tabs()->toolbar([
@@ -58,6 +65,9 @@ class CustomTableController extends AdminController
         ]);
     }
 
+    /**
+     * 生成自定义视图的演示数据。
+     */
     public function fakerData()
     {
         $faker = Factory::create();
@@ -67,7 +77,7 @@ class CustomTableController extends AdminController
             $data[] = [
                 'id'    => $i,
                 'name'  => $faker->name,
-                'image' => 'https://slowlyo.gitee.io/static/images/wallpaper/wallpaper-' . mt_rand(1, 11) . '.jpg',
+                'image' => DemoImage::make($i, sprintf('CARD %02d', $i)),
             ];
         }
 
