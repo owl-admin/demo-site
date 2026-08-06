@@ -41,6 +41,10 @@ docker stop owl-demo
 docker logs owl-demo
 ```
 
+## Blade 权限示例
+
+初始化后可在“开发示例”中打开“Blade 页面权限示例”。为角色授予同名权限后，菜单显示和 iframe 页面访问会同时生效。
+
 ## 传统部署
 
 ### 欢迎和我一起维护 Demo / 框架文档

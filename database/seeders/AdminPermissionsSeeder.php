@@ -167,6 +167,17 @@ class AdminPermissionsSeeder extends Seeder
                 'created_at' => '2022-09-06 11:23:46',
                 'updated_at' => '2022-09-06 11:23:46',
             ],
+            [
+                'id' => 16,
+                'name' => 'Blade 页面权限示例',
+                'slug' => 'dev_example.blade_permission',
+                'http_method' => null,
+                'http_path' => '["\/pages\/blade_permission*"]',
+                'custom_order' => 7,
+                'parent_id' => 0,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
         ];
 
         DB::table('admin_permissions')->insert($permissions);

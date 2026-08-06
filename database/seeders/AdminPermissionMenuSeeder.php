@@ -38,6 +38,8 @@ class AdminPermissionMenuSeeder extends Seeder
             ['permission_id' => 14, 'menu_id' => 8, 'created_at' => null, 'updated_at' => null],
             ['permission_id' => 15, 'menu_id' => 15, 'created_at' => null, 'updated_at' => null],
             ['permission_id' => 15, 'menu_id' => 8, 'created_at' => null, 'updated_at' => null],
+            ['permission_id' => 16, 'menu_id' => 16, 'created_at' => null, 'updated_at' => null],
+            ['permission_id' => 16, 'menu_id' => 9998, 'created_at' => null, 'updated_at' => null],
         ];
 
         DB::table('admin_permission_menu')->insert($permissionMenus);

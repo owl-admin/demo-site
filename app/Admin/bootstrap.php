@@ -42,13 +42,6 @@ Admin::scripts('window.localStorage.setItem("admin-api-loginParams", "JTdCJTIydX
 Admin::menu()->add([
     // region dev example
     [
-        'id'           => 9998,
-        'title'        => '开发示例',
-        'url'          => '/dev_example',
-        'icon'         => 'vscode-icons:file-type-bolt',
-        'custom_order' => 1,
-    ],
-    [
         'id'        => 10001,
         'parent_id' => 9998,
         'title'     => '左树右表',
