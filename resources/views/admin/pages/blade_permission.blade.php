@@ -46,6 +46,10 @@
             border-radius: 8px;
         }
 
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
         h2 {
             margin: 0 0 12px;
             font-size: 16px;
@@ -70,6 +74,7 @@
             color: #4b5563;
             line-height: 1.8;
         }
+
     </style>
 </head>
 <body>
@@ -100,6 +105,20 @@ menu_id: 16</code>
                     <li>为角色勾选“Blade 页面权限示例”。</li>
                     <li>重新登录后菜单与页面同时生效。</li>
                 </ul>
+            </section>
+
+            <section class="full-width">
+                <h2>控制器示例</h2>
+                <p>控制器只负责返回视图，权限校验交由后台路由中间件统一处理。</p>
+                <code>&lt;?php
+
+class BladePermissionController extends AdminController
+{
+    public function index(): View
+    {
+        return view('admin.pages.blade_permission');
+    }
+}</code>
             </section>
         </div>
     </main>

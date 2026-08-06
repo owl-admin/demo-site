@@ -68,7 +68,8 @@ class BladePermissionPageTest extends TestCase
         $this->withToken($user->createToken('blade-demo-authorized')->plainTextToken)
             ->get('/admin-api/pages/blade_permission')
             ->assertOk()
-            ->assertSee('Blade 页面权限控制');
+            ->assertSee('Blade 页面权限控制')
+            ->assertSee('BladePermissionController');
 
         // 菜单接口应返回挂在开发示例下的受控菜单，前端据此生成导航树。
         $menuResponse = $this->withToken($user->createToken('blade-demo-menu')->plainTextToken)
