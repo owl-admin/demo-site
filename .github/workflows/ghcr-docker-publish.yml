@@ -3,7 +3,8 @@ name: Build and Push Docker image to GHCR
 on:
   push:
     branches:
-      - '**'
+      - master
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,6 +13,10 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+
+concurrency:
+  group: deploy-demo-vps
+  cancel-in-progress: true
 
 jobs:
   build-and-push:
@@ -36,8 +41,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/heads/main') }}
-            type=ref,event=branch
+            type=raw,value=master,enable=true
+            type=raw,value=latest,enable=true
             type=sha,format=short
 
       - name: Build and push
@@ -46,12 +51,20 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Notify hook
-        if: ${{ success() }}
-        run: |
-          curl -sS -X POST "http://hook.slowlyo.top/h/56b2c86a-52d5-44bc-b6f5-b0986db0bdbe?signature=${{ secrets.HOOK_SECRET }}"
+      - name: Deploy to VPS over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script_stop: true
+          command_timeout: 20m
+          script: |
+            export IMAGE=ghcr.io/owl-admin/demo-site:master
+            /opt/owladmin-deploy/deploy-demo.sh
