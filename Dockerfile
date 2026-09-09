@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # 使用 PHP 8.4 基础镜像，满足 Laravel 13 的运行要求
-FROM php:8.4-fpm-bullseye
+FROM php:8.4-fpm-bookworm
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_CACHE_DIR=/tmp/composer-cache
