@@ -77,6 +77,11 @@ COPY . .
 # 依赖已就绪后再生成自动加载，Composer 会顺带触发 Laravel 包发现
 RUN composer dump-autoload --optimize --no-dev --no-interaction
 
+# 发布框架前端资源到 public/admin-assets
+RUN cp .env.example .env \
+    && php artisan admin:publish --assets --force \
+    && rm -f .env
+
 # 设置权限
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \

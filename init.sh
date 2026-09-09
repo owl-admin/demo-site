@@ -33,6 +33,11 @@ echo "正在生成应用密钥..."
 php artisan key:generate
 echo "应用密钥生成完成"
 
+# 发布 OwlAdmin 前端资源（升级框架后需要）
+echo "正在发布 admin 前端资源..."
+php artisan admin:publish --assets --force
+echo "admin 前端资源发布完成"
+
 # 迁移表
 echo "正在运行数据库迁移..."
 php artisan migrate --force
