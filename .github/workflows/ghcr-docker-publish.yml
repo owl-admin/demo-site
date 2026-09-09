@@ -5,6 +5,11 @@ on:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+      deploy_only:
+        description: Skip build; only SSH pull existing GHCR image and recreate container
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -20,6 +25,7 @@ concurrency:
 
 jobs:
   build-and-push:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_only != true }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -57,6 +63,11 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+  deploy:
+    needs: [build-and-push]
+    if: ${{ always() && (needs.build-and-push.result == 'success' || (github.event_name == 'workflow_dispatch' && inputs.deploy_only == true)) }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to VPS over SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -66,5 +77,54 @@ jobs:
           script_stop: true
           command_timeout: 20m
           script: |
+            set -euo pipefail
+            mkdir -p /opt/owladmin-deploy
+            cat > /opt/owladmin-deploy/deploy-demo.sh <<'EOF'
+            #!/bin/bash
+            set -euo pipefail
+            IMAGE="${IMAGE:-ghcr.io/owl-admin/demo-site:master}"
+            NAME="${NAME:-owladmin-demo}"
+            PORT_BIND="${PORT_BIND:-127.0.0.1:8088:80}"
+            echo "[deploy-demo] pull $IMAGE"
+            docker pull --platform linux/amd64 "$IMAGE"
+            echo "[deploy-demo] recreate $NAME"
+            docker rm -f "$NAME" 2>/dev/null || true
+            docker run -d --name "$NAME" --restart unless-stopped \
+              -p "$PORT_BIND" \
+              -e APP_ENV=production \
+              -e APP_DEBUG=false \
+              "$IMAGE"
+            for i in $(seq 1 30); do
+              if docker exec "$NAME" test -f /var/www/html/.env 2>/dev/null; then
+                break
+              fi
+              sleep 2
+            done
+            docker exec "$NAME" bash -lc 'cd /var/www/html && if [ -f .env ]; then sed -i "s|^APP_URL=.*|APP_URL=https://demo.owladmin.com|" .env; php artisan config:clear || true; fi'
+            docker exec "$NAME" bash -lc 'cd /var/www/html && python3 - <<'"'"'PY'"'"'
+            from pathlib import Path
+            p = Path("bootstrap/app.php")
+            t = p.read_text()
+            needle = "->withMiddleware(function (Middleware $middleware)"
+            if "trustProxies" in t:
+                print("trustProxies already present")
+            elif needle in t:
+                t = t.replace(
+                    needle + " {",
+                    needle + " {\n        $middleware->trustProxies(at: \"*\");",
+                    1,
+                )
+                p.write_text(t)
+                print("trustProxies patched")
+            else:
+                print("WARN: middleware hook not found")
+            PY
+            php artisan optimize:clear || true'
+            code=$(curl -sS -o /dev/null -w "%{http_code}" --connect-timeout 10 -H "Host: demo.owladmin.com" http://127.0.0.1:8088/admin || echo 000)
+            echo "[deploy-demo] admin_http=$code"
+            test "$code" = "200" -o "$code" = "302"
+            echo "[deploy-demo] done"
+            EOF
+            chmod 755 /opt/owladmin-deploy/deploy-demo.sh
             export IMAGE=ghcr.io/owl-admin/demo-site:master
             /opt/owladmin-deploy/deploy-demo.sh

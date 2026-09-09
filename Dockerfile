@@ -10,7 +10,8 @@ ENV COMPOSER_ALLOW_SUPERUSER=1 \
 WORKDIR /var/www/html
 
 # 一次性安装所有依赖、配置扩展并清理 - 减少镜像层数
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update \
+    && apt-get install -y --no-install-recommends \
     # 运行时依赖 (需要保留)
     nginx \
     supervisor \
