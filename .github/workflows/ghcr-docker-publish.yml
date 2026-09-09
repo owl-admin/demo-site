@@ -79,52 +79,7 @@ jobs:
           script: |
             set -euo pipefail
             mkdir -p /opt/owladmin-deploy
-            cat > /opt/owladmin-deploy/deploy-demo.sh <<'EOF'
-            #!/bin/bash
-            set -euo pipefail
-            IMAGE="${IMAGE:-ghcr.io/owl-admin/demo-site:master}"
-            NAME="${NAME:-owladmin-demo}"
-            PORT_BIND="${PORT_BIND:-127.0.0.1:8088:80}"
-            echo "[deploy-demo] pull $IMAGE"
-            docker pull --platform linux/amd64 "$IMAGE"
-            echo "[deploy-demo] recreate $NAME"
-            docker rm -f "$NAME" 2>/dev/null || true
-            docker run -d --name "$NAME" --restart unless-stopped \
-              -p "$PORT_BIND" \
-              -e APP_ENV=production \
-              -e APP_DEBUG=false \
-              "$IMAGE"
-            for i in $(seq 1 30); do
-              if docker exec "$NAME" test -f /var/www/html/.env 2>/dev/null; then
-                break
-              fi
-              sleep 2
-            done
-            docker exec "$NAME" bash -lc 'cd /var/www/html && if [ -f .env ]; then sed -i "s|^APP_URL=.*|APP_URL=https://demo.owladmin.com|" .env; php artisan config:clear || true; fi'
-            docker exec "$NAME" bash -lc 'cd /var/www/html && python3 - <<'"'"'PY'"'"'
-            from pathlib import Path
-            p = Path("bootstrap/app.php")
-            t = p.read_text()
-            needle = "->withMiddleware(function (Middleware $middleware)"
-            if "trustProxies" in t:
-                print("trustProxies already present")
-            elif needle in t:
-                t = t.replace(
-                    needle + " {",
-                    needle + " {\n        $middleware->trustProxies(at: \"*\");",
-                    1,
-                )
-                p.write_text(t)
-                print("trustProxies patched")
-            else:
-                print("WARN: middleware hook not found")
-            PY
-            php artisan optimize:clear || true'
-            code=$(curl -sS -o /dev/null -w "%{http_code}" --connect-timeout 10 -H "Host: demo.owladmin.com" http://127.0.0.1:8088/admin || echo 000)
-            echo "[deploy-demo] admin_http=$code"
-            test "$code" = "200" -o "$code" = "302"
-            echo "[deploy-demo] done"
-            EOF
+            echo 'IyEvYmluL2Jhc2gKc2V0IC1ldW8gcGlwZWZhaWwKSU1BR0U9IiR7SU1BR0U6LWdoY3IuaW8vb3dsLWFkbWluL2RlbW8tc2l0ZTptYXN0ZXJ9IgpOQU1FPSIke05BTUU6LW93bGFkbWluLWRlbW99IgpQT1JUX0JJTkQ9IiR7UE9SVF9CSU5EOi0xMjcuMC4wLjE6ODA4ODo4MH0iCmVjaG8gIltkZXBsb3ktZGVtb10gcHVsbCAkSU1BR0UiCmRvY2tlciBwdWxsIC0tcGxhdGZvcm0gbGludXgvYW1kNjQgIiRJTUFHRSIKZWNobyAiW2RlcGxveS1kZW1vXSByZWNyZWF0ZSAkTkFNRSIKZG9ja2VyIHJtIC1mICIkTkFNRSIgMj4vZGV2L251bGwgfHwgdHJ1ZQpkb2NrZXIgcnVuIC1kIC0tbmFtZSAiJE5BTUUiIC0tcmVzdGFydCB1bmxlc3Mtc3RvcHBlZCBcCiAgLXAgIiRQT1JUX0JJTkQiIFwKICAtZSBBUFBfRU5WPXByb2R1Y3Rpb24gXAogIC1lIEFQUF9ERUJVRz1mYWxzZSBcCiAgIiRJTUFHRSIKZm9yIGkgaW4gJChzZXEgMSA2MCk7IGRvCiAgaWYgZG9ja2VyIGV4ZWMgIiROQU1FIiB0ZXN0IC1mIC92YXIvd3d3L2h0bWwvLmVudiAyPi9kZXYvbnVsbDsgdGhlbgogICAgYnJlYWsKICBmaQogIHNsZWVwIDIKZG9uZQpkb2NrZXIgZXhlYyAiJE5BTUUiIGJhc2ggLWxjICdjZCAvdmFyL3d3dy9odG1sICYmIGlmIFsgLWYgLmVudiBdOyB0aGVuIHNlZCAtaSAic3xeQVBQX1VSTD0uKnxBUFBfVVJMPWh0dHBzOi8vZGVtby5vd2xhZG1pbi5jb218IiAuZW52OyBwaHAgYXJ0aXNhbiBjb25maWc6Y2xlYXIgfHwgdHJ1ZTsgZmknCmRvY2tlciBleGVjICIkTkFNRSIgYmFzaCAtbGMgJ2NkIC92YXIvd3d3L2h0bWwgJiYgaWYgZ3JlcCAtcSB0cnVzdFByb3hpZXMgYm9vdHN0cmFwL2FwcC5waHA7IHRoZW4gZWNobyB0cnVzdFByb3hpZXMgYWxyZWFkeSBwcmVzZW50OyBlbGlmIGdyZXAgLXEgIndpdGhNaWRkbGV3YXJlKGZ1bmN0aW9uIChNaWRkbGV3YXJlIFwkbWlkZGxld2FyZSkiIGJvb3RzdHJhcC9hcHAucGhwOyB0aGVuIHNlZCAtaSAiL3dpdGhNaWRkbGV3YXJlKGZ1bmN0aW9uIChNaWRkbGV3YXJlIFwkbWlkZGxld2FyZSkgey9hXFwgICAgICAgIFwkbWlkZGxld2FyZS0+dHJ1c3RQcm94aWVzKGF0OiBcIipcIik7IiBib290c3RyYXAvYXBwLnBocCAmJiBlY2hvIHRydXN0UHJveGllcyBwYXRjaGVkOyBlbHNlIGVjaG8gV0FSTjogbWlkZGxld2FyZSBob29rIG5vdCBmb3VuZDsgZmk7IHBocCBhcnRpc2FuIG9wdGltaXplOmNsZWFyIHx8IHRydWUnCmNvZGU9MDAwCmZvciBpIGluICQoc2VxIDEgMzApOyBkbwogIGNvZGU9JChjdXJsIC1zIC1vIC9kZXYvbnVsbCAtdyAiJXtodHRwX2NvZGV9IiAtLWNvbm5lY3QtdGltZW91dCAxMCAtSCAiSG9zdDogZGVtby5vd2xhZG1pbi5jb20iIGh0dHA6Ly8xMjcuMC4wLjE6ODA4OC9hZG1pbiB8fCB0cnVlKQogIFtbICIkY29kZSIgPT0gIjIwMCIgfHwgIiRjb2RlIiA9PSAiMzAyIiBdXSAmJiBicmVhawogIHNsZWVwIDIKZG9uZQplY2hvICJbZGVwbG95LWRlbW9dIGFkbWluX2h0dHA9JGNvZGUiCnRlc3QgIiRjb2RlIiA9ICIyMDAiIC1vICIkY29kZSIgPSAiMzAyIgplY2hvICJbZGVwbG95LWRlbW9dIGRvbmUiCg==' | base64 -d > /opt/owladmin-deploy/deploy-demo.sh
             chmod 755 /opt/owladmin-deploy/deploy-demo.sh
             export IMAGE=ghcr.io/owl-admin/demo-site:master
             /opt/owladmin-deploy/deploy-demo.sh
