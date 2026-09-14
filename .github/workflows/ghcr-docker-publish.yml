@@ -10,6 +10,10 @@ on:
         description: Skip build; only SSH pull existing GHCR image and recreate container
         type: boolean
         default: false
+      reset_only:
+        description: Skip build/deploy; only SSH run /opt/owladmin-demo-reset.sh on the VPS
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -25,7 +29,7 @@ concurrency:
 
 jobs:
   build-and-push:
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.deploy_only != true }}
+    if: ${{ github.event_name != 'workflow_dispatch' || (inputs.deploy_only != true && inputs.reset_only != true) }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -65,7 +69,7 @@ jobs:
 
   deploy:
     needs: [build-and-push]
-    if: ${{ always() && (needs.build-and-push.result == 'success' || (github.event_name == 'workflow_dispatch' && inputs.deploy_only == true)) }}
+    if: ${{ always() && inputs.reset_only != true && (needs.build-and-push.result == 'success' || (github.event_name == 'workflow_dispatch' && inputs.deploy_only == true)) }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to VPS over SSH
@@ -85,3 +89,23 @@ jobs:
             chmod 755 /opt/owladmin-demo-reset.sh
             export IMAGE=ghcr.io/owl-admin/demo-site:master
             /opt/owladmin-deploy/deploy-demo.sh
+
+  reset:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.reset_only == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reset demo site over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script_stop: true
+          command_timeout: 20m
+          script: |
+            set -euo pipefail
+            if [ ! -x /opt/owladmin-demo-reset.sh ]; then
+              echo "ERROR: /opt/owladmin-demo-reset.sh missing or not executable"
+              exit 1
+            fi
+            /opt/owladmin-demo-reset.sh
