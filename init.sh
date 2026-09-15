@@ -35,7 +35,7 @@ echo "应用密钥生成完成"
 
 # 发布 OwlAdmin 前端资源（升级框架后需要）
 echo "正在发布 admin 前端资源..."
-php artisan admin:publish --assets --force
+php artisan admin:publish --assets --force --yes
 echo "admin 前端资源发布完成"
 
 # 迁移表

@@ -79,7 +79,7 @@ RUN composer dump-autoload --optimize --no-dev --no-interaction
 
 # 发布框架前端资源到 public/admin-assets
 RUN cp .env.example .env \
-    && php artisan admin:publish --assets --force \
+    && php artisan admin:publish --assets --force --yes \
     && rm -f .env
 
 # 设置权限
