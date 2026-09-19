@@ -178,6 +178,17 @@ class AdminPermissionsSeeder extends Seeder
                 'created_at' => null,
                 'updated_at' => null,
             ],
+            [
+                'id' => 17,
+                'name' => 'Office 组件示例',
+                'slug' => 'dev_example.office_viewer',
+                'http_method' => null,
+                'http_path' => '["\/dev_example\/office_viewer*"]',
+                'custom_order' => 8,
+                'parent_id' => 0,
+                'created_at' => null,
+                'updated_at' => null,
+            ],
         ];
 
         DB::table('admin_permissions')->insert($permissions);

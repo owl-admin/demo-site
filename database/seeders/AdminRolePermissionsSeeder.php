@@ -55,6 +55,12 @@ class AdminRolePermissionsSeeder extends Seeder
                 'created_at' => '2024-03-19 12:53:29',
                 'updated_at' => '2024-03-19 12:53:29',
             ],
+            [
+                'role_id' => 1,
+                'permission_id' => 17,
+                'created_at' => '2026-09-20 00:00:00',
+                'updated_at' => '2026-09-20 00:00:00',
+            ],
         ];
 
         DB::table('admin_role_permissions')->insert($rolePermissions);

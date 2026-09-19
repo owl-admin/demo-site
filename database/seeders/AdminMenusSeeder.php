@@ -301,6 +301,24 @@ class AdminMenusSeeder extends Seeder
                 'iframe_url' => '/admin-api/pages/blade_permission',
                 'custom_order' => 7,
             ],
+            [
+                'id' => 17,
+                'parent_id' => 9998,
+                'title' => 'Office 组件示例',
+                'icon' => 'vscode-icons:file-type-word2',
+                'url' => '/dev_example/office_viewer',
+                'url_type' => 1,
+                'visible' => 1,
+                'is_home' => 0,
+                'component' => null,
+                'is_full' => 0,
+                'extension' => null,
+                'created_at' => null,
+                'updated_at' => null,
+                'keep_alive' => null,
+                'iframe_url' => null,
+                'custom_order' => 8,
+            ],
         ];
 
         DB::table('admin_menus')->insert($menus);
