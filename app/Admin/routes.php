@@ -69,6 +69,7 @@ Route::group([
         $router->resource('condition_builder', \App\Admin\Controllers\DevExample\ConditionBuilderController::class);
         $router->resource('blade_view', \App\Admin\Controllers\DevExample\BladeViewController::class);
         $router->resource('articles', \App\Admin\Controllers\DevExample\ArticleController::class);
+        $router->get('office_viewer', [\App\Admin\Controllers\DevExample\OfficeViewerController::class, 'index']);
 
         // 表单
         $router->group(['prefix' => 'form'], function (Router $router) {
