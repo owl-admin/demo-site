@@ -3448,7 +3448,7 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.7.4",
+            "version": "v4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
@@ -3509,7 +3509,7 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/orgs/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.4",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.5",
                 "wiki": "https://doc.owladmin.com/"
             },
             "time": "2026-09-19T17:12:56+00:00"
