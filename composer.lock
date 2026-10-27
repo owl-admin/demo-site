@@ -3448,16 +3448,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.7.7",
+            "version": "v4.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff"
+                "reference": "9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff",
-                "reference": "2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8",
+                "reference": "9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8",
                 "shasum": ""
             },
             "require": {
@@ -3514,10 +3514,10 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/orgs/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.7",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.8",
                 "wiki": "https://doc.owladmin.com/"
             },
-            "time": "2026-10-27T03:42:09+00:00"
+            "time": "2026-10-27T06:50:34+00:00"
         },
         {
             "name": "symfony/clock",
