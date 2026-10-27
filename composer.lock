@@ -3448,16 +3448,16 @@
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.7.6",
+            "version": "v4.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "f521fe26e374582b794016016c8612be304fb295"
+                "reference": "2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/f521fe26e374582b794016016c8612be304fb295",
-                "reference": "f521fe26e374582b794016016c8612be304fb295",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff",
+                "reference": "2fa05cdd6c4c748e658912aeb25a8ae4d32d09ff",
                 "shasum": ""
             },
             "require": {
@@ -3468,6 +3468,7 @@
                 "slowlyo/laravel-support": "^0.0.7"
             },
             "require-dev": {
+                "laravel/sanctum": "^4.0|^5.0",
                 "orchestra/testbench": "^10.0|^11.0",
                 "phpunit/phpunit": "^11.0|^12.0"
             },
@@ -3513,10 +3514,10 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/orgs/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.6",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.7",
                 "wiki": "https://doc.owladmin.com/"
             },
-            "time": "2026-10-26T05:52:45+00:00"
+            "time": "2026-10-27T03:42:09+00:00"
         },
         {
             "name": "symfony/clock",
