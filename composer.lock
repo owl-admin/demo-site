@@ -3444,20 +3444,21 @@
                 "issues": "https://github.com/slowlyo/laravel-support/issues",
                 "source": "https://github.com/slowlyo/laravel-support/tree/v0.0.7"
             },
-            "time": "2025-05-06T13:29:47+00:00"
+            "time": "2025-05-06T13:29:47+00:00",
+            "published-time": "2025-05-06T13:30:18+00:00"
         },
         {
             "name": "slowlyo/owl-admin",
-            "version": "v4.7.8",
+            "version": "v4.7.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slowlyo/owl-admin.git",
-                "reference": "9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8"
+                "reference": "833c5b9feaed56acfd100020c0c63c2c12970494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8",
-                "reference": "9b0c98dc3e2710b2ba8d7579da89ec6a4042fcc8",
+                "url": "https://api.github.com/repos/slowlyo/owl-admin/zipball/833c5b9feaed56acfd100020c0c63c2c12970494",
+                "reference": "833c5b9feaed56acfd100020c0c63c2c12970494",
                 "shasum": ""
             },
             "require": {
@@ -3514,10 +3515,11 @@
                 "email": "slowlyo_email@qq.com",
                 "forum": "https://github.com/orgs/owl-admin/discussions",
                 "issues": "https://github.com/Slowlyo/owl-admin/issues",
-                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.8",
+                "source": "https://github.com/slowlyo/owl-admin/tree/v4.7.9",
                 "wiki": "https://doc.owladmin.com/"
             },
-            "time": "2026-10-27T06:50:34+00:00"
+            "time": "2026-11-04T01:04:06+00:00",
+            "published-time": "2026-11-04T01:04:44+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8520,5 +8522,5 @@
         "php": "^8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
